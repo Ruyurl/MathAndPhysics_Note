@@ -1,0 +1,528 @@
+\chapter{力学}
+\setcounter{page}{1}
+\section{ベクトル，速度，加速度}
+\subsection{点の位置の表し方}
+
+無限に広い平面にある点$\mathrm{P}$の位置を表すのには，基準となる物体（基準体）が必要．基準体を1つの点$\mathrm{O}$とすれば，$\mathrm{P}$の位置を表すものに，距離はあるが方向はない．よって，基準体は大きさを持ったものでなくてはならない．時が経っても形の変わらないものを\textbf{剛体}という．この剛体上に2つの定点$\mathrm{A,\ B}$をとれば，$\mathrm{AP,\ BP}$の長さによって$\mathrm{P}$の位置は決まる．
+
+点$\mathrm{P}$の位置を表すのには$\mathrm{OP}$の長さ$r$を使って，$\vecrm{OP} = \bm{r}$のようにベクトルで書き表す．これを\textbf{位置ベクトル}という．$x$軸と$\vecrm{OP}$の成す角を$\varphi$とすると$(x,\ y)$と$(r,\ \varphi)$の関係は
+\begin{equation}
+	x = r\cos\varphi, \qquad y = r\sin\varphi
+\end{equation}
+
+座標系のとり方はいろいろある．
+
+\begin{enumerate}[leftmargin=18pt, labelsep=10pt, labelsep=10pt, itemindent=9pt]
+	\item[\f{例}] 原点を共通に持つ2つの座標系の軸が$\bunsuu{\pi}{4}$の角をつくっている．
+		\begin{inparaenum}[(1)]
+			\item 任意の点$\mathrm{P}$の座標$(x,\ y),\ (x',\ y')$の間にはどんな関係があるか；
+			\item $x'^2 + y'^2 = x^2 + y^2$を示せ；
+			\item $ax^2 + 2hxy + ay^2 = 1$で示される曲線の方程式を$x',\ y'$を使って表せ．
+		\end{inparaenum}
+		\begin{enumerate}[label=(\arabic*), labelsep=10pt, leftmargin=23pt]
+			\item 図で，$\mathrm{P}$から$x$軸と$x'$軸にそれぞれ垂線$\mathrm{PA,\ PB}$を下す．$\mathrm{A}$から$x'$軸に垂線$\mathrm{AA'}$を下すと
+			\begin{equation}
+				x' = \mathrm{OB} + \mathrm{OA'} + \mathrm{A'B} = \mathrm{OA}\cos\bunsuu{\pi}{4} + \mathrm{AP}\sin\bunsuu{\pi}{4} = \bunsuu{1}{\sqrt{2}}(x + y) \label{equ4-1}
+			\end{equation}
+			また
+			\begin{equation}
+				y' = \mathrm{AP}\cos\bunsuu{\pi}{4} - \mathrm{OA}\sin\bunsuu{\pi}{4} = \bunsuu{1}{\sqrt{2}}(-x + y) \label{equ4-2}
+			\end{equation}
+			(\ref{equ4-1})，(\ref{equ4-2})が$x',\ y'$を$x,\ y$で表す式である．$x,\ y$について解けば
+			\begin{gather}
+				x = \bunsuu{1}{\sqrt{2}}(x' - y')\\
+				y = \bunsuu{1}{\sqrt{2}}(x' + y')
+			\end{gather}
+			\item (1)より
+			\begin{equation}
+				x'^2 + y'^2 = x^2 + y^2
+			\end{equation}
+			\item 与式に代入すると
+			\begin{equation*}
+				(a + h)x'^2 + (a - h)y'^2 = 1
+			\end{equation*}
+		\end{enumerate}
+\end{enumerate}
+
+空間の直交座標系は，右手の親指，人差し指，中指の順に$x,\ y,\ z$軸をとる（\textbf{右手座標系}）．\textbf{極座標}では，$x$軸と$\bm{r}$の正射影の成す角を$\varphi$，$z$軸と$\bm{r}$の成す角を$\theta$とする．$\varphi$は経度，$\theta$は緯度にあたる．$(x,\ y,\ z)$と$(r,\ \varphi,\ \theta)$の関係は
+\begin{equation}
+	x = r\sin\theta\cos\varphi,\qquad y = r\sin\theta\sin\varphi,\qquad z = r\cos\theta
+\end{equation}
+となる．
+
+
+
+\subsection{速度ベクトル}
+
+\textbf{速度}または\textbf{速度ベクトル}$\bm{v}$は
+\begin{equation}
+	\bm{v} = \lim_{\varDelta t \to 0} \bunsuu{\varDelta \bm{r}}{\varDelta t} = \bunsuu{d\bm{r}}{dt}
+\end{equation}
+で求める．
+
+$\mathrm{P}$点の位置を辿ると曲線を描く（\textbf{軌道}または\textbf{径路}）．時間の差$\varDelta t$が小さいほど，$|\varDelta\bm{r}|$と軌道に沿っての長さ$\varDelta s$の比が$1$に近づくので$v = |\bm{v}|$は
+\begin{equation}
+	v = \lim_{\varDelta t \to 0} \bunsuu{|\varDelta \bm{r}|}{\varDelta t} = \lim_{\varDelta t \to 0} \bunsuu{\varDelta s}{\varDelta t} = \bunsuu{ds}{dt}
+\end{equation}
+となる．これを\textbf{速さ}という．
+
+
+
+\subsection{加速度ベクトル}
+
+\textbf{加速度}または\textbf{加速度ベクトル}$\bm{a}$は
+\begin{equation}
+	\bm{a} = \lim_{\varDelta t \to 0} \bunsuu{\varDelta \bm{v}}{\varDelta t} = \bunsuu{d\bm{v}}{dt}
+\end{equation}
+で求める．
+
+\begin{equation}
+	x = a\cos(\omega t + \alpha) \qquad \text{（$a,\ \alpha$は定数）}
+\end{equation}
+で表される運動は
+\begin{gather}
+	v = \bunsuu{dx}{dt} = -\omega a \sin(\omega t + \alpha)\\
+	a = \bunsuu{d^2x}{dt^2} = -\omega^2 a \cos(\omega t + \alpha) = -\omega^2 x
+\end{gather}
+となる．加速度はいつも原点の方を向いており，その大きさは原点からの距離に比例している．この運動を\textbf{単振動}という．$x$は$\pm a$の間を往復する．$\omega t + \alpha$の値によって$x$の値が決まるので\textbf{位相}という．$\alpha$を\textbf{初期位相}という．
+
+
+
+\subsection{1節　問題}
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 空間の1つの点の位置の極座標を$r,\ \theta,\ \varphi$とする．$r,\ \theta,\ \varphi$方向（$r$方向は$\theta$，$\varphi$を一定にして$r$だけが増すような方向，他も同様）の方向余弦を求めよ．
+	\item 3つのベクトル$\bm{A},\ \bm{B},\ \bm{C}$を1つの点$\mathrm{O}$から引くときこれらが一平面内にあるための条件を求めよ．
+	\item 2つの点$\mathrm{A,\ B}$の位置ベクトルを$\bm{A},\ \bm{B}$とする．$\mathrm{A,\ B}$両方の点を通る直線の方程式は
+	\begin{equation*}
+		\bm{r} = (1 - \lambda)\bm{A} + \lambda\bm{B}
+	\end{equation*}
+	であることを証明せよ．
+	\item 1つの平面（$xy$平面）内にあるベクトル$\bm{A}$の成分が$A_x = A\cos\omega t,\ A_y = A\sin \omega t$（$A,\ \omega$は定数）で与えられるとき$\bm{A}$と$\bunsuu{d\bm{A}}{dt}$とは互いに直角になっていることを証明せよ．
+\end{enumerate}
+
+
+
+\section{運動の法則}
+\subsection{慣性の法則（運動の第1法則）}
+
+\begin{tcolorbox}[colback=white]
+	すべての物体は，加えられた力によってその状態が変化させられない限り，静止或いは等速直線運動の状態を続ける（\textbf{慣性系の存在}）．
+\end{tcolorbox}
+
+2つの座標系$\mathrm{S}$系：$\mathrm{O}\text{-}xyz$と$\mathrm{S'}$系：$\mathrm{O}\text{-}x'y'z'$を考える．$\mathrm{S'}$系は$\mathrm{S}$系に対して並進運動（平行移動）をしていると考える．
+
+このとき，空間内に質点$m$があり，力$\bm{F}$が作用しているとする．$\mathrm{S}$系での位置ベクトルは$\bm{r}$，$\mathrm{S'}$系での位置ベクトルは$\bm{r}'$である．また，$\mathrm{O}$から見た$\mathrm{O'}$の位置ベクトルを$\bm{R}$とする．すると
+\begin{equation}
+	\bm{r} = \bm{R} + \bm{r}'
+\end{equation}
+の関係がある．これを用いると速度，加速度はそれぞれ
+\begin{gather}
+	\bunsuu{d\bm{r}}{dt} = \bunsuu{d\bm{R}}{dt} + \bunsuu{d\bm{r}'}{dt}\\
+	\bunsuu{d^2\bm{r}}{dt^2} = \bunsuu{d^2\bm{R}}{dt^2} + \bunsuu{d^2\bm{r}'}{dt^2}
+\end{gather}
+となる．従って，運動方程式（\ref{sec4-2-3}節を参照）より
+\begin{equation}
+	m\bunsuu{d^2\bm{r}}{dt^2} = m\bunsuu{d^2\bm{R}}{dt^2} + m\bunsuu{s^2\bm{r}'}{dt^2} = \bm{F}
+\end{equation}
+
+\subsubsection*{$\mathrm{S}$系に対して$\mathrm{S}'$系が等速直線運動をしている場合}
+
+このとき$\bm{R}$の加速度は$\bm{0}$なので
+\begin{equation*}
+	\bunsuu{d^2\bm{R}}{dt^2} = \bm{0}
+\end{equation*}
+よって
+\begin{gather}
+	\text{$\mathrm{S}$系\qquad} m\bunsuu{d^2\bm{r}}{dt^2} = \bm{F}\\
+	\text{$\mathrm{S}'$系\qquad} m\bunsuu{d^2\bm{r}'}{dt^2} = \bm{F}
+\end{gather}
+
+従って，どちらの系でも同様に運動を記述できる．
+
+
+\subsubsection*{$\mathrm{S}$系に対して$\mathrm{S}'$系が加速度運動をしている場合}
+
+このとき
+\begin{equation*}
+	\bunsuu{d^2\bm{R}}{dt^2} \ne \bm{0}
+\end{equation*}
+なので
+\begin{gather}
+	\text{$\mathrm{S}$系\qquad} m\bunsuu{d^2\bm{r}}{dt^2} = \bm{F}\\
+	\text{$\mathrm{S}'$系\qquad} m\bunsuu{d^2\bm{r}'}{dt^2} = \bm{F} - m\bunsuu{d^2\bm{R}}{dt^2}
+\end{gather}
+
+力が働かない場合（$\bm{F} = \bm{0}$）を考えると
+\begin{gather}
+	\text{$\mathrm{S}$系\qquad} m\bunsuu{d^2\bm{r}}{dt^2} = \bm{0}\\
+	\text{$\mathrm{S}'$系\qquad} m\bunsuu{d^2\bm{r}'}{dt^2} =- m\bunsuu{d^2\bm{R}}{dt^2}
+\end{gather}
+$\mathrm{S}$系では等速直線運動，$\mathrm{S'}$系では加速度運動が観測される．従って$- m\bunsuu{d^2\bm{R}}{dt^2}$を見かけの力（\textbf{慣性力}）とする．第1法則が成り立つ系を\textbf{慣性系}，成り立たない系を\textbf{非慣性系}という．
+
+非慣性系で運動方程式を記述するには
+\begin{equation}
+	m\bunsuu{d^2\bm{r}'}{dt^2} = \bm{F}' = \bm{F} - m\bunsuu{d^2\bm{R}}{dt^2}
+\end{equation}
+と置き換える．
+
+慣性系の問題の解き方
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 慣性系から見た動体の加速度$\alpha$を書き入れ，全ての力を書き込んで運動方程式を立てる．
+	\item 非慣性系から見た，動体の中にある物体に働く慣性力を書き込む．
+	\item 物体に働く慣性力以外の力を書き込む．
+	\item 慣性力を含む物体の運動方程式を立てる（非慣性系の運動方程式）．静止している場合はつり合いの式を書く．
+	\item 運動方程式（つり合いの式）を解く．
+\end{enumerate}
+
+
+
+\subsection{ガリレイ変換}
+
+2つの慣性系
+$\mathrm{S}(\mathrm{O},\ x,\ y,\ z)$と
+$\mathrm{S}'(\mathrm{O}',\ x',\ y',\ z')$
+で，$x \heikou x',\ y \heikou y',\ z \heikou z'$とし，$\mathrm{O}'$は$\mathrm{S}$の座標系で$(x_0,\ y_0,\ z_0)$にあり，一定の速度$\bm{v}_0 = (u,\ v,\ w)$であるとする．
+
+任意の点$\mathrm{P}$の座標を$(x,\ y,\ z),\ (x',\ y',\ z')$とすれば
+\begin{align}
+	x &= x_0 + x' & y &= y_0 + y' & z &= z_0 + z' \label{equ4-3}\\
+	x' &= x - x_0 & y' &= y - y_0 & z' &= z - z_0 \label{equ4-4}
+\end{align}
+である．これらを$t$で微分すると
+\begin{align}
+	u &= u_0 + u' & v &= v_0 + v' & w &= w_0 + w' \label{equ4-5}\\
+	u' &= u - u_0 & v' &= v - v_0 & w' &= w - w_0 \label{equ4-6}
+\end{align}
+となる．(\ref{equ4-5})を更に$t$で微分すると$\bunsuu{du_0}{dt} = 0,\ \bunsuu{dv_0}{dt} = 0,\ \bunsuu{dw_0}{dt} = 0$なので
+\begin{align}
+	\bunsuu{du}{dt} &= \bunsuu{du'}{dt} &
+	\bunsuu{dv}{dt} &= \bunsuu{dv'}{dt} &
+	\bunsuu{dw}{dt} &= \bunsuu{dw'}{dt} \label{equ4-7}
+\end{align}
+となる．(\ref{equ4-3})～(\ref{equ4-7})を\textbf{ガリレイ変換}という．例えば，(\ref{equ4-6})は速度$u$で飛んでいる鳥を同方向に速度$u_0$で走っている列車から見ると相対的に$u - u_0$の速度で飛んでいるように見えるということ．
+
+$\bm{v}$が一定であるとき，$\mathrm{S}$が慣性系ならば$\mathrm{S}'$も慣性系である．
+
+
+
+\subsection{力と加速度（運動の第2法則）}
+\label{sec4-2-3}
+
+\begin{tcolorbox}[colback=white]
+	質点に他の物体から力が働いた結果，加速度が生じる．このとき
+	\begin{equation}
+		m\bunsuu{d^2\bm{r}}{dt} = \bm{F}
+	\end{equation}
+が成り立つ（\textbf{運動方程式}）．
+\end{tcolorbox}
+
+《注》運動方程式は$\text{[結果]} = \text{[原因]}$というように書くことが多い．
+
+運動の変化は，\text{運動量}$\bm{p} = m\bm{v}$を用いて
+\begin{equation*}
+	\varDelta \bm{p} = \bm{p}(t_2) - \bm{p}(t_1)
+\end{equation*}
+と表される．運動の変化は加えられた駆動力（＝力×力を加えた時間）によって起こるので，
+\begin{equation}
+	\label{equ4-8}
+	\varDelta \bm{p} = \bm{F}\varDelta t
+\end{equation}
+と書くことができる．しかし，実際$\bm{F}$は変化するので積分を用いることで一般化ができる．力を時間で積分したものを\textbf{力積}$\bm{I}$といい
+\begin{equation*}
+	\bm{I} = \int_{t_1}^{t_2} \bm{F}\,dt
+\end{equation*}
+で定義される．つまり運動の変化$\varDelta\bm{p}$は力積$\bm{I}$に等しい．
+
+運動の変化率は(\ref{equ4-8})から
+\begin{equation*}
+	\bunsuu{\varDelta \bm{p}}{\varDelta t} = \bm{F}
+\end{equation*}
+と書ける．$\varDelta t \to 0$のとき
+\begin{equation}
+	\bunsuu{d\bm{p}}{dt} = \bm{F}
+\end{equation}
+で，質点の運動量の時間微分は，その瞬間に加えられた力に等しいことを意味する．運動量の定義式よりこれは
+\begin{equation}
+	m\bunsuu{d\bm{v}}{dt} = \bm{F}
+\end{equation}
+と書くこともできる．
+
+ここで，$\bm{F}$はその物体に加えられた力の\textbf{合力}を指し，$m$はその質点の\textbf{慣性質量}とする．
+
+運動方程式は
+\begin{equation*}
+	\bunsuu{d^2\bm{r}}{dt} = \bunsuu{\bm{F}}{m}
+\end{equation*}
+より，$\bm{F}$が一定のとき質量が大きいほど加速度の変化が小さい．物体が運動の状態を続けようとする性質を\textbf{慣性}ということから$m$は慣性質量と呼ばれる．
+
+
+
+\subsection{作用・反作用の法則（運動の第3法則）}
+
+\begin{tcolorbox}[colback=white]
+	2個の質点1,\ 2があり，互いに力を及ぼしているとき，質点1が質点2から受ける力$\bm{F}_{12}$は，質点2が質点1から受ける力$\bm{F}_{21}$と大きさが同じで向きが反対である．つまり
+	\begin{equation}
+		\bm{F}_{12} = -\bm{F}_{21}
+	\end{equation}
+	である（\textbf{作用・反作用の法則}）．
+\end{tcolorbox}
+
+林檎が落下しているとき，林檎が地球から受ける力（重力）と地球が林檎から受ける力は作用・反作用の関係にある．また，林檎が机の上で静止しているとき，林檎が机から受ける力（垂直抗力）と机が林檎から受ける力も作用・反作用の関係にある．しかし，林檎が地球から受ける力（重力）と林檎が机から受ける力（垂直抗力）は作用・反作用の関係ではなく，つり合いの関係である．
+
+
+
+\subsection{2節　問題}
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 滑らかな水平面上にある板（質量$M$）の上を人（質量$m$）が板に対して加速度$a$で歩くとき，板は水平面上に対してどのような加速度を持つか．また，人と板とが互いに水平に及ぼしあう力はどれだけか．
+	\item 水平な滑らかな床の上に一様な鎖（質量$M$，長さ$l$）を一直線に置いてその一端を一定の力$F$で引っ張る．鎖の各点での張力を求めよ．
+	\item 惑星が太陽から惑星の質量に比例し，太陽からの距離の2乗に反比例する引力を受けて太陽のまわりを円運動を行うものとする．いろいろな惑星が太陽の周りを回る周期$T$と，円運動の半径$a$との間には
+	\begin{equation*}
+		\bunsuu{T^2}{a^3} = \text{惑星によらない定数}
+	\end{equation*}
+	の関係があることを示せ．この関係はケプラーの第3法則に相当する．
+	\item 太陽系は銀河系の中心から30000光年の距離で，およそ$250\,\mathrm{km\,s^{-1}}$の速さで銀河系の中心を中心として等速円運動をしている．銀河系の形は図のようになっており，太陽系は銀河系の各恒星からの万有引力を受けている．銀河系の恒星は空間に散らばっているが，大雑把にいって太陽系に働く力は，銀河系全体の質量がその中心に集中していると考えても大体の程度のことはいえるであろう．太陽のまわりの地球の運動の速度は$30.0\,\mathrm{km\,s^{-1}}$として，銀河系の総質量と太陽の質量との比を求めよ．
+	\item 中性子星と呼ばれる星は中性子が万有引力によって結び付けられてたもので，原子核と同様な密度（およそ$10^{12}\,\mathrm{g\,cm^{-3}}$）を持つ．中性子星は球形で，自転しているとして，赤道で中性子星が飛び去らないための回転の周期の最小値を求めよ．
+\end{enumerate}
+
+
+
+\section{簡単な運動}
+\subsection{落体の運動}
+
+鉛直上方に$y$軸をとり，適当な高さの点を原点とする．質量$m$の質点を$y$軸上で運動させると下向きに加速度を持っているので，下向きに力が働く．よって運動方程式は
+\begin{equation*}
+	m\bunsuu{d^2y}{dt^2} = -F
+\end{equation*}
+
+加速度は物体によらず一定である．元々物体が慣性質量を持つことと，地球が物体を引っ張る（万有引力）ことは独立なことである．よって，「加速度が物体によらず一定であること」は，慣性質量$m$と重力（$F$）が比例していなければならない．これは歴史の中で確かめられたので
+\begin{equation*}
+	F = mg
+\end{equation*}
+とすれば運動方程式は
+\begin{equation}
+	\bunsuu{d^2y}{dt^2} = -g
+\end{equation}
+となる．これを積分して
+\begin{equation*}
+	\bunsuu{dy}{dt} = -gt + C
+\end{equation*}
+
+ここで，初速度を$v_0$とすれば，$t = 0$を代入して
+\begin{equation*}
+	\bunsuu{dy}{dt} = C \iff v_0 = C
+\end{equation*}
+なので
+\begin{equation*}
+	\bunsuu{dy}{dt} = -gt + v_0
+\end{equation*}
+となる．これを更に積分して
+\begin{equation*}
+	y = -\bunsuu{1}{2}gt^2 + v_0t + C'
+\end{equation*}
+
+投げ出した時の位置を原点とすれば，$t = 0$を代入して
+\begin{equation*}
+	0 = C'
+\end{equation*}
+よって
+\begin{equation*}
+	y = -\bunsuu{1}{2}gt^2 + v_0t
+\end{equation*}
+となる．
+
+
+
+\subsection{粘性抵抗力が働く場合の落体運動}
+
+物体の運動が遅いとき，\textbf{粘性抵抗力}がはたらき
+\begin{equation}
+	\bm{F} = -\alpha\bm{v}
+\end{equation}
+の形で与えられる．また，物体の運動が速いときは\textbf{慣性抵抗力}がはたらき
+\begin{equation}
+	F =
+	\left\{
+		\begin{array}{ll}
+			-\beta v^2 & \text{$v > 0$のとき}\\
+			+\beta v^2 & \text{$v < 0$のとき}
+		\end{array}
+	\right.
+\end{equation}
+の形で与えられる．
+
+自由落下で，空気抵抗がある場合を考える．鉛直下向きに$y$軸をとると，運動方程式は
+\begin{equation}
+	m\bunsuu{dv}{dt} = mg - \alpha v
+\end{equation}
+である．変数分離して
+\begin{align*}
+	\bunsuu{dv}{dt} = g - \bunsuu{\alpha v}{m} &
+	\iff dv = \left(g - \bunsuu{\alpha v}{m}\right)dt\\
+	& \iff \bunsuu{dv}{g - \bunsuu{\alpha}{m}v} = dt
+\end{align*}
+両辺積分すると
+\begin{align*}
+	\int \bunsuu{dv}{g - \bunsuu{\alpha}{m}v}\ = \int dt
+	&\iff -\bunsuu{m}{\alpha}\log\left|g - \bunsuu{\alpha}{m}v\right| = t + C\\
+	&\iff \log\left|g - \bunsuu{\alpha}{m}v\right| = -\bunsuu{\alpha}{m}t + C\\
+	&\iff g - \bunsuu{\alpha}{m}v = \exp\left(-\bunsuu{\alpha}{m}t + C\right)\\
+	&\iff \bunsuu{\alpha}{m} v = g - \exp\left(-\bunsuu{\alpha}{m}t + C\right)\\
+	&\iff v = \bunsuu{m}{\alpha}\left\{g - \exp\left(-\bunsuu{\alpha}{m}t + C\right)\right\} = \bunsuu{m}{\alpha}\left\{g - \exp\left(-\bunsuu{\alpha}{m}t\right)\exp(C)\right\}
+\end{align*}
+ここで，初期条件より$t = 0,\ v = 0$なので
+\begin{equation*}
+	0 = \bunsuu{m}{\alpha}\{g - \exp(C)\} \iff \exp(C) = g
+\end{equation*}
+よって，
+\begin{equation}
+	v = \bunsuu{mg}{\alpha}\left\{1 - \exp\left(-\bunsuu{\alpha}{m}t\right)\right\} \label{equ4-9}
+\end{equation}
+となる．
+
+(\ref{equ4-9})で，$t \to \infty$とすると
+\begin{equation}
+	v_{\infty} = \bunsuu{mg}{\alpha}
+\end{equation}
+となる．$v_{\infty}$を\textbf{終端速度}といい，これより大きくなることはない．
+
+
+
+\subsection{慣性抵抗力が働く場合の落体運動}
+
+半径が大きくなると粘性抵抗力より慣性抵抗力の方が支配的になる．よって，運動方程式は
+\begin{equation}
+	m\bunsuu{dv}{dt} = mg - \beta v^2
+\end{equation}
+となる．先程と同じように変数分離して
+\begin{equation*}
+	\bunsuu{dv}{g - \bunsuu{\beta}{m}v^2} = dt
+\end{equation*}
+両辺積分すると
+\begin{equation*}
+	\int \bunsuu{dv}{g - \bunsuu{\beta}{m}v^2} = \int dt
+\end{equation*}
+\vskip-1.5\baselineskip
+\begin{align*}
+	\text{左辺} &= \int \bunsuu{dv}{\Bigl(\sqrt{g} + \sqrt{\myfrac{\beta}{m}}\,v\Bigr)\Bigl(\sqrt{g} - \sqrt{\myfrac{\beta}{m}}\,v \Bigr)}
+	% 部分分数分解
+	= \bunsuu{1}{2\sqrt{g}} \int \left(
+		\bunsuu{1}{
+			\sqrt{g} + \sqrt{\myfrac{\beta}{m}}\,v
+		} +
+		\bunsuu{1}{
+			\sqrt{g} - \sqrt{\myfrac{\beta}{m}}\,v
+		}
+	\right)\,dv\text{\hspace*{2\zw} （部分分数分解）}\\
+	&= \bunsuu{1}{2\sqrt{g}}\left(
+		\sqrt{\bunsuu{m}{\beta}}\log\left|\sqrt{g} + \sqrt{\bunsuu{\beta}{m}}\,v\right| - \sqrt{\bunsuu{m}{\beta}}\log\left|\sqrt{g} - \sqrt{\bunsuu{\beta}{m}}\,v\right|
+	\right)\\
+	&= \bunsuu{1}{2}\sqrt{\bunsuu{m}{g\beta}}\biggl(
+		\log\biggl|\sqrt{g} + \sqrt{\myfrac{\beta}{m}}\,v\biggr| - \log\biggl|\sqrt{g} - \sqrt{\myfrac{\beta}{m}}\,v\biggr|
+	\biggr) =
+	\bunsuu{1}{2}\sqrt{\bunsuu{m}{g\beta}}\log\left|
+		\bunsuu{\sqrt{g} + \sqrt{\myfrac{\beta}{m}}\,v}{\sqrt{g} - \sqrt{\myfrac{\beta}{m}}\,v}
+	\right|\\
+	\text{右辺} &= t + C
+\end{align*}
+よって
+\begin{align*}
+	\bunsuu{1}{2}\sqrt{\bunsuu{m}{g\beta}}\log\left|
+		\bunsuu{\sqrt{g} + \sqrt{\myfrac{\beta}{m}}\,v}{\sqrt{g} - \sqrt{\myfrac{\beta}{m}}\,v}
+	\right| = t + C
+	& \quad\stackrel{2C\sqrt{\myfrac{g\beta}{m}} = C'}{\iff}\quad \log\left|
+		\bunsuu{\sqrt{g} + \sqrt{\myfrac{\beta}{m}}\,v}{\sqrt{g} - \sqrt{\myfrac{\beta}{m}}\,v}
+	\right| = 2t\sqrt{\bunsuu{g\beta}{m}} + C'\\
+	&\qquad\iff \bunsuu{\sqrt{g} + \sqrt{\myfrac{\beta}{m}}\,v}{\sqrt{g} - \sqrt{\myfrac{\beta}{m}}\,v} = e^{2t\sqrt{\myfrac{g\beta}{m}} + C'}\\
+	&\qquad\iff \sqrt{g} + \sqrt{\bunsuu{\beta}{m}}\,v = \biggl(\sqrt{g} - \sqrt{\bunsuu{\beta}{m}}\,v\biggr)e^{2t\sqrt{\myfrac{g\beta}{m}} + C'}
+\end{align*}
+\begin{align*}
+	\text{（前頁の続き）}
+	&\iff \sqrt{\bunsuu{\beta}{m}}\,v + \sqrt{\bunsuu{\beta}{m}}\,v e^{2t\sqrt{\myfrac{g\beta}{m}} + C'} = \sqrt{g}\,e^{2t\sqrt{\myfrac{g\beta}{m}} + C'} - \sqrt{g}\\
+	&\iff \sqrt{\bunsuu{\beta}{m}}\,v \left(1 + e^{2t\sqrt{\myfrac{g\beta}{m}} + C'}\right) = \sqrt{g}\left(e^{2t\sqrt{\myfrac{g\beta}{m}} + C'} - 1\right)\\
+	&\iff v = -\sqrt{\bunsuu{mg}{\beta}}
+	\bunsuu{
+		1 - e^{2t\sqrt{\myfrac{g\beta}{m}} + C'}
+	}{
+		1 + e^{2t\sqrt{\myfrac{g\beta}{m}} + C'}
+	} 
+\end{align*}
+となる．初期条件より$t = 0,\ v = 0$なので
+\begin{align*}
+	0 = 1 - e^{C'} \iff C' = 0
+\end{align*}
+よって
+\begin{equation}
+	v = -\sqrt{\bunsuu{mg}{\beta}}
+	\bunsuu{
+		1 - e^{2t\sqrt{\myfrac{g\beta}{m}}}
+	}{
+		1 + e^{2t\sqrt{\myfrac{g\beta}{m}}}
+	} 
+\end{equation}
+となる．ここで，分子分母に$e^{-2t\sqrt{\myfrac{g\beta}{m}}}$をかけると
+\begin{equation*}
+	v = -\sqrt{\bunsuu{mg}{\beta}}
+	\bunsuu{
+		e^{-2t\sqrt{\myfrac{g\beta}{m}}} - 1
+	}{
+		e^{-2t\sqrt{\myfrac{g\beta}{m}}} + 1
+	} = \sqrt{\bunsuu{mg}{\beta}}
+	\bunsuu{
+		1 - e^{-2t\sqrt{\myfrac{g\beta}{m}}}
+	}{
+		1 + e^{-2t\sqrt{\myfrac{g\beta}{m}}}
+	}
+\end{equation*}
+なので，$t \to \infty$とすると
+\begin{equation}
+	v_{\infty} = \sqrt{\bunsuu{mg}{\beta}}
+\end{equation}
+と，終端速度が求められる．
+
+
+
+\subsection{放物運動}
+
+質量$m$の物体を，仰角（地表と成す角）$\theta\ \left(0 < \theta < \bunsuu{\pi}{2}\right)$，速さ$v_0$で放り投げた場合の運動を考える．
+
+空気抵抗を無視すると，任意の点での物体に加わる力は重力だけなので運動方程式は次のようになる．
+\begin{align}
+	&m\bunsuu{d^2 x}{dt^2} = 0 & &m\bunsuu{d^2 y}{dt^2} = 0 & &m\bunsuu{d^2 z}{dt^2} = -mg
+\end{align}
+これらの微分方程式を解くと次のようになる．
+\begin{align*}
+	\bunsuu{d^2 x}{dt^2} &= 0 & \bunsuu{d^2 y}{dt^2} &= 0 & \bunsuu{d^2 z}{dt^2} &= -g\\
+	\bunsuu{dx}{dt} &= C_x & \bunsuu{dy}{dt} &= C_y & \bunsuu{dz}{dt} &= -gt + C_z\\
+	x &= C_x\,t + D_x & y &= C_y\,t + D_y & z &= -\bunsuu{1}{2}gt^2 + C_z\,t + D_z
+\end{align*}
+放物運動は2次元平面内の運動なので，$xz$平面内での運動と考えると，$t = 0$のとき$\bm{r} = (0,\ 0,\ 0)$，$\bm{v}_0 = (v_0\cos\theta,\ 0,\ v_0\sin\theta)$なので，代入すると
+\begin{align*}
+	\bunsuu{d}{dt}x(0) &= v_0\cos\theta = C_x &
+	\bunsuu{d}{dt}y(0) &= 0 = C_y &
+	\bunsuu{d}{dt}z(0) &= v_o\sin\theta = C_z\\
+	x(0) &= 0 = D_x &
+	y(0) &= 0 = D_y &
+	z(0) &= 0 = D_z
+\end{align*}
+なので，特殊解は
+\begin{align}
+	x &= v_0t\cos\theta & y &= 0 & z &= v_0 t\sin\theta
+\end{align}
+となる．
+
+
+
+\subsection{粘性抵抗力が働く場合の放物運動}
+
+図を描くと，任意の点での物体に加わる力は重力$m\bm{g}$と粘性抵抗力$-\alpha\bm{v}$である．水平方向を$x$軸，鉛直方向を$z$軸とすると
+\begin{align*}
+	m\bm{g} &= -mg\bm{k} & -\alpha\bm{v} = -\alpha v_x \bm{i} - \alpha v_z\,\bm{k}
+\end{align*}
+となる．また，初期条件は先程と同じとする．運動方程式は
+\begin{align}
+	m\bunsuu{d v_x}{dt} &= -\alpha v_x & m\bunsuu{d v_z}{dt} &= -mg - \alpha v_z
+\end{align}
+となる．
+

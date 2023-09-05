@@ -1,0 +1,563 @@
+\chapter{ベクトル解析}
+\setcounter{page}{1}
+
+\noindent
+\textbf{【注意】}
+\begin{enumerate}[leftmargin=15pt]
+	\item 特に断りがない限り，ベクトル$\bm{a} =
+			\begin{bmatrix}
+				a_x\\ a_y\\ a_z
+			\end{bmatrix}
+			$とする．$\bm{b},\ \bm{c},\ \cdots$も同様．
+	\item 行列$A$の転置行列は$A^\top$と表す．ここでは列ベクトルに分数が入って縦に長くなったときに使う．\\
+	\f{例} $\bm{a} =
+	\begin{bmatrix}
+		a_x\\ a_y\\ a_z
+	\end{bmatrix}
+	=
+	{
+		\begin{bmatrix}
+			a_x & a_y & a_z
+		\end{bmatrix}
+	}^\top
+	$
+	\item $\bm{i},\ \bm{j},\ \bm{k}$はそれぞれ$x$軸，$y$軸，$z$軸方向の基本ベクトルとする．
+\end{enumerate}
+
+
+
+\section{内積（スカラー積）}
+
+$\bm{0}$でない2つのベクトル$\bm{a},\ \bm{b}$のなす角が$\theta\ (0 \le \theta \le \pi)$のとき，
+\begin{align}
+	\bm{a} \cdot \bm{b} &= |\bm{a}||\bm{b}|\cos\theta\\
+						&=
+						\begin{bmatrix}
+							a_x & a_y & a_z
+						\end{bmatrix}
+						\cdot
+						\begin{bmatrix}
+							b_x\\ b_y \\ b_z
+						\end{bmatrix}
+						= a_x b_x + a_y b_y + a_z b_z
+\end{align}
+を\textbf{内積}または\textbf{スカラー積}という．
+
+\begin{kousiki}{内積の性質}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\bm{a} \cdot \bm{b} = \bm{b} \cdot \bm{a}$ \qquad $\bm{a} \cdot \bm{a} = |\bm{a}|^2$
+		\item $\bm{a} \cdot (\bm{b} + \bm{c}) = \bm{a} \cdot \bm{b} + \bm{a} \cdot \bm{c}$ \qquad $(\bm{a} + \bm{b}) \cdot \bm{c} = \bm{a} \cdot \bm{c}$
+		\item $k(\bm{a} \cdot \bm{b}) = (k\bm{a}) \cdot \bm{b} = \bm{a} \cdot (k\bm{b})$ \qquad $(k \in \mathbb{R})$
+		\item
+			\begin{enumerate}[label=(\roman*), labelsep=10pt, leftmargin=23pt]
+				\item $\bm{i} \cdot \bm{i} = \bm{j} \cdot \bm{j} = \bm{k} \cdot \bm{k} = 1$
+				\item $\bm{i} \cdot \bm{j} = \bm{j} \cdot \bm{k} = \bm{k} \cdot \bm{i} = 0$
+			\end{enumerate}
+		\item $\bm{a} \ne \bm{0},\ \bm{b} \ne \bm{0}$のとき，$\bm{a} \perp \bm{b} \iff \bm{a} \cdot \bm{b} = 0$
+	\end{enumerate}
+	
+\end{kousiki}
+
+
+
+\section{外積（ベクトル積）}
+
+$\bm{0}$でない2つのベクトル$\bm{a},\ \bm{b}$のなす角が$\theta\ (0 < \theta < \pi)$のとき，
+\begin{align}
+	\bm{a} \times \bm{b} &= (|\bm{a}||\bm{b}|\sin\theta)\bm{e}\\
+	&= 
+	\begin{vmatrix}
+		\bm{i} & a_x & b_x\\
+		\bm{j} & a_y & b_y\\
+		\bm{k} & a_z & b_z
+	\end{vmatrix}
+\end{align}
+を\textbf{外積}または\textbf{ベクトル積}という．$\bm{e}$は，$\bm{a},\ \bm{b},\ \bm{e}$がこの順で右手系を成す向き．行列式は形式的な表現である．
+
+$\bm{a} = \bm{0},\ \bm{b} = \bm{0}$のとき，又は$\theta = 0,\ \pi$のときは$\bm{a} \times \bm{b} = \bm{0}$とする．
+
+\begin{kousiki}{外積の性質}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\bm{a} \times \bm{b} = -\bm{b} \times \bm{a}$
+		\item 
+			\begin{enumerate}[label=(\roman*), labelsep=10pt, leftmargin=23pt]
+				\item $\bm{a} \times (\bm{b} + \bm{c}) = \bm{a} \times \bm{b} + \bm{a} \times \bm{c}$
+				\item $(\bm{a} + \bm{b}) \times \bm{c} = \bm{a} \times \bm{c}$
+			\end{enumerate}
+		\item $k(\bm{a} \times \bm{b}) = (k\bm{a}) \times \bm{b} = \bm{a} \times (k\bm{b})$ \qquad $(k \in \mathbb{R})$
+		\item
+			\begin{enumerate}[label=(\roman*), labelsep=10pt, leftmargin=23pt]
+				\item $\bm{i} \times \bm{i} = \bm{j} \times \bm{j} = \bm{k} \times \bm{k} = \bm{0}$
+				\item $\bm{i} \times \bm{j} = \bm{k},\quad \bm{j} \times \bm{k} = \bm{i},\quad \bm{k} \times \bm{i} = \bm{j}$
+			\end{enumerate}
+		\item $\bm{a} \ne \bm{0},\ \bm{b} \ne \bm{0}$のとき，$\bm{a} \heikou \bm{b} \iff \bm{a} \times \bm{b} = \bm{0}$
+	\end{enumerate}
+	
+\end{kousiki}
+
+$\bm{a}$と$\bm{b}$の成す平行四辺形の面積$S$は
+\begin{equation}
+	S = |\bm{a} \times \bm{b}|
+\end{equation}
+で求められる．
+
+
+
+\section{三重積}
+\subsection{スカラー三重積}
+
+3つのベクトル$\bm{a},\ \bm{b},\ \bm{c}$について
+\begin{align}
+	\bm{a} \cdot (\bm{b} \times \bm{c}) &= |\bm{a}||\bm{b} \times \bm{c}|\cos\varphi \\
+	&=
+	\begin{vmatrix}
+		\bm{a} & \bm{b} & \bm{c}
+	\end{vmatrix}
+	=
+	\begin{vmatrix}
+		a_x & b_x & c_x\\
+		a_y & b_y & c_y\\
+		a_z & b_z & c_z
+	\end{vmatrix}
+\end{align}
+を\textbf{スカラー三重積}という．$\varphi$は$\bm{a}$と$\bm{b} \times \bm{c}$の成す角である．
+
+\begin{kousiki}{スカラー三重積の性質}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\bm{a} \cdot (\bm{b} \times \bm{c}) = \bm{b} \cdot (\bm{c} \times \bm{a}) = \bm{c} \cdot (\bm{a} \times \bm{b})$
+		\item $\bm{a},\ \bm{b},\ \bm{c}$が同一平面上になく，この順で右手系を成すとき，$\bm{a},\ \bm{b},\ \bm{c}$の成す平行六面体の体積$V$は
+		\begin{equation}
+			V = \bm{a} \cdot (\bm{b} \times \bm{c})
+		\end{equation}
+		で求められる．
+	\end{enumerate}
+\end{kousiki}
+
+\textbf{[1]}は，行列式の性質から分かる．\textbf{[2]}について，$\bm{a},\ \bm{b},\ \bm{c}$がこの順で左手系を成すとき$\left(\bunsuu{\pi}{2} < \varphi \le \pi\right)$，$V$は
+\begin{equation}
+	V = -\bm{a} \cdot (\bm{b} \times \bm{c})
+\end{equation}
+である．
+
+
+
+\subsection{ベクトル三重積}
+
+3つのベクトル$\bm{a},\ \bm{b},\ \bm{c}$について
+\begin{equation}
+	\bm{a} \times (\bm{b} \times \bm{c})
+\end{equation}
+を\textbf{ベクトル三重積}という．
+
+\begin{kousiki}{Lagrangeの公式}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\bm{a} \times (\bm{b} \times \bm{c}) = (\bm{a} \cdot \bm{c})\bm{b} - (\bm{a} \cdot \bm{b})\bm{c}$
+		\item $(\bm{a} \times \bm{b}) \times \bm{c} = (\bm{a} \cdot \bm{c})\bm{b} - (\bm{b} \cdot \bm{c})\bm{a}$
+	\end{enumerate}
+\end{kousiki}
+
+
+
+\section{ベクトル関数の微分法}
+\subsection{ベクトル関数の極限と連続}
+
+$t_0$を定数，$\bm{c} = 
+\begin{bmatrix}
+	c_1\\ c_2\\ c_3
+\end{bmatrix}
+$を定ベクトルとする．$t$をスカラー変数とするベクトル関数$\bm{f}(t) = 
+\begin{bmatrix}
+	f_1(t)\\ f_2(t)\\ f_3(t)
+\end{bmatrix}
+$について，$t$が$t_0$に限りなく近づくときの$\bm{f}(t)$の\textbf{極限}は次で定義される．
+\begin{align}
+	\lim_{t \to t_0} |\bm{f}(t) - \bm{c}| = 0 &\iff \lim_{t \to t_0} \bm{f}(t) = \bm{c}\\
+	&\iff \lim_{t \to t_0} f_1(t) = c_1,\quad \lim_{t \to t_0} f_2(t) = c_2,\quad \lim_{t \to t_0} f_3(t) = c_3
+\end{align}
+
+また，$\dlim_{t \to t_0} \bm{f}(t) = \bm{f}(t_0)$が成立するとき，$\bm{f}(t)$は$t = t_0$で\textbf{連続である}という．
+
+
+
+\subsection{ベクトル関数の微分法}
+
+ベクトル関数$\bm{f}(t)$に於いて，次式を$\bm{f}(t)$の\textbf{導関数}という．
+\begin{align}
+	\bunsuu{d\bm{f}(t)}{dt} &= \lim_{\varDelta t \to 0} \bunsuu{\bm{f}(t + \varDelta t) - \bm{f}(t)}{\varDelta t} =
+	{
+	\begin{bmatrix}
+		\bunsuu{df_1(t)}{dt} &
+		\bunsuu{df_2(t)}{dt} &
+		\bunsuu{df_3(t)}{dt}
+	\end{bmatrix}
+	}^\top
+\end{align}
+
+\begin{kousiki}{微分法の公式}
+	$\bm{f}(t),\ \bm{g}(t)$をベクトル関数，$\varphi(t)$をスカラー関数，$\bm{c}$を定ベクトルとする．
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt, itemsep=6pt]
+		\item $\bunsuu{d\bm{c}}{dt} = \bm{0}$
+		\item $\bunsuu{d(\bm{f} \pm \bm{g})}{dt} = \bunsuu{d\bm{f}}{dt} \pm \bunsuu{d\bm{g}}{dt}$\hfill（複号同順）
+		\item $\bunsuu{d(\varphi\bm{f})}{dt} = \bunsuu{d\varphi}{dt}\bm{f} + \varphi\bunsuu{d\bm{f}}{dt}$
+		\item $\bunsuu{d(\bm{f} \cdot \bm{g})}{dt} = \bunsuu{d\bm{f}}{dt} \cdot \bm{g} + \bm{f} \cdot \bunsuu{d\bm{g}}{dt}$
+		\item $\bunsuu{d(\bm{f} \times \bm{g})}{dt} = \bunsuu{d\bm{f}}{dt} \times \bm{g} + \bm{f} \times \bunsuu{d\bm{g}}{dt}$
+		\item $\bunsuu{d}{dt}\left(\bunsuu{\bm{f}}{\varphi}\right) = \bunsuu{\bunsuu{d\bm{f}}{dt}\varphi - \bm{f}\bunsuu{d\varphi}{dt}}{\varphi^2}$\qquad$(\varphi \ne 0)$
+		\item $t = \psi(u)$をスカラー関数とすると \qquad $\bunsuu{d\bm{f}}{du} = \bunsuu{d\bm{f}}{dt}\bunsuu{d\psi}{du}$\hfill（合成関数の微分法）
+	\end{enumerate}
+\end{kousiki}
+
+
+
+\subsection{接線ベクトル}
+
+点$\mathrm{P}$の位置ベクトルが$\bm{r} =
+\begin{bmatrix}
+	x(t)\\ y(t)\\ z(t)
+\end{bmatrix}
+$のようにベクトル関数であるとき，$t$が変化するにつれて$\mathrm{P}$はある曲線$C$を描く．この$C$を$\bm{r} = \bm{r}(t)$の表す曲線という．
+
+以下，特に断りがない限り，$\bm{r}(t)$は何度でも微分可能で$\bunsuu{d\bm{r}}{dt} \ne \bm{0}$とする．
+
+$t$の微小変化$\varDelta t$に対応する$\bm{r}(t)$の変化を$\varDelta \bm{r}$とすると$\varDelta \bm{r} = \bm{r}(t + \varDelta t) - \bm{r}(t)$である．
+\begin{equation}
+	\bunsuu{d\bm{r}}{dt} = \lim_{\varDelta t \to 0} \bunsuu{\varDelta \bm{r}}{\varDelta t} = \lim_{\varDelta t \to 0} \bunsuu{\bm{r}(t + \varDelta t) - \bm{r}(t)}{\varDelta t}
+\end{equation}
+を曲線$C$の点$\mathrm{P}$における\textbf{接線ベクトル}という．
+
+\begin{enumerate}[leftmargin=18pt, labelsep=10pt, labelsep=10pt, itemindent=9pt]
+	\item[\f{例}] $\bm{r}(t) =
+		\begin{bmatrix}
+			t^2\\ t^3\\ t^4
+		\end{bmatrix}
+		$ならば，接線ベクトルは$\bunsuu{d}{dt}\bm{r}(t) =
+		\begin{bmatrix}
+			2t\\ 3t^2\\ 4t^3
+		\end{bmatrix}
+		$である．特に，$t = 1$の位置$\bm{r}(1) =
+		\begin{bmatrix}
+			1\\ 1\\ 1
+		\end{bmatrix}
+		$における接線ベクトルは$\bunsuu{d}{dt}\bm{r}(1) =
+		\begin{bmatrix}
+			2\\ 3\\ 4
+		\end{bmatrix}
+		$である．
+\end{enumerate}
+
+
+
+\subsection{単位接線ベクトル}
+
+接線ベクトルを自身の大きさで割った，大きさ$1$の接線ベクトルを\textbf{単位接線ベクトル}$\bm{t}$という．
+\begin{equation}
+	\bm{t} = \bunsuu{\bunsuu{d\bm{r}}{dt}}{\left|\bunsuu{d\bm{r}}{dt}\right|} \label{equ2-16}
+\end{equation}
+
+曲線上のある定点$\mathrm{A}$を基準として，そこからの長さ$s$によって位置ベクトル$\bm{r}(s)$を定義する方法をとる．$\mathrm{A,\ P}$の位置ベクトルをそれぞれ$\bm{r}(\alpha),\ \bm{r}(t)$とすると，$\mathrm{AP}$の長さ$s$が次のようになるので，$\bunsuu{ds}{dt}$が求められる．
+\begin{gather}
+	s = s(t) = \int_{\alpha}^{t} \sqrt{\left(\bunsuu{dx}{dt}\right)^2 + \Bigl(\bunsuu{dy}{dt}\Bigr)^2 + \left(\bunsuu{dz}{dt}\right)^2}\,dt\\
+	\bunsuu{ds}{dt} = \sqrt{\left(\bunsuu{dx}{dt}\right)^2 + \Bigl(\bunsuu{dy}{dt}\Bigr)^2 + \left(\bunsuu{dz}{dt}\right)^2} = \sqrt{\bunsuu{d\bm{r}}{dt} \cdot \bunsuu{d\bm{r}}{dt}} = \left|\bunsuu{d\bm{r}}{dt}\right|
+\end{gather}
+
+よって，$\bunsuu{d\bm{r}}{ds}$は合成関数の微分法より
+\begin{equation}
+	\bunsuu{d\bm{r}}{ds} = \bunsuu{d\bm{r}}{dt}\bunsuu{dt}{ds} = \bunsuu{\bunsuu{d\bm{r}}{dt}}{\bunsuu{ds}{dt}} = \bunsuu{\bunsuu{d\bm{r}}{dt}}{\left|\bunsuu{d\bm{r}}{dt}\right|}
+\end{equation}
+これは(\ref{equ2-16})と同じ式である．よって次が成り立つ．
+
+\begin{kousiki}{単位接線ベクトル}
+	\begin{equation}
+		\bm{t} = \bunsuu{\bunsuu{d\bm{r}}{dt}}{\left|\bunsuu{d\bm{r}}{dt}\right|} = \bunsuu{d\bm{r}}{ds}
+	\end{equation}
+\end{kousiki}
+
+一方，$\bm{t} \cdot \bm{t} = |\bm{t}|^2 = 1$の両辺を$t$で微分すると，内積の微分公式より，$2\bunsuu{d\bm{t}}{dt} \cdot \bm{t} = 0$なので，$\bunsuu{d\bm{t}}{dt} \cdot \bm{t} = 0$である．つまり，$\bunsuu{d\bm{t}}{dt} \perp \bm{t}$が成立する$\left(\text{$\bunsuu{d\bm{t}}{dt} \ne \bm{0}$ならば}\right)$．よって，次を\textbf{単位主法線ベクトル}とし，$\bm{n}$で表すと
+\begin{equation}
+	\bm{n} = \bunsuu{\bunsuu{d\bm{t}}{dt}}{\left|\bunsuu{d\bm{t}}{dt}\right|}
+\end{equation}
+となる．
+
+\begin{kousiki}{単位主法線ベクトル}
+	\begin{equation}
+		\bm{n} = \bunsuu{\bunsuu{d\bm{t}}{dt}}{\left|\bunsuu{d\bm{t}}{dt}\right|} = \bunsuu{\bunsuu{d\bm{t}}{ds}}{\left|\bunsuu{d\bm{t}}{ds}\right|}
+	\end{equation}
+\end{kousiki}
+
+
+
+\section{2変数ベクトル関数の微分法}
+\subsection{2変数ベクトル関数の極限と連続}
+
+$u_0,\ v_0$を定数，$\bm{c} = 
+\begin{bmatrix}
+	c_1\\ c_2\\ c_3
+\end{bmatrix}
+$を定ベクトルとする．$u,\ v$をスカラー変数とするベクトル関数$\bm{f}(u,\ v) = 
+\begin{bmatrix}
+	f_1(u,\ v)\\ f_2(u,\ v)\\ f_3(u,\ v)
+\end{bmatrix}
+$について，$(u,\ v)$が$(u_0,\ v_0)$に限りなく近づくときの$\bm{f}(u,\ v)$の\textbf{極限}は次で定義される．
+\begin{align}
+	&\lim_{(u,\ v) \to (u_0,\ v_0)} |\bm{f}(u,\ v) - \bm{c}| = 0 \notag\\
+	&\iff \lim_{(u,\ v) \to (u_0,\ v_0)} \bm{f}(u,\ v) = \bm{c}\\
+	&\iff \lim_{(u,\ v) \to (u_0,\ v_0)} f_1(u,\ v) = c_1,\quad \lim_{(u,\ v) \to (u_0,\ v_0)} f_2(u,\ v) = c_2,\quad \lim_{(u,\ v) \to (u_0,\ v_0)} f_3(u,\ v) = c_3
+\end{align}
+
+また，$\dlim_{(u,\ v) \to (u_0,\ v_0)} \bm{f}(u,\ v) = \bm{f}(u_0,\ v_0)$が成立するとき，$\bm{f}(u,\ v)$は$(u,\ v) = (u_0,\ v_0)$で\textbf{連続である}という．
+
+
+
+\subsection{ベクトル関数の偏微分法}
+
+領域$D$で定義されたベクトル関数$\bm{f}(u,\ v)$に於いて
+\begin{equation}
+	\bunsuu{\partial \bm{f}}{\partial u} = \lim_{\varDelta u \to 0} \bunsuu{\bm{f}(u + \varDelta u,\ v) - \bm{f}(u,\ v)}{\varDelta u} =
+	{
+	\begin{bmatrix}
+		\bunsuu{\partial f_1(u,\ v)}{\partial u} &
+		\bunsuu{\partial f_2(u,\ v)}{\partial u} &
+		\bunsuu{\partial f_3(u,\ v)}{\partial u}
+	\end{bmatrix}
+	}^\top
+\end{equation}
+を$\bm{f}(u,\ v)$の\textbf{$u$についての偏導関数}といい，$\bm{f}_u(u,\ v)$とも表す．また，
+\begin{equation}
+	\bunsuu{\partial \bm{f}}{\partial v} = \lim_{\varDelta v \to 0} \bunsuu{\bm{f}(u,\ v + \varDelta v) - \bm{f}(u,\ v)}{\varDelta v} =
+	{
+	\begin{bmatrix}
+		\bunsuu{\partial f_1(u,\ v)}{\partial v} &
+		\bunsuu{\partial f_2(u,\ v)}{\partial v} &
+		\bunsuu{\partial f_3(u,\ v)}{\partial v}
+	\end{bmatrix}
+	}^\top
+\end{equation}
+を$\bm{f}(u,\ v)$の\textbf{$v$についての偏導関数}といい，$\bm{f}_v(u,\ v)$とも表す．
+
+\begin{enumerate}[leftmargin=18pt, labelsep=10pt, labelsep=10pt, itemindent=9pt]
+	\item[\f{例}] $\bm{f}(u,\ v) =
+		\begin{bmatrix}
+			u\\ v\\ u^2 + v^2
+		\end{bmatrix}
+		$の偏導関数は
+		\begin{equation}
+			\bunsuu{\partial \bm{f}}{\partial u} =
+			\begin{bmatrix}
+				1\\ 0\\ 2u
+			\end{bmatrix}
+			,\quad \bunsuu{\partial \bm{f}}{\partial v} =
+			\begin{bmatrix}
+				0\\ 1\\ 2v
+			\end{bmatrix}
+		\end{equation}
+\end{enumerate}
+
+また，次のチェーン・ルールが成り立つ．
+\begin{kousiki}{チェーン・ルール}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $u,\ v$がともにスカラー変数$t$の関数のとき
+			\begin{equation}
+				\bunsuu{d\bm{f}}{dt} = \bunsuu{\partial \bm{f}}{\partial u}\bunsuu{du}{dt} + \bunsuu{\partial \bm{f}}{\partial v}\bunsuu{dv}{dt}
+			\end{equation}
+		\item $u,\ v$がともにスカラー変数$s,\ t$の変数のとき
+			\begin{equation}
+				\bunsuu{\partial \bm{f}}{\partial s} =
+				\bunsuu{\partial \bm{f}}{\partial u}\bunsuu{\partial u}{\partial s} + \bunsuu{\partial \bm{f}}{\partial v}\bunsuu{\partial v}{\partial s}, \qquad
+				\bunsuu{\partial \bm{f}}{\partial t} =
+				\bunsuu{\partial \bm{f}}{\partial u}\bunsuu{\partial u}{\partial t} + \bunsuu{\partial \bm{f}}{\partial v}\bunsuu{\partial v}{\partial t}
+			\end{equation}
+	\end{enumerate}
+\end{kousiki}
+
+
+
+\subsection{接平面}
+
+空間内の点$\mathrm{P}$の位置ベクトルが$\bm{r} =
+\begin{bmatrix}
+	x(u,\ v)\\ y(u,\ v)\\ z(u,\ v)
+\end{bmatrix}
+$のようにベクトル関数であるとき，点$(u,\ v)$が領域$D$を動くと，$\mathrm{P}$は1つの曲面$S$を描く．この$S$を$\bm{r} = \bm{r}(u,\ v)$の表す曲面という．
+
+$\bm{r}(u,\ v)$が$D$で連続な偏導関数をもつとする．$v$を一定にして$u$を変化させると$\bm{r}$は$S$上で1つの曲線（\textbf{$u$曲線}）を描く．よって，$\bunsuu{\partial \bm{r}(u,\ v)}{\partial u}$は$u$曲線上の$\mathrm{P}$における接線ベクトルを与える．
+
+同様に，$u$を一定にして$v$を変化させると$\bm{r}$は$S$上で1つの曲線（\textbf{$v$曲線}）を描く．よって，$\bunsuu{\partial \bm{r}(u,\ v)}{\partial v}$は$v$曲線上の$\mathrm{P}$における接線ベクトルを与える．
+
+このとき，外積の性質より$\bunsuu{\partial \bm{r}}{\partial u}$と$\bunsuu{\partial \bm{r}}{\partial v}$が平行ならば$\bunsuu{\partial \bm{r}}{\partial u} \times \bunsuu{\partial \bm{r}}{\partial v} = \bm{0}$なので，$\bunsuu{\partial \bm{r}}{\partial u} \times \bunsuu{\partial \bm{r}}{\partial v} \ne \bm{0}$ならば，この2つの接線ベクトルを含む平面$H$が存在する．この$H$を$S$の点$\mathrm{P}$における\textbf{接平面}という．その法線ベクトルは
+\begin{equation}
+	\bunsuu{\partial \bm{r}}{\partial u} \times \bunsuu{\partial \bm{r}}{\partial v} =
+	\begin{vmatrix}
+		\bm{i} & x_u & x_v\\
+		\bm{j} & y_u & y_v\\
+		\bm{k} & z_u & z_v
+	\end{vmatrix}
+\end{equation}
+である．
+
+\begin{enumerate}[leftmargin=18pt, labelsep=10pt, labelsep=10pt, itemindent=9pt]
+	\item[\f{例}] ベクトル関数$\bm{r} = \bm{r}(u,\ v) =
+		\begin{bmatrix}
+			u\cos v\\ u\sin v\\ u^2
+		\end{bmatrix}
+		$を例にとって，詳しく見ていく．
+		\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt, itemsep=12pt]
+			\item \underline{与式の表す曲面の，$x,\ y,\ z$に関する方程式}\\
+				$x = u\cos v,\ y = u\sin v$より$x^2 + y^2$を計算すると$u^2$なので，$z = u^2$となる．よって，$z = x^2 + y^2$．
+			\item \underline{$v = \bunsuu{\pi}{2}$のときの$u$曲線}\\
+				$x = u\cos\bunsuu{\pi}{2} = 0,\ y = u\sin\bunsuu{\pi}{2} = u$なので，$z = 0^2 + y^2 = y^2$．これは平面$x = 0$上の放物線である．
+			\item \underline{$u = 1$のときの$v$曲線}\\
+				$x = \cos v,\ y = \sin v$より，$z = 1$．これは平面$z = 1$上の半径$1$の円である．
+			\item \underline{$(u,\ v) = \left(1,\ \bunsuu{\pi}{2}\right)$における接線ベクトル}\\
+				$\bunsuu{\partial \bm{r}}{\partial u} =
+				\begin{bmatrix}
+					\cos v\\ \sin v\\ 2u
+				\end{bmatrix}
+				=
+				\begin{bmatrix}
+					0\\ 1\\ 2
+				\end{bmatrix}
+				$,\qquad
+				$\bunsuu{\partial \bm{r}}{\partial v} =
+				\begin{bmatrix}
+					-u\sin v\\ u\cos v\\ 0
+				\end{bmatrix}
+				=
+				\begin{bmatrix}
+					-1\\ 0\\ 0
+				\end{bmatrix}
+				$
+			\item \underline{$(u,\ v) = \left(1,\ \bunsuu{\pi}{2}\right)$における接平面の法線ベクトル}\\
+				$\bunsuu{\partial \bm{r}}{\partial u} \times \bunsuu{\partial \bm{r}}{\partial v} =
+				\begin{vmatrix}
+					\bm{i} & x_u & x_v\\
+					\bm{j} & y_u & y_v\\
+					\bm{k} & z_u & z_v
+				\end{vmatrix}
+				=
+				\begin{vmatrix}
+					\bm{i} & 0 & -1\\
+					\bm{j} & 1 & 0\\
+					\bm{k} & 2 & 0
+				\end{vmatrix}
+				=
+				\begin{bmatrix}
+					0\\ -2\\ 1
+				\end{bmatrix}
+				$
+		\end{enumerate}
+\end{enumerate}
+
+
+
+\section{空間曲線}
+\subsection{曲率}
+
+曲線$\bm{r} = \bm{r}(s)$の単位接線ベクトル$\bm{t} = \bunsuu{d\bm{r}}{ds}$について次の$\kappa \in \mathbb{R}$を曲線の\textbf{曲率}という．
+\begin{equation}
+	\kappa = \left|\bunsuu{d\bm{t}}{ds}\right| = \left|\bunsuu{d^2\bm{r}}{ds^2}\right|
+\end{equation}
+
+$\kappa$は曲線の局所的な曲がり具合である．この値が大きいほどカーブが急になる．$\varDelta \bm{t}$が十分に小さいとき，$|\varDelta \bm{t}| \approx \varDelta \theta$と見做すことができ，$\kappa = \left|\bunsuu{d\theta}{ds}\right|$と表すこともできるので，$\kappa = $は回転角の変化率であるとも言える．
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 半径$a$の円の曲率は$\kappa = \bunsuu{1}{a}$で，半径が大きくなるほど曲線の曲がり具合が小さくなる．
+	\item 直線の曲率は$\kappa = 0$である．
+\end{enumerate}
+
+曲率の逆数を\textbf{曲率半径}といい，$\sigma$で表す．
+\begin{equation}
+	\sigma = \bunsuu{1}{\kappa}
+\end{equation}
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 半径$a$の曲率半径は$\sigma = a$である．$\kappa = 0$のときは$\sigma = \infty$と定義する．
+	\item 直線の曲率半径は$\sigma = \infty$である．
+\end{enumerate}
+
+
+
+\subsection{捩率}
+
+
+
+\subsection{速度・加速度}
+
+
+\section{スカラー場の勾配}
+\subsection{勾配}
+
+$D$で定義されたスカラー場$f(x,\ y,\ z)$について，その偏導関数$\bunsuu{\partial f}{\partial x},\ \bunsuu{\partial f}{\partial y},\ \bunsuu{\partial f}{\partial z}$を係数とするベクトル$\bunsuu{\partial f}{\partial x}\bm{i} + \bunsuu{\partial f}{\partial y}\bm{j} + \bunsuu{\partial f}{\partial z}\bm{k}$を考えると，領域$D$にあるベクトル場が定義される．これをスカラー場$f$の\textbf{勾配}といい，$\grad f$で表す．形式的なベクトル$\bm{\nabla} =
+\begin{bmatrix}
+	\scriptstyle\myfrac{\partial}{\partial x}\\[5pt]
+	\scriptstyle\myfrac{\partial}{\partial y}\\[5pt]
+	\scriptstyle\myfrac{\partial}{\partial z}
+\end{bmatrix}
+$を使って，$\bm{\nabla}f$で表すこともある．$\bm{\nabla}$を\textbf{Hamiltonの演算子}と呼ばれ，\textbf{ナブラ}と読む．
+
+\begin{kousiki}{スカラー場の勾配}
+	スカラー場$f(x,\ y,\ z)$の勾配$\grad f$とは次のベクトル場である．
+	\begin{equation}
+		\grad f = \bm{\nabla}f =
+		{
+		\begin{bmatrix}
+			\bunsuu{\partial f}{\partial x} &
+			\bunsuu{\partial f}{\partial y} &
+			\bunsuu{\partial f}{\partial z}
+		\end{bmatrix}
+		}^\top
+	\end{equation}
+\end{kousiki}
+
+$c$を定数とすると，方程式$f(x,\ y,\ z) = c$は一般に1つの曲面を表す．これを$f$の\textbf{等位面}という．$c$をパラメータとすると方程式は等位面の群を表す．点$\mathrm{P}$を通る等位面上に$\mathrm{P}$を通る任意の曲線$\bm{r}(t) =
+\begin{bmatrix}
+	x(t)\\ y(t)\\ z(t)
+\end{bmatrix}
+$を描くと \vskip-\baselineskip
+\begin{equation*}
+	f\bigl(x(t),\ y(t),\ z(t)\bigr) = c
+\end{equation*}
+を満たす．両辺を$t$で微分すると，チェーン・ルールより
+\begin{align*}
+	&\bunsuu{\partial f}{\partial x}\bunsuu{dx}{dt} + \bunsuu{\partial f}{\partial y}\bunsuu{dy}{dt} + \bunsuu{\partial f}{\partial z}\bunsuu{dz}{dt} = 0\\
+	&\iff \bm{\nabla}f \cdot \bunsuu{d\bm{r}}{dt} = 0\\
+	&\iff \bm{\nabla}f \perp \bunsuu{d\bm{r}}{dt}
+\end{align*}
+となる．
+
+これは点$\mathrm{P}$に対応するベクトル場$\bm{\nabla}f$は，$\mathrm{P}$を通る等位面上の曲線の接線ベクトル$\bunsuu{d\bm{r}}{dt}$に垂直になる．また，曲線は任意であるから次のことが言える．
+\begin{kousiki}{勾配$\bm{\nabla}f$の意味}
+	点$\mathrm{P}$における勾配$\bm{\nabla}f$は，$\mathrm{P}$における等位面の法線ベクトルになる．
+\end{kousiki}
+
+\vskip\baselineskip
+
+任意の単位ベクトル$\bm{e} =
+\begin{bmatrix}
+	e_x\\ e_y\\ e_z
+\end{bmatrix}
+$について，点$\mathrm{P}$から$\bm{e}$の方向に$\varDelta s$だけ動いた時の$f$の微分係数（接線の傾き）を調べる．これを\textbf{方向微分係数}$\bunsuu{df}{ds}$という．
+\begin{kousiki}{方向微分係数}
+	\begin{align}
+		\bunsuu{df}{ds} &=
+		\lim_{\varDelta s \to 0}
+			\bunsuu{f(x + e_x \varDelta s,\ y + e_y \varDelta s,\ z + e_z \varDelta s) - f(x,\ y,\ z)}{\varDelta s}\\
+			&= \bm{\nabla}f \cdot \bm{e}
+	\end{align}
+\end{kousiki}
+
+\f{証明}　$\mathrm{P}$から$\bm{e}$の方向に$\varDelta s$だけ離れた点の座標は$(x + e_x \varDelta s,\ y + e_y \varDelta s,\ z + e_z \varDelta s)$なので，$f$の変化率はチェーン・ルールより
+\begin{align*}
+	\bunsuu{d}{ds}&f(x + e_x \varDelta s,\ y + e_y \varDelta s,\ z + e_z \varDelta s)\\
+	&= \bunsuu{\partial f}{\partial x}\bunsuu{d}{ds}(x + e_x \varDelta s) + \bunsuu{\partial f}{\partial y}\bunsuu{d}{ds}(y + e_y \varDelta s) + \bunsuu{\partial f}{\partial z}\bunsuu{d}{ds}(z + e_z \varDelta s)\\
+	&= \bunsuu{\partial f}{\partial x}e_x + \bunsuu{\partial f}{\partial y}e_y + \bunsuu{\partial f}{\partial z}e_z = \bm{\nabla}f \cdot \bm{e}
+\end{align*}
+となる．
+
+このとき，$\bm{\nabla}f$と$\bm{e}$の成す角を$\theta$とすると
+\begin{equation*}
+	\bm{\nabla}f \cdot \bm{e} = |\bm{\nabla} f||\bm{e}|\cos\theta = |\bm{\nabla}f|\cos\theta
+\end{equation*}
+となり，$\theta = 0$のとき正の最大値をとる．すなわち，勾配＝法線ベクトルの方向への方向微分係数が最大となる．方程式
+\begin{equation*}
+	f(x,\ y,\ z) = c_i \quad (c = 1,\ 2,\ \cdots)
+\end{equation*}
+で，$c_1$での方向微分係数より，$c_2$での方向微分係数の値の方が大きいとき，

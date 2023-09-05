@@ -1,0 +1,39 @@
+\chapter{偏微分法}
+\setcounter{page}{1}
+\section{関数の極限}
+
+関数$f(x,\ y)$に於いて，点$(x,\ y)$が点$(a,\ b)$以外の点を取りながら$(a,\ b)$に限りなく近づくとき，関数の値が$C$に限りなく近づくならば，$f(x,\ y)$は$C$に\textbf{収束する}といい，
+\begin{equation}
+	\lim_{(x,\ y) \to (a,\ b)} f(x,\ y) = C
+\end{equation}
+と表す．$C$を\textbf{極限値}という．
+
+このとき，$(x,\ y)$がどんな近づき方で$(a,\ b)$に近づいても極限値がある一定の値$C$になることが必要である．
+
+例えば，$f(x,\ y) = \bunsuu{xy}{x^2 + y^2}$について，$\dlim_{(x,\ y) \to (0,\ 0)} f(x,\ y)$を考える．
+\begin{enumerate}[label=(\roman*), labelsep=10pt, leftmargin=23pt]
+	\item 点を直線$y = x$上で近づけると$f(x,\ y) = \bunsuu{x \cdot x}{x^2 + x^2} = \bunsuu{1}{2}$であるから$\bunsuu{1}{2}$に収束する．
+	\item 点を直線$y = 2x$上で近づけると$f(x,\ y) = \bunsuu{x \cdot 2x}{x^2 + (2x)^2} = \bunsuu{2}{5}$であるから$\bunsuu{2}{5}$に収束する．
+\end{enumerate}
+よって，極限値はない．
+
+関数$f(x,\ y)$の定義域内の点$\mathrm{P}(a,\ b)$について，
+\begin{equation}
+	\lim_{(x,\ y) \to (a,\ b)} f(x,\ y) = f(a,\ b)
+\end{equation}
+が成り立つとき，$f(x,\ y)$は点$\mathrm{P}$で\textbf{連続である}という．
+
+
+\section{偏導関数}
+
+関数$z = f(x,\ y)$に於いて
+\begin{equation}
+	\bunsuu{\partial f}{\partial x} = \lim_{\varDelta x \to 0} \bunsuu{f(x + \varDelta x,\ y) - f(x,\ y)}{\varDelta x}
+\end{equation}
+を$f(x,\ y)$の\textbf{$x$についての偏導関数}といい，$f_x(x,\ y)$とも表す．また，
+\begin{equation}
+	\bunsuu{\partial f}{\partial y} = \lim_{\varDelta y \to 0} \bunsuu{f(x,\ y + \varDelta y) - f(x,\ y)}{\varDelta y}
+\end{equation}
+を$f(x,\ y)$の\textbf{$y$についての偏導関数}といい，$f_y(x,\ y)$とも表す．
+
+偏微分係数$f_x(a,\ b),\ f_y(a,\ b)$はそれぞれ点$(a,\ b)$の$x$軸方向の傾き，$y$軸方向の傾きを表す．

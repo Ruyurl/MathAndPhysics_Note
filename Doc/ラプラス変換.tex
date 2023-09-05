@@ -1,0 +1,243 @@
+\chapter{ラプラス変換}
+\setcounter{page}{1}
+\section{定義と基本的性質}
+\subsection{ラプラス変換の定義}
+
+関数$f(t)$は，$t \in \mathbb{R}_{> 0}$で定義され，$s$を$t$と無関係な実数とする．このとき次のような関数$F(s)$を考える．
+\begin{equation}
+	F(s) = \int_{0}^{\infty} e^{-st}f(t)\,dt = \lim_{\substack{T \to \infty \\ \varepsilon \to +0}} \int_{\varepsilon}^{T} e^{-st}f(t)\,dt
+\end{equation}
+
+これは，関数$f(t)$に関数$F(s)$を対応させる規則を与えている．その対応を$\mathcal{L}$で表す．$\mathcal{L}$を適用させた$F(s)$を$f(t)$の\textbf{ラプラス変換}といい，
+\begin{equation}
+	F(s) = \mathcal{L}[f(t)] \text{\quad または \quad} f(t) \stackrel{\mathcal{L}}{\longrightarrow} F(s)
+\end{equation}
+と表す．$f(t)$を\textbf{原関数}，$F(s)$を\textbf{像関数}という．一般に$s \in \mathbb{C}$であるが，ここでは$s \in \mathbb{R}$とする．
+
+\begin{enumerate}[leftmargin=18pt, labelsep=10pt, labelsep=10pt, itemindent=9pt]
+	\item[\f{例1}] $f(t) = 1$のラプラス変換$\mathcal{L}[1]$
+		\begin{align*}
+			F(s) = \mathcal{1}[1] = \lim_{T \to \infty} \int_{0}^{T} e^{-st}\,dt = \lim_{T \to \infty} \teisekibun{{-\bunsuu{1}{s}e^{-st}}}{0}{T} = \lim_{T \to \infty} \bunsuu{1}{s}(1 - e^{-sT}) = \bunsuu{1}{s} \quad (s > 0)
+		\end{align*}
+		$s \le 0$のとき，$\dlim_{T \to \infty} \bunsuu{1}{s}(1 - e^{-sT}) = \infty$なので存在しない．
+	\item[\f{例2}] $f(t) = t$のラプラス変換$\mathcal{L}[t]$
+		\begin{align*}
+			F(s) &= \mathcal{L}[t] = \lim_{T \to \infty} \int_{0}^{T} e^{-st}t\,dt = \lim_{T \to \infty} \left\{ \teisekibun{{-\bunsuu{e^{-st}}{s}t}}{0}{T} + \int_{0}^{T} \bunsuu{e^{-st}}{s}\,dt \right\}
+			= \lim_{T \to \infty} \left\{ -\bunsuu{e^{-sT}}{s}T - \teisekibun{\bunsuu{e^{-st}}{s^2}}{0}{T} \right\}\\
+			&= \lim_{T \to \infty} \left\{
+				-\bunsuu{e^{-sT}T}{s} - \bunsuu{e^{-sT}}{s^2} + \bunsuu{1}{s^2}
+			\right\}
+			= \bunsuu{1}{s^2}
+		\end{align*}
+		ここで，$s > 0$のとき
+		\begin{gather*}
+			\lim_{T \to \infty} \left(-\bunsuu{e^{-sT}T}{s}\right) = -\bunsuu{1}{s}\lim_{T \to \infty} \bunsuu{T}{e^{sT}} = -\bunsuu{1}{s}\lim_{T \to \infty} \bunsuu{1}{se^{sT}} = 0\\
+			\lim_{T \to \infty} \left(-\bunsuu{e^{-sT}}{s^2}\right) = -\bunsuu{1}{s^2}\lim_{T \to \infty} \bunsuu{1}{e^{sT}} = 0
+		\end{gather*}
+	\item[\f{例3}] $f(t) = e^{\alpha t}$（$\alpha$は定数）のラプラス変換$\mathcal{L}[e^{\alpha t}]$
+		\begin{align*}
+			F(s) = \mathcal{L}[e^{\alpha t}] &= \lim_{T \to \infty} \int_{0}^{T} e^{-st}e^{\alpha t}\,dt
+			= \lim_{T \to \infty} \int_{0}^{T} e^{-(s - \alpha)t}\,dt
+			= \lim_{T \to \infty} \teisekibun{{-\bunsuu{1}{s - \alpha}e^{-(s - \alpha)t}}}{0}{T}\\
+			&= \lim_{T \to \infty} \left(-\bunsuu{1}{s - \alpha}\{e^{-(s - \alpha)T} - 1\}\right) = \bunsuu{1}{s - \alpha} \quad (s > \alpha)
+		\end{align*}
+		$s - \alpha \le 0$，即ち$s \le \alpha$のとき，極限値は存在しない．
+	\item[\f{例4}] $f(t) = \sin \omega t$のラプラス変換$\mathcal{L}[\sin \omega t]$
+		\begin{align*}
+			F(s) &= \mathcal{L}[\sin \omega t] = \lim_{T \to \infty} \int_{0}^{T} e^{-st}\sin \omega t\,dt
+			\intertext{$I_1 = \dint_{0}^{T} e^{-st}\sin \omega t\,dt$とする．}
+			I_1 &= \int_{0}^{T} e^{-st}\sin \omega t\,dt = \teisekibun{ \bunsuu{1}{-s}e^{-st}\sin \omega t }{0}{T} - \int_{0}^{T} \bunsuu{1}{-s}e^{-st}\omega\cos \omega t\,dt\\
+			&= \bunsuu{1}{-s}e^{-sT}\sin \omega T + \bunsuu{\omega}{s}\int_{0}^{T} e^{-st}\cos \omega t\,dt\\
+			&= \bunsuu{1}{-s}e^{-sT}\sin \omega T + \bunsuu{\omega}{s}\left\{
+				\teisekibun{
+					\bunsuu{1}{-s}e^{-st}\cos \omega t
+				}{0}{T} - \int_{0}^{T} \bunsuu{1}{-s}e^{-st}(-\omega\sin \omega t)\,dt
+			\right\}\\
+			&= \bunsuu{1}{-s}e^{-sT}\sin \omega T + \bunsuu{\omega}{s}\left\{
+				\left(
+					\bunsuu{1}{-s}e^{-sT}\cos \omega T + \bunsuu{1}{s}
+				\right)
+				- \bunsuu{\omega}{s}I_1
+			\right\}
+			\intertext{よって，$I_1$について解くと}
+			I_1 &= \bunsuu{s^2}{s^2 + \omega^2}\left\{
+				-\bunsuu{1}{s}e^{-sT}\sin \omega T - \bunsuu{\omega}{s^2}e^{-sT}\cos \omega T + \bunsuu{\omega}{s^2}
+			\right\}
+		\end{align*}
+		$s > 0$のとき$\dlim_{T \to \infty} e^{-sT}\sin \omega T = \dlim_{T \to \infty} e^{-sT}\cos \omega T = 0$なので，
+		\begin{equation*}
+			\mathcal{L}[\sin \omega t] = \lim_{T \to \infty} I_1 = \bunsuu{\omega}{s^2 + \omega^2}\quad(s > 0)
+		\end{equation*}
+		同様にすると，$\mathcal{L}[\cos \omega t] = \bunsuu{s}{s^2 + \omega^2}\quad(s > 0)$
+\end{enumerate}
+
+
+
+\subsection{単位ステップ関数}
+
+次のように定義される関数$H(t)$を\textbf{Heavisideの階段関数}という．
+\begin{equation}
+	H(t) =
+	\left\{
+		\begin{array}{ll}
+			0 & (t < 0)\\ 1 & (t > 0)
+		\end{array}
+	\right.
+\end{equation}
+
+《注》$t = 0$に於ける値は任意に決めることができる．
+
+また，次のように定義される関数$U(t)$を\textbf{単位ステップ関数}という．
+\begin{equation}
+	U(t) =
+	\left\{
+		\begin{array}{ll}
+			0 & (t \le 0)\\ 1 & (t > 0)
+		\end{array}
+	\right.
+\end{equation}
+
+関数$U(t - a)$は$U(t)$を$t$軸方向に$a$平行移動して得られる．
+
+$a \ge 0$のときの$\mathcal{L}[U(t - a)]$を求める．$t - a \le 0$，即ち$t \le a$のときは$U(t - a) = 0$，$t > a$のときは$U(t - a) = 1$なので
+\begin{align*}
+	F(s) = \mathcal{L}[U(t - a)] &= \int_{0}^{\infty} e^{-st}U(t - a)\,dt = \int_{0}^{a} e^{-st}U(t - a)\,dt + \int_{a}^{\infty} e^{-st}U(t - a)\,dt = \int_{a}^{\infty} e^{-st}\,dt\\
+	&= \teisekibun{{
+		-\bunsuu{1}{s}e^{-st}
+	}}{a}{\infty}
+	= -\bunsuu{1}{s}\lim_{t \to \infty} \left(
+		e^{-st} - e^{-as}
+	\right)
+\end{align*}
+ここで，$s > 0$のとき$\dlim_{t \to \infty} e^{-st} = 0$なので
+\begin{equation*}
+	F(s) = -\bunsuu{1}{s}\cdot(-e^{-as}) = \bunsuu{e^{-as}}{s} \quad (s > 0)
+\end{equation*}
+である．
+
+
+
+\section{ラプラス変換の基本的性質}
+\subsection{ラプラス変換の線形性}
+
+関数$f(t),\ g(t)$，定数$a,\ b$に対し
+\begin{equation}
+	\mathcal{L}[af(t) + bg(t)] = a\mathcal{L}[f(t)] + b\mathcal{L}[g(t)]
+\end{equation}
+が成り立つ．これによって，項別にラプラス変換をすることで求めることができる．
+
+
+
+\subsection{ラプラス変換の相似性}
+
+関数$f(t)$，定数$\lambda > 0$に対し，$F(s) = \mathcal{L}[f(t)]$とする．このとき
+\begin{equation}
+	\mathcal{L}[f(\lambda t)] = \bunsuu{1}{\lambda}F\left(\bunsuu{s}{\lambda}\right)
+\end{equation}
+が成り立つ．即ち，$t$軸方向に$\bunsuu{1}{\lambda}$倍してからラプラス変換すると，$F(s)$を$s$軸方向に$\lambda$倍したものを$\bunsuu{1}{\lambda}$倍したものになる．
+
+\begin{equation*}
+	\mspace{100mu}
+	\begin{array}{llll}
+		& x = f(t)	& \xlongrightarrow[\text{ラプラス変換}]{\mathcal{L}} & X = F(s)\\
+		\text{\small \fbox{$t$軸方向に$\bunsuu{1}{\lambda}$倍}}
+			& \text{\LARGE \raisebox{-4pt}{☟}} &
+			& \text{\LARGE \raisebox{-4pt}{☟}}\quad
+			\text{\small \fbox{$s$軸方向に$\lambda$倍して$X$軸方向に$\bunsuu{1}{\lambda}$倍}}\\[10pt]
+		& x = f(\lambda t)	& \xlongrightarrow[\text{ラプラス変換}]{\mathcal{L}} & X = \bunsuu{1}{\lambda}F\left(\bunsuu{s}{\lambda}\right)
+	\end{array}
+\end{equation*}
+
+
+
+\subsection{第1移動定理（像関数の移動法則）}
+
+関数$f(t)$，定数$\alpha$に対し，$F(s) = \mathcal{L}[f(t)]$とする．このとき
+\begin{equation}
+	\mathcal{L}[e^{\alpha t}f(t)] = F(s - \alpha)
+\end{equation}
+が成り立つ．即ち，原関数に$e^{\alpha t}$をかけたものをラプラス変換すると，像関数は$F(s)$を$s$軸方向に$\alpha$平行移動したものになる．
+
+\begin{equation*}
+	\mspace{150mu}
+	\begin{array}{llll}
+		& x = f(t)	& \xlongrightarrow[\text{ラプラス変換}]{\mathcal{L}} & X = F(s)\\
+		\text{\small \fbox{$e^{\alpha t}$をかける}}
+			& \text{\LARGE \raisebox{-4pt}{☟}} &
+			& \text{\LARGE \raisebox{-4pt}{☟}}\quad
+			\text{\small \fbox{$s$軸方向に$\alpha$平行移動}}\\[10pt]
+		& x = e^{\alpha t}f(t)	& \xlongrightarrow[\text{ラプラス変換}]{\mathcal{L}} & X = F(s - \alpha)
+	\end{array}
+\end{equation*}
+
+
+
+\subsection{第2移動定理（原関数の移動法則）}
+
+ラプラス変換は$t > 0$の範囲で行うので，単位ステップ関数$U(t)$をかけても変わらない．このとき，関数$f(t)$，定数$\mu > 0$に対し，$F(s) = \mathcal{L}[f(t)]$とすると
+\begin{equation}
+	\mathcal{L}[f(t - \mu)U(t - \mu)] = e^{-\mu s}F(s)
+\end{equation}
+が成り立つ．即ち，原関数を$t$軸方向に$\mu$移動したものをラプラス変換すると，像関数は$F(s)$に$e^{-\mu s}$をかけたものになる．
+
+\begin{equation*}
+	\mspace{120mu}
+	\begin{array}{llll}
+		& x = f(t)	& \xlongrightarrow[\text{ラプラス変換}]{\mathcal{L}} & X = F(s)\\
+		\text{\small \fbox{$t$軸方向に$\mu$移動}}
+			& \text{\LARGE \raisebox{-4pt}{☟}} &
+			& \text{\LARGE \raisebox{-4pt}{☟}}\quad
+			\text{\small \fbox{$e^{-\mu s}$をかける}}\\[10pt]
+		& x = f(t - \mu)U(t - \mu)	& \xlongrightarrow[\text{ラプラス変換}]{\mathcal{L}} & X = e^{-\mu s}F(s)
+	\end{array}
+\end{equation*}
+
+
+
+\subsection{微分法則}
+
+原関数$f(t)$のラプラス変換を$F(s)$とすると次が成り立つ．
+\begin{kousiki}{1階の微分法則}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\mathcal{L}[f'(t)] = sF(s) - f(+0)$ \hfill （原関数の微分法則）
+		\item $\mathcal{L}[tf(t)] = -F'(s)$ \hfill （像関数の微分法則）
+	\end{enumerate}
+\end{kousiki}
+
+$f(+0)$は，$t \to +0$のときの$f(t)$の極限値を表す．原関数の微分法則は微分方程式に使われることがある．
+
+原関数や像関数の微分法則を繰り返し使うと以下を得る．
+\begin{kousiki}{高次微分法則}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\mathcal{L}[f^{(n)}(t)] = s^n F(s) - s^{n - 1}f(+0) - s^{n - 2}f'(+0) - s^{n - 3}f''(+0) - \cdots - f^{(n - 1)}(+0)$ \hfill （原関数の高次微分法則）
+		\item $\mathcal{L}[t^n f(t)] = (-1)^n F^{(n)}(s)$ \hfill （像関数の高次微分法則）
+	\end{enumerate}
+\end{kousiki}
+
+
+
+\subsection{積分法則}
+
+原関数$f(t)$のラプラス変換を$F(s)$とすると積分についての次が成り立つ．
+
+\begin{kousiki}{積分法則}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\mathcal{L}\left[\dint_{0}^{t} f(\tau)\,d\tau\right] = \bunsuu{F(s)}{s}$ \hfill （原関数の積分法則）
+		\item $\mathcal{L}\left[\bunsuu{f(t)}{t}\right] = \dint_{s}^{\infty} F(\sigma)\,d\sigma$ \hfill （像関数の積分法則）
+	\end{enumerate}
+\end{kousiki}
+
+
+
+\subsection{たたみこみ}
+
+区間$[0,\ \infty)$で定義された関数$f(t),\ g(t)$に対し
+\begin{equation}
+	(f * g)(t) = \int_{0}^{t} f(\tau)g(t - \tau)\,d\tau
+\end{equation}
+を$f(t)$と$g(t)$の\textbf{たたみこみ}または\textbf{合成積}という．たたみこみのラプラス変換について，次の関係が成り立つ．
+\begin{kousiki}{たたみこみのラプラス変換}
+	\begin{equation}
+		\mathcal{L}[(f * g)(t)] = \mathcal{L}[f(t)]\mathcal{L}[g(t)]
+	\end{equation}
+\end{kousiki}

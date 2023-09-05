@@ -1,0 +1,327 @@
+\documentclass[
+	report, paper=a4, head_space=23mm, foot_space=13mm,
+	fontsize=9pt, jafontscale=0.9,
+	gutter=20mm, line_length=170mm,
+	fleqn, twoside
+]{jlreq}
+\def\pdfpagewidth{\paperwidth}
+\def\pdfpageheight{\paperheight}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% report  トップレベル＝\chapter
+% paper a4に設定
+% 余白の設定
+%   head_space  天の空き量
+%   foot_space  地の空き量
+%   gutter   小口（外側）の空き量
+% fleqn 別行立て数式を左側に
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% todayの再設定
+\makeatletter
+\newcommand*{\themonth}{\two@digits\month}
+\newcommand*{\theday}{\two@digits\day}
+\makeatother
+\renewcommand{\today}{{\the\year}年{\themonth}月{\theday}日}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%                              %%%%%%%%%%
+%%%%%%%%%%           文章関係           %%%%%%%%%%
+%%%%%%%%%%                              %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% フォント関係
+\usepackage{luatexja-fontspec}
+\setmainjfont{ChikuPori-Regular2.ttf}[BoldFont=KozGoPro-Medium.otf]
+\setsansjfont{KozGoPro-Medium.otf}[BoldFont=KozGoPro-Bold.otf]
+\usepackage{fontspec}
+\setsansfont{QTEurotype}
+% \setsansfont{Arial}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ノンブル、柱の設定
+\ModifyPageStyle{headings}{
+	% 柱
+	running_head_position=top-center,
+	% 奇数ページの柱内容
+	odd_running_head={_chapter},
+	% 偶数ページの柱内容
+	even_running_head={_section},
+	% 柱，ノンブル
+	nombre={\thechapter-\thepage},
+	nombre_position=top-right,
+	nombre_font=\sffamily\bfseries,
+}
+\pagestyle{headings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% plain ヘッダーには何も表示せず，フッターにノンブル
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 色関係
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% xcolor    dvipsnamesをつけるといろいろな名前が使える：
+% https://mathlandscape.com/latex-color/#toc3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 目次
+\usepackage[colorlinks,linkcolor=black,urlcolor=black]{hyperref}
+\setcounter{tocdepth}{2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hyperref  目次リンク
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multicol, here, multirow, fancybox, array, incgraph, wrapfig, caption, paralist, ascmac}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 段組み
+% here  図や表のH
+% multirow  縦結合
+% fancybox いい感じのbox
+% array 表の罫線を微妙に改善
+% incgraph	表紙
+% wrapfig	図の回り込み
+% paralist	文中のリスト
+% ascmac	別行box
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 四角番号
+\newcommand{\f}[1]{\fbox{\textbf{#1}}}
+% \renewcommand{\labelenumi}{\f{\arabic{enumi}}}
+% \renewcommand{\labelenumii}{(\arabic{enumii})}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% enumerateでのデフォルト \f{1},\f{2},...
+% enumerateでの第2階層のデフォルト (1),(2),...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tasks}
+\settasks{
+	label=(\arabic*), label-align=right, 
+	item-indent=6pt, label-offset=6pt,
+	column-sep=15pt
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% enumitem  いろいろな設定ができる（emathを先に読み込むので97行目に移動）．
+% task  横箇条書き
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% カウンタの定義
+\newcounter{daimoncounter}
+% \toiと打つと，カウンタが1つ増えて，その数が表示される．
+\newcommand{\daimon}{\refstepcounter{daimoncounter}\thedaimoncounter}
+\newcommand{\toi}{\f{\daimon}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 選択問題の四角
+% 枠の大きさ設定
+\newcommand{\senntakuanaume}[1]{\setlength{\fboxsep}{1pt}\setlength{\fboxrule}{0.6pt} \doublebox{\mbox{\textbf{\phantom{ア}#1\phantom{ア}}}} \setlength{\fboxrule}{0.4pt}} %\senntakuanaumeで選択肢問題の穴埋め
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%                              %%%%%%%%%%
+%%%%%%%%%%           数式関係           %%%%%%%%%%
+%%%%%%%%%%                              %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath, emath, mathtools, extarrows, cancel, ulem, enumitem, mleftright, emathMw, siunitx, bm}
+\mleftright
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% amsmath   いろいろな機能を追加．
+% emath     日本に合わせたいろいろな機能を追加．
+% mathtools いろいろな機能を追加．
+% extarrows 
+% cancel    数式に斜線
+% mleftright 括弧の空き
+% emathMw	enumerate環境下での図の回り込み
+% siunitx	角度\ang{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\tagform}[1]{(#1)}%
+\preEqlabel{}%数式番号デフォルト
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% emathを入れたことにより，デフォルトが①②になったので
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\dint}{\displaystyle\int}
+\newcommand{\diint}{\displaystyle\iint}
+\newcommand{\dsum}{\displaystyle\sum}
+\renewcommand{\dlim}{\lim\limits}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 積分記号，和，極限（常にdisplaystyle）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[e]{esvect}
+\renewcommand{\vec}[1]{\hspace*{-0.5pt}\vv{\mathstrut #1}\hspace*{-0.5pt}}
+\newcommand{\vecrm}[1]{\vv{\mathrm{\mathstrut #1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ベクトルの定義しなおし
+% 始点と終点を示すベクトルは \vecrm を使用．
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+
+\def\@myfrac@d#1#2{%
+	\displaystyle\frac{%
+		\raisebox{-.44ex}{$\,#1\,$}%分子
+	}{%
+		\raisebox{.1ex}{$\,#2\,$}%分母
+	}
+}
+\def\@myfrac@t#1#2{%
+	\textstyle\frac{%
+		\raisebox{-.04ex}{\scalebox{0.9}{$\,#1\,$}}%分子
+	}{%
+		\raisebox{-.3ex}{\scalebox{0.9}{$\,#2\,$}}%分母
+	}
+}
+\def\@myfrac@s#1#2{\hspace{-.5pt}%
+	\scriptstyle\frac{%
+		\raisebox{0.1ex}{\scalebox{0.6}{$\,#1\,$}}%分子
+	}{%
+		\raisebox{0.1ex}{\scalebox{0.6}{$\,#2\,$}}%分母
+	}
+\hspace{-.5pt}}
+\def\@myfrac@ss#1#2{%
+	\scriptscriptstyle#1/#2
+}
+\def\myfrac#1#2{
+	\mathchoice{\@myfrac@d{#1}{#2}}{\@myfrac@t{#1}{#2}}{\@myfrac@s{#1}{#2}}{\@myfrac@ss{#1}{#2}}
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \myfrac{分子}{分母}   textstyleとscriptsizeの分数を定義．
+% displaystyle ---> displaystyle
+% textstyle ---> displaystyleの0.9倍
+% scriptstyle ---> displaystyleの0.6倍
+% scriptscriptstyle ---> 分子/分母の形
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\cosec}{cosec}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 三角関数
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\csin}{Sin}
+\DeclareMathOperator{\Arcsin}{Arcsin}
+\DeclareMathOperator{\ccos}{Cos}
+\DeclareMathOperator{\Arccos}{Arccos}
+\DeclareMathOperator{\ctan}{Tan}
+\DeclareMathOperator{\Arctan}{Arctan}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccot}{arccot}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 逆三角関数
+% cはCapitalの略
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 双曲線関数
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+\DeclareMathOperator{\arsech}{arsech}
+\DeclareMathOperator{\arcsch}{arcsch}
+\DeclareMathOperator{\arcoth}{arcoth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 逆双曲線関数
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\grad}{grad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 勾配
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%                              %%%%%%%%%%
+%%%%%%%%%%           ＴｉｋＺ           %%%%%%%%%%
+%%%%%%%%%%                              %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{pgfplots, tikz, tikz-3dplot}
+\usetikzlibrary{positioning, intersections, calc, arrows.meta, fadings, patterns, lindenmayersystems} %tikzのlibrary
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems, breakable, raster, skins}
+
+\newtcolorbox{kousiki}[2][]{
+	% tikzを用いた記法の処理
+	enhanced, %
+	% box内左右の余白
+	left = 12pt, right = 12pt, %
+	% タイトルのフォント指定
+	fonttitle = \bfseries\large, %
+	% タイトルの文字の色
+	coltitle = white, %
+	% タイトルの背景の色
+	colbacktitle = black, %
+	% タイトルを左寄せに、少し微調整
+	attach boxed title to top left={}, %
+	% タイトルボックスの装飾
+	boxed title style = {skin = enhancedfirst jigsaw, arc = 1mm, bottom = 0mm, boxrule = 0mm}, %
+	% 枠線の太さ
+	boxrule = 0.5pt, %
+	% 本文の背景色
+	colback = black!5!, %
+	% 本文の枠の色
+	colframe = black, %
+	% 左上の角の調整
+	sharp corners = northwest, % 
+	% 影をつける
+	drop fuzzy shadow, %
+	% ページマタギOK
+	breakable, %
+	% タイトルは直接入力
+	title = \vspace{3mm}#2, 
+	% 弧
+	arc = 1mm, %
+	#1
+}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%                              %%%%%%%%%%
+%%%%%%%%%%           デザイン           %%%%%%%%%%
+%%%%%%%%%%                              %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 章
+\ModifyHeading{chapter}{
+	font={\huge\jfontspec{KozGoPro-Bold.otf}\bfseries},
+	format={%
+		{\color[gray]{0.5}\rule[-0.5\zw]{2\zw}{1.8\zw}}%
+		\if@mainmatter
+			\hspace{-2\zw}\raisebox{0.1\zw}{%
+				\makebox[2\zw]{\color[gray]{1}\thechapter}}%
+		\fi
+		\hspace{0.5\zw}#1#2
+	}
+}
+% 節
+\ModifyHeading{section}{%
+	format={%
+		\hrule\par\vspace*{0.25ex}\parbox[b]{\linewidth - 1\zw}{\hspace*{-1\zw}\colorbox{black}{\hspace*{1\zw}\textcolor{white}{#1}}\quad#2}\vspace*{0.25ex}\par\hrule}
+}
+%
+% 小節
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\ModifyHeading{subsection}{%
+	format={%
+		{\color{gray}◆}#1{\color{gray}\hspace*{-0.7\zw}◆}\quad#2
+	}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 章，節のデザインを変更 \MakeUppercase{#1}ですべて大文字   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+\title{\fontsize{40pt}{1\zh} \jfontspec{DelaGothicOne-Regular.ttf}数学・物理 回憶錄}
+\date{\LARGE 最終更新日: \today}
+\maketitle
+
+
+
+\input{偏微分法.tex}
+\input{ベクトル解析.tex}
+\input{ラプラス変換.tex}
+\input{力学1234.tex}
+
+
+
+
+
+
+\end{document}
