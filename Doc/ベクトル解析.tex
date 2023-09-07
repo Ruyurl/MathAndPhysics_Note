@@ -263,7 +263,7 @@ $t$の微小変化$\varDelta t$に対応する$\bm{r}(t)$の変化を$\varDelta 
 \begin{equation}
 	\bunsuu{d\bm{r}}{ds} = \bunsuu{d\bm{r}}{dt}\bunsuu{dt}{ds} = \bunsuu{\bunsuu{d\bm{r}}{dt}}{\bunsuu{ds}{dt}} = \bunsuu{\bunsuu{d\bm{r}}{dt}}{\left|\bunsuu{d\bm{r}}{dt}\right|}
 \end{equation}
-これは(\ref{equ2-16})と同じ式である．よって次が成り立つ．
+これは式(\ref{equ2-16})と同じ式である．よって次が成り立つ．
 
 \begin{kousiki}{単位接線ベクトル}
 	\begin{equation}
@@ -487,10 +487,10 @@ $\kappa$は曲線の局所的な曲がり具合である．この値が大きい
 
 $D$で定義されたスカラー場$f(x,\ y,\ z)$について，その偏導関数$\bunsuu{\partial f}{\partial x},\ \bunsuu{\partial f}{\partial y},\ \bunsuu{\partial f}{\partial z}$を係数とするベクトル$\bunsuu{\partial f}{\partial x}\bm{i} + \bunsuu{\partial f}{\partial y}\bm{j} + \bunsuu{\partial f}{\partial z}\bm{k}$を考えると，領域$D$にあるベクトル場が定義される．これをスカラー場$f$の\textbf{勾配}といい，$\grad f$で表す．形式的なベクトル$\bm{\nabla} =
 \begin{bmatrix}
-	\scriptstyle\myfrac{\partial}{\partial x}\\[5pt]
-	\scriptstyle\myfrac{\partial}{\partial y}\\[5pt]
-	\scriptstyle\myfrac{\partial}{\partial z}
-\end{bmatrix}
+	\bunsuu{\partial}{\partial x} &
+	\bunsuu{\partial}{\partial y} &
+	\bunsuu{\partial}{\partial z}
+\end{bmatrix}^\top
 $を使って，$\bm{\nabla}f$で表すこともある．$\bm{\nabla}$を\textbf{Hamiltonの演算子}と呼ばれ，\textbf{ナブラ}と読む．
 
 \begin{kousiki}{スカラー場の勾配}

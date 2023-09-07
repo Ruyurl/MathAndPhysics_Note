@@ -1,0 +1,255 @@
+\chapter{電磁気学I}
+\setcounter{page}{1}
+
+\section{線積分，面積分，体積分}
+
+電磁気学を学ぶには，線積分，面積分，体積分の3つの積分の知識が必要不可欠である．
+
+
+
+\subsection{スカラー場の線積分}
+
+\textbf{線積分}とは，ある線分に沿って物理量を足していくことである．
+
+空間上に曲線$C$がある．この$C$を\textbf{経路}という．線積分は，その経路上の各点に存在する物理量（今から説明するのはスカラー場$f$）を足して合わせていくことを考える．経路上の位置$\bm{r}$に存在するスカラー場$f(\bm{r})$が与えられているとする．
+
+まず，経路$C$を$n$個の小区間に分割する．$C$の始点を点$\mathrm{A}$，終点を点$\mathrm{B}$として$\mathrm{A}$から順に，分点
+\begin{equation*}
+	\mathrm{A} = \mathrm{P}_0,\ \mathrm{P}_1,\ \mathrm{P}_2,\ \cdots,\ \mathrm{P}_n = \mathrm{B}
+\end{equation*}
+をとる．点$\mathrm{P}_k$の位置ベクトルを$\bm{r}_k$とし，$\varDelta s_k = \mathrm{P}_k - \mathrm{P}_{k - 1}$とする．
+
+この小区間$\varDelta s_k$とスカラー場$f(\bm{r}_k)$をかけたものを足し合わせていく：
+\begin{equation*}
+	\sum_{k = 1}^{n} f(\bm{r}_k)\varDelta s_k
+\end{equation*}
+ここで，$n$を無限大までに増やして小区間の長さを限りなく0に近づかせると次のように積分の形に表すことができる．これを経路$C$に沿うスカラー場の線積分という．
+\begin{equation}
+	\sum_{k = 1}^{n} f(\bm{r}_k)\varDelta s_k \quad\xrightarrow{n \to \infty}\quad \int_{C} f(\bm{r})\,ds
+\end{equation}
+
+
+
+\subsection{ベクトル場の線積分}
+
+経路$C$上にベクトル場$\bm{F}(\bm{r})$が与えられているとする．
+
+ベクトルの線積分も基本的な考え方はスカラーのときと同じである．ただし，ベクトル場の線積分では，\textcolor{teal}{ベクトル場の経路に沿った方向の成分}を積分する．この成分は，ベクトル$\bm{F}$と単位接線ベクトル$\bm{t}$の内積で求めることができる．よって，ベクトル場$\bm{F}(\bm{r})$の線積分は以下の式である．
+\begin{equation}
+	\int_{C} \bm{F}(\bm{r}) \cdot \bm{t}\,ds
+\end{equation}
+
+経路の始点Aと終点Bが一致している曲線（経路）を\textbf{閉曲線}という．経路が閉曲線の場合の線積分を\textbf{周回積分}といい，次のように表す．
+\begin{equation}
+	\oint_{C} \bm{F}(\bm{r}) \cdot \bm{t}\,ds
+\end{equation}
+
+
+
+\subsection{スカラー場の面積分}
+
+\textbf{面積分}とは，ある面全体について物理量を足し合わせていくことである．
+
+空間上に曲面$S$があり，$S$上でスカラー場$f(\bm{r})$が定義されているとする．曲面を網目状の微小な面積$\varDelta S$に分け，それにスカラー場$f(\bm{r})$を掛けたものを足し合わせることを考える．そして，分割数を増やして$\varDelta S \to 0$としていけば面積分が得られる．
+\begin{equation}
+	\int_{\color{teal}S} f(\bm{r})\,d{\color{cyan}S} \label{equ5-1-1}
+\end{equation}
+ここで注意なのが，\textcolor{teal}{青緑色}の$S$は，曲面$S$上の面積分という意味での$S$であり，\textcolor{cyan}{水色}の$S$は，面積の$S$という意味である．
+
+$dS$は微小な長方形の面積なので$dS = dxdy$である．よって，式(\ref{equ5-1-1})は
+\begin{equation}
+	\iint_{D} f(\bm{r})\,dxdy
+\end{equation}
+のように表すこともできる．$D$は曲面$S$が定義されている領域である．
+
+
+
+\subsection{ベクトル場の面積分}
+
+曲面$S$上にベクトル場$\bm{F}(\bm{r})$が与えられているとする．
+
+ベクトル場の面積分では，\textcolor{teal}{ベクトル場の単位法線ベクトル方向の成分}を積分する．この成分は，ベクトル$\bm{F}$と単位法線ベクトル$\bm{n}$の内積で求めることができる．よって，ベクトル場$\bm{F}(\bm{r})$の面積分は以下の式である．
+\begin{equation}
+	\int_{S} \bm{F}(\bm{r}) \cdot \bm{n} \, dS
+\end{equation}
+
+
+
+\subsection{スカラー場の体積分}
+
+\textbf{体積分}とは，ある体積領域全体について物理量を足し合わせていくことである．
+
+
+
+\section{クーロン力と電場}
+% \subsection{万有引力の法則}
+
+% クーロン力（静電気力）は，重力と対比すると分かりやすい．理由はクーロンの法則と万有引力の法則が非常に似ているからである．ここでは万有引力の法則を振り返る．
+
+% \begin{kousiki}{万有引力の法則}
+% 	2つの物体1，2の位置ベクトルをそれぞれ$\bm{r}_1,\ \bm{r}_2$とする．物体1が物体2から受ける\textbf{万有引力}$\bm{F}_{12}$，物体2が物体1から受ける万有引力$\bm{F}_{21}$はそれぞれ
+% 	\begin{gather}
+% 		\bm{F}_{12} = {\color{blue}
+% 			G\bunsuu{m_1 m_2}{|\bm{r}_1 - \bm{r}_2|^2}
+% 		}
+% 		\cdot 
+% 		{\color{red}
+% 			\left(-\bunsuu{\bm{r}_1 - \bm{r}_2}{|\bm{r}_1 - \bm{r}_2|}\right)
+% 		}\\
+% 		\bm{F}_{21} = {\color{blue}
+% 			G\bunsuu{m_1 m_2}{|\bm{r}_2 - \bm{r}_1|^2}
+% 		}
+% 		\cdot 
+% 		{\color{red}
+% 			\left(-\bunsuu{\bm{r}_2 - \bm{r}_1}{|\bm{r}_2 - \bm{r}_1|}\right)
+% 		}
+% 	\end{gather}
+% 	\textcolor{blue}{青字}は万有引力の大きさ，\textcolor{red}{赤字}は万有引力の向きを表す．
+% \end{kousiki}
+
+
+
+% \subsubsection*{大きさ}
+
+% $m$は\textbf{重力質量}という．万有引力から定義されるのでこう呼ばれる．$1\,\mathrm{N}$とは，$1\,\mathrm{kg}$の質量をもつ物体に$1\,\mathrm{m/s^2}$の加速度を与える力の大きさである．$G$は\textbf{万有引力定数}といい，$G \approx 6.674 \times 10^{-11}\,\mathrm{N \cdot m^2 / kg^2}$と測定されている．
+
+% $|\bm{r}_1 - \bm{r}_2|$は2点間の距離を表す．万有引力の法則は距離の2乗に反比例する．
+
+
+
+% \subsubsection*{向き（$\bm{F}_{12}$の場合）}
+
+% $\bm{r}_1 - \bm{r}_2$は物体2から物体1へ向かう向きである．$\bm{F}_{12}$は物体1に働く\textbf{引力}なので，マイナスが付く．すると物体1は物体2に引きつけられる．また，向きのみを表すため，大きさが変わってはいけないので，絶対値で割って大きさを$1$にする．
+
+
+
+\subsection{クーロン力（静電気力）}
+
+クーロン力が起こる原因になるものを\textbf{電荷}という．電荷には正負があり，正の電荷をもつ代表的なものに陽子，負の電荷をもつ代表的なものに電子がある．電荷の量を\textbf{電荷量}といい，$q$と表す．単位は$\mathrm{C}$である．
+
+$1\,\mathrm{C}$は$1\,\mathrm{A}$の電流を1秒間流した時に流れる電荷量なので
+\begin{equation}
+	1\,\mathrm{C} = 1\,\mathrm{A \cdot s}
+\end{equation}
+である．
+
+陽子と電子の電荷量は大きさが同じで向きが反対である．陽子と電子の電荷の大きさを\textbf{電気素量}といい，$e$で表す．
+\begin{equation}
+	e = 1.602 \times 10^{-19}\,\mathrm{C}
+\end{equation}
+
+つまり，陽子の電荷量は$+e$，電子の電荷量は$-e$である．
+
+電荷は陽子と陽子，電子と電子のように同符号であるとき，2つの電荷の間に反発する力（斥力）が働く．また，陽子と電子のように異符号であるとき，2つの電荷の間に引き合う力（引力）が働く．このような力を\textbf{クーロン力}といい，以下の法則が成り立つ．
+
+\begin{kousiki}{クーロンの法則}
+	2つの点電荷があり，それぞれの電荷量を$Q,\ q$とする．$Q$から$q$へ向かうベクトルを$\bm{r}$とするとき，点電荷$q$に働く\textbf{クーロン力}は
+	\begin{equation}
+		\bm{F} = {\color{teal}
+			\bunsuu{1}{4\pi \varepsilon_0}\bunsuu{qQ}{|\bm{r}|^2}
+		}
+		\cdot 
+		{\color{cyan}
+			\bunsuu{\bm{r}}{|\bm{r}|}
+		}
+	\end{equation}
+	である．$\varepsilon_0$は真空の誘電率である．また，\textcolor{teal}{青緑色}はクーロン力の大きさ，\textcolor{cyan}{水色}はクーロン力の向きを表す．
+\end{kousiki}
+
+
+
+\subsubsection*{クーロン力の大きさ}
+
+$\bunsuu{1}{4\pi\varepsilon_0}$は定数である．
+$\varepsilon_0$は真空の誘電率\footnote{真空の誘電率についてはここでは触れない．そういうものだと認識してもよい．なお，真空の誘電率は，$c$を光の速さ，$\mu_0$を真空の透磁率とすると$\varepsilon_0 = \bunsuu{1}{c^2\mu_0}$で求められる．} で，
+$\bunsuu{1}{4\pi\varepsilon_0} \approx 8.987552 \times 10^9\, \mathrm{V^2 / N}$である．この定数値はクーロンの法則が成り立つように辻褄合わせで決められた値であるのでそこまで深く考える必要はない．クーロン力は電荷量に比例し，2点間の距離$|\bm{r}|$の2乗に反比例する．
+
+
+
+\subsubsection*{クーロン力の向き}
+
+$Q$と$q$が同符号の場合，$q$には引力が働くので向きは$\bm{r}$と同じ向きになる．また，\textcolor{cyan}{水色}は向きのみを表すため，大きさが変わってはいけないので絶対値で割って大きさを$1$にする．
+
+
+
+\subsubsection*{重ね合わせの原理}
+
+電荷が$q,\ Q_1,\ Q_2,\ \cdots,\ Q_n$と複数個あったとする．また，$Q_1$が$q$に及ぼすクーロン力を$\bm{F}_1$，…，$Q_n$が$q$に及ぼすクーロン力を$\bm{F}_n$とするとき，$q$が受けるクーロン力はそれぞれのクーロン力の和で表すことができる（\textbf{重ね合わせの原理}）．
+
+\begin{kousiki}{クーロン力の重ね合わせの原理}
+	$Q_i$から$q$へ向かうベクトルを$\bm{r}_i$とするとき
+	，点電荷$q$が受けるクーロン力は，
+	\begin{align}
+		\bm{F} &= \sum_{i = 0}^{n} \bm{F}_i\\
+			&= \bm{F}_1 + \bm{F}_2 + \cdots + \bm{F}_n \notag\\
+			&= \bunsuu{q}{4\pi\varepsilon_0} \sum_{i = 0}^{n} \bunsuu{Q_i}{|\bm{r}_i|^2} \cdot \bunsuu{\bm{r}_i}{|\bm{r}_i|}
+	\end{align}
+\end{kousiki}
+
+\begin{enumerate}[leftmargin=18pt, labelsep=10pt, itemindent=9pt]
+	\item[\f{例}] 点$\mathrm{A}_1(a,\ 0)$に点電荷$Q$，点$\mathrm{A}_2(-a,\ 0)$に点電荷$Q$，点$\mathrm{D}(0,\ d)$に点電荷$q$がある．このとき，$q$にかかるクーロン力を求めよ．\\
+		$\vecrm{A_1 D} = \bm{r}_1 = \begin{bmatrix*}[r] -a\\ d \end{bmatrix*},\ \vecrm{A_2 D} = \bm{r}_2 = \begin{bmatrix*}[r] a\\ d \end{bmatrix*}$とする．よって
+		\begin{align*}
+			\bm{F} &= \bm{F}_1 + \bm{F}_2\\
+				&= \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{qQ}{|\bm{r}_1|^2}\bunsuu{\bm{r}_1}{|\bm{r}_1|} + \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{qQ}{|\bm{r}_2|^2}\bunsuu{\bm{r}_2}{|\bm{r}_2|}\\
+				&= \bunsuu{qQ}{4\pi\varepsilon_0}\bunsuu{\bm{r}_1}{|\bm{r}_1|^3} + \bunsuu{qQ}{4\pi\varepsilon_0}\bunsuu{\bm{r}_2}{|\bm{r}_2|^3}\\
+				&= \bunsuu{qQ}{4\pi\varepsilon_0}\bunsuu{1}{(\sqrt{a^2 + d^2})^3}
+				\begin{bmatrix*}[r]
+					-a\\ d
+				\end{bmatrix*}
+				+ \bunsuu{qQ}{4\pi\varepsilon_0}\bunsuu{1}{(\sqrt{a^2 + d^2})^3}
+				\begin{bmatrix*}[r]
+					a\\ d
+				\end{bmatrix*}
+				\\
+				&= \bunsuu{qQ}{4\pi\varepsilon_0}\bunsuu{1}{(\sqrt{a^2 + d^2})^3}\left(
+					\begin{bmatrix*}[r]
+						-a\\ d
+					\end{bmatrix*}
+					+
+					\begin{bmatrix*}[r]
+						a\\ d
+					\end{bmatrix*}
+				\right) = \bunsuu{qQ}{4\pi\varepsilon_0}\bunsuu{1}{(\sqrt{a^2 + d^2})^3}
+					\begin{bmatrix*}[r]
+						0\\ d
+					\end{bmatrix*}
+		\end{align*}
+\end{enumerate}
+
+
+
+\subsection{電場}
+
+クーロン力は，何かの物体に接触していなくても発生する力である．これからある点電荷Aがあったとき，その点電荷Aが周りの空間に影響を及ぼしていて，その空間の中に点電荷Bが置かれたときにAによる影響を受けてクーロン力が働くのではないかと考えることにする．そのような影響を表す量を\textbf{電場}といい，$\bm{E}$で表す．
+
+ここで，クーロンの法則による表し方を変えてみる（一先ず，クーロン力の大きさ（スカラー）だけを考える）．
+\begin{align}
+	F &= \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1 Q_2}{r^2} \notag\\
+	&= Q_1 {\color{teal}\left(\bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_2}{r^2}\right)} \label{equ5-1}
+\end{align}
+式(\ref{equ5-1})をこういう見方で考える．
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item $Q_1$の存在は置いといて，点電荷$Q_2$があることによって$Q_2$が周りの空間にある影響$E$を作り出す（本来はベクトル）．これは式(\ref{equ5-1})の\textcolor{teal}{青緑色}の部分に該当する．
+	\item $Q_1$は，$E$を感じてクーロン力を受ける．
+\end{enumerate}
+
+\begin{kousiki}{電場(1)}
+	電荷に力を作用させる電気的な空間（このような空間のことを\textbf{場}と呼ぶ．特に，場の値がベクトルであるとき\textbf{ベクトル場}という）．
+\end{kousiki}
+
+では，このことをベクトルでまとめる．
+
+\begin{kousiki}{電場(2)}
+	原点にある電荷$Q_2$があって，この電荷が周りの空間のある1点$\bm{r} = (x,\ y,\ z)$に
+	\begin{equation}
+		\bm{E}(x,\ y,\ z) = \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_2}{|\bm{r}|^2}\bunsuu{\bm{r}}{|\bm{r}|}
+	\end{equation}
+	だけの電場を作っていると考える．そして，その電場に入った電荷$Q_1$は，電場から
+	\begin{equation}
+		\bm{F} = Q_1 \bm{E}
+	\end{equation}
+	と表せる力を受ける．このことから，電場$\bm{E}$の単位は$\mathrm{N/C}$である．
+\end{kousiki}
+
+電場の向きは$\bm{r}$に平行である．$Q_2 < 0$であれば，$\bm{r}$と反対向きになる．
