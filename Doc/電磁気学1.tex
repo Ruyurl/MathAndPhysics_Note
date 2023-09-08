@@ -1,6 +1,11 @@
 \chapter{電磁気学I}
 \setcounter{page}{1}
 
+
+電磁気学に入る前に，この章で必要なベクトル解析の知識を確認する．詳しくはベクトル解析の章を見ていただきたい．
+
+
+
 \section{線積分，面積分，体積分}
 
 電磁気学を学ぶには，線積分，面積分，体積分の3つの積分の知識が必要不可欠である．
@@ -36,10 +41,10 @@
 
 ベクトルの線積分も基本的な考え方はスカラーのときと同じである．ただし，ベクトル場の線積分では，\textcolor{teal}{ベクトル場の経路に沿った方向の成分}を積分する．この成分は，ベクトル$\bm{F}$と単位接線ベクトル$\bm{t}$の内積で求めることができる．よって，ベクトル場$\bm{F}(\bm{r})$の線積分は以下の式である．
 \begin{equation}
-	\int_{C} \bm{F}(\bm{r}) \cdot \bm{t}\,ds
+	\int_{C} \bm{F}(\bm{r}) \cdot \bm{t}\,ds = \int_{C} \bm{F}(\bm{r}) \cdot d\bm{r}
 \end{equation}
 
-経路の始点Aと終点Bが一致している曲線（経路）を\textbf{閉曲線}という．経路が閉曲線の場合の線積分を\textbf{周回積分}といい，次のように表す．
+経路の始点Aと終点Bが一致している曲線（経路）を\textbf{閉曲線}という．例えば$C: x^2 + y^2 = 1$は円なので閉曲線である．経路が閉曲線の場合の線積分を\textbf{周回積分}といい，次のように表す．
 \begin{equation}
 	\oint_{C} \bm{F}(\bm{r}) \cdot \bm{t}\,ds
 \end{equation}
@@ -73,12 +78,193 @@ $dS$は微小な長方形の面積なので$dS = dxdy$である．よって，�
 	\int_{S} \bm{F}(\bm{r}) \cdot \bm{n} \, dS
 \end{equation}
 
+球面のような閉じた面を\textbf{閉曲面}という．曲面が閉曲面の場合の面積分は次のように表す．
+\begin{equation}
+	\oint_{S} \bm{F}(\bm{r}) \cdot \bm{n}\,dS
+\end{equation}
 
 
-\subsection{スカラー場の体積分}
+
+\subsection{体積分}
 
 \textbf{体積分}とは，ある体積領域全体について物理量を足し合わせていくことである．
 
+空間上に体積領域$V$があり，$V$上でスカラー場$f(\bm{r})$が定義されているとする．この領域を微小な体積領域$\varDelta V$に分け，それにスカラー場$f(\bm{r})$を掛けたものを足し合わせることを考える．そして，分割数を増やして$\varDelta V \to 0$としていけば体積分が得られる．
+\begin{equation}
+	\int_{V} f(\bm{r})\,dV
+\end{equation}
+
+
+
+\section{ベクトル場の微分：勾配，発散，回転}
+
+\subsection{ハミルトンの演算子}
+
+\textbf{ハミルトンの演算子}は，以下のような形式的なベクトルであり，\textbf{ナブラ}と読む．
+\begin{equation}
+	\bm{\nabla} =
+	\begin{bmatrix}
+		\bunsuu{\partial}{\partial x} &
+		\bunsuu{\partial}{\partial y} &
+		\bunsuu{\partial}{\partial z}
+	\end{bmatrix}^\top
+\end{equation}
+
+ナブラの定義や逆三角形の2辺の太さが太いことから，$\bm{\nabla}$はベクトルの形をしていることは明らかである．
+勿論，$\bunsuu{\partial}{\partial x}$だけでは成り立たず，$\bunsuu{\partial f}{\partial x}$のように微分される関数がないといけない．では何故こんなものがあるのかというと，後の勾配，発散，回転の式を表すのに便利だからだ．これらは電磁気学で出てくる大切な概念である．
+
+例えば，$\bm{\nabla} f$と表せば，ベクトルのスカラー倍と見做すことができ
+\begin{equation*}
+	\bm{\nabla} f =
+	\begin{bmatrix}
+		\bunsuu{\partial}{\partial x} &
+		\bunsuu{\partial}{\partial y} &
+		\bunsuu{\partial}{\partial z}
+	\end{bmatrix}^\top
+	f
+	=
+	\begin{bmatrix}
+		\bunsuu{\partial f}{\partial x} &
+		\bunsuu{\partial f}{\partial y} &
+		\bunsuu{\partial f}{\partial z}
+	\end{bmatrix}^\top
+\end{equation*}
+と，スカラー関数$f$を$x,\ y,\ z$で偏微分したものをそれぞれの成分とするベクトルを表すことができる．尚，これは勾配の定義そのものである．
+
+また，ベクトル関数$\bm{F}$を内積の形でかければ，
+\begin{equation*}
+	\bm{\nabla} \cdot \bm{F} =
+	\begin{bmatrix}
+		\bunsuu{\partial}{\partial x} &
+		\bunsuu{\partial}{\partial y} &
+		\bunsuu{\partial}{\partial z}
+	\end{bmatrix}^\top
+	\cdot
+	\begin{bmatrix}
+		F_x & F_y & F_z
+	\end{bmatrix}^\top
+	= \bunsuu{\partial F_x}{\partial x} + \bunsuu{\partial F_y}{\partial y} + \bunsuu{\partial F_z}{\partial z}
+\end{equation*}
+となる．これは，発散の定義である．
+
+外積の形でかければ
+\begin{align*}
+	\bm{\nabla} \times \bm{F} &=
+	\begin{bmatrix}
+		\bunsuu{\partial}{\partial x} &
+		\bunsuu{\partial}{\partial y} &
+		\bunsuu{\partial}{\partial z}
+	\end{bmatrix}^\top
+	\times
+	\begin{bmatrix}
+		F_x & F_y & F_z
+	\end{bmatrix}^\top
+	=
+	\begin{vmatrix}
+		\bm{i} & \bunsuu{\partial}{\partial x} & F_x\\[5mm]
+		\bm{j} & \bunsuu{\partial}{\partial y} & F_y\\[5mm]
+		\bm{k} & \bunsuu{\partial}{\partial z} & F_z\\
+	\end{vmatrix}\\
+	&=
+	\bunsuu{\partial F_z}{\partial y}\bm{i} +
+	\bunsuu{\partial F_x}{\partial z}\bm{j} +
+	\bunsuu{\partial F_y}{\partial x}\bm{k} -
+	\bunsuu{\partial F_y}{\partial z}\bm{i} -
+	\bunsuu{\partial F_z}{\partial x}\bm{j} -
+	\bunsuu{\partial F_x}{\partial y}\bm{k}\\
+	&=
+	\left(
+		\bunsuu{\partial F_z}{\partial y} -
+		\bunsuu{\partial F_y}{\partial z}
+	\right)\bm{i}
+	+
+	\left(
+		\bunsuu{\partial F_x}{\partial z} -
+		\bunsuu{\partial F_z}{\partial x}
+	\right)\bm{j}
+	+
+	\left(
+		\bunsuu{\partial F_y}{\partial x} -
+		\bunsuu{\partial F_x}{\partial y}
+	\right)\bm{k}
+	=
+	\begin{bmatrix}
+		\bunsuu{\partial F_z}{\partial y} -
+		\bunsuu{\partial F_y}{\partial z}\\[5mm]
+		\bunsuu{\partial F_x}{\partial z} -
+		\bunsuu{\partial F_z}{\partial x}\\[5mm]
+		\bunsuu{\partial F_y}{\partial x} -
+		\bunsuu{\partial F_x}{\partial y}
+	\end{bmatrix}
+\end{align*}
+となる．これは，回転の定義である．
+
+
+
+\subsection{勾配（グラディエント）}
+
+スカラー場$\varphi(x,\ y,\ z)$が直交座標で定義されているとする．このとき，$x$についての偏微分を$x$成分，$y$についての偏微分を$y$成分，$z$についての偏微分を$z$成分とするベクトル場を$\varphi$の\textbf{勾配}または\textbf{グラディエント}といい，$\grad \varphi$や$\bm{\nabla} \varphi$で表す．
+\begin{equation}
+	\bm{\nabla} \varphi = \grad \varphi =
+	\begin{bmatrix}
+		\bunsuu{\partial \varphi}{\partial x} &
+		\bunsuu{\partial \varphi}{\partial y} &
+		\bunsuu{\partial \varphi}{\partial z}
+	\end{bmatrix}^\top
+\end{equation}
+
+勾配はそれぞれの点において$\varphi$が最も増大する方向を指し示す．勾配の向きは等位面に垂直で，大きさはどれくらい増大しているかを表す．等位面の間隔が狭いとき，勾配が急峻になっているので，$\bm{\nabla} \varphi$の大きさ（矢印の長さ）が大きく，間隔が広いとき，勾配が緩やかなので，$\bm{\nabla} \varphi$の大きさは小さい．
+
+《注》勾配は，入力をスカラー場として，ベクトル場を出力する．
+
+
+
+\subsection{発散（ダイヴァージェンス）}
+
+ベクトル場$\bm{F}(x,\ y,\ z)$が直交座標で定義されているとする．このとき，$\bm{F}$の$x$成分$F_x$を$x$で，$y$成分$F_y$を$y$で，$z$成分$F_z$を$z$で偏微分したあと，それらを足し合わせたものを$\bm{F}$の\textbf{発散}または\textbf{ダイヴァージェンス}といい，$\dive \bm{F}$や$\bm{\nabla} \cdot \bm{F}$で表す．
+\begin{equation}
+	\bm{\nabla} \cdot \bm{F} = \dive \bm{F} = \bunsuu{\partial F_x}{\partial x} + \bunsuu{\partial F_y}{\partial y} + \bunsuu{\partial F_z}{\partial z}
+\end{equation}
+
+発散は，それぞれの点においてベクトル場$\bm{F}$の流入出を評価する．例えば，$\bm{v}(x,\ y,\ z)$は点$(x,\ y,\ z)$での流体の速度を示すとする．ある空間に3辺の長さが$\varDelta x,\ \varDelta y,\ \varDelta z$の微小な直方体を考える．この直方体に流入する流体の量を$V_{\mathrm{in}}$，流出する流体の量を$V_{\mathrm{out}}$とするとき，$V_{\mathrm{out}} - V_{\mathrm{in}} > 0$なら，流出量の方が多いので，この直方体の中に蛇口のようなものがあってそこから流体が「湧き出て」いることを表す．逆に$V_{\mathrm{out}} - V_{\mathrm{in}} < 0$なら，流出量の方が少ないので，この直方体の中に排水溝のようなものがあってそこに流体が「吸い込まれて」いることを表す．証明は略すが，この直方体の\textcolor{cyan}{中}から流れ出る流体は
+\begin{equation*}
+	V_{\mathrm{out}} - V_{\mathrm{in}} = 
+	\left(
+		\bunsuu{\partial v_x}{\partial x} + \bunsuu{\partial v_y}{\partial y} + \bunsuu{\partial v_z}{\partial z}
+	\right)
+	\varDelta x \varDelta y \varDelta z
+	= (\dive \bm{v}) \varDelta x \varDelta y \varDelta z
+\end{equation*}
+で表すことができる．直方体の体積は$\varDelta x \varDelta y \varDelta z$なので，これで割ると$\dive \bm{v}$は\textcolor{teal}{単位時間における単位体積あたりでの直方体の中から流出した流体の体積}を表す．$\dive\bm{v} > 0$のとき「湧き出し」，$\dive\bm{v} < 0$のとき「吸い込む」．$\dive\bm{v} = 0$のときは流れ入った流体はそのまま流れ出る．
+
+《注》発散は，入力をベクトル場として，スカラー場を出力する．
+
+
+
+\subsection{回転（ローテーション）}
+
+ベクトル場$\bm{F}(x,\ y,\ z)$が直交座標で定義されているとする．このとき，次のように定義されるものを$\bm{F}$の\textbf{回転}または\textbf{ローテーション}といい，$\rot \bm{F}$や$\bm{\nabla} \times \bm{F}$で表す．
+\begin{equation}
+	\bm{\nabla} \times \bm{F} =
+	\begin{vmatrix}
+		\bm{i} & \bunsuu{\partial}{\partial x} & F_x\\[5mm]
+		\bm{j} & \bunsuu{\partial}{\partial y} & F_y\\[5mm]
+		\bm{k} & \bunsuu{\partial}{\partial z} & F_z\\
+	\end{vmatrix}
+	=
+	\begin{bmatrix}
+		\bunsuu{\partial F_z}{\partial y} -
+		\bunsuu{\partial F_y}{\partial z}\\[5mm]
+		\bunsuu{\partial F_x}{\partial z} -
+		\bunsuu{\partial F_z}{\partial x}\\[5mm]
+		\bunsuu{\partial F_y}{\partial x} -
+		\bunsuu{\partial F_x}{\partial y}
+	\end{bmatrix}
+\end{equation}
+
+回転は，それぞれの点においてベクトル場$\bm{F}$の回転の向きや強さを表している．$\rot \bm{F} \ne \bm{0}$のとき$\bm{F}$が回転軸に対して渦巻いている，つまり回転する要素があるということになる．
+
+《注》回転は，入力をベクトル場として，ベクトル場を出力する．
 
 
 \section{クーロン力と電場}
@@ -219,19 +405,19 @@ $Q$と$q$が同符号の場合，$q$には引力が働くので向きは$\bm{r}$
 
 
 
-\subsection{電場}
+\subsection{電場（１）}
 
 クーロン力は，何かの物体に接触していなくても発生する力である．これからある点電荷Aがあったとき，その点電荷Aが周りの空間に影響を及ぼしていて，その空間の中に点電荷Bが置かれたときにAによる影響を受けてクーロン力が働くのではないかと考えることにする．そのような影響を表す量を\textbf{電場}といい，$\bm{E}$で表す．
 
 ここで，クーロンの法則による表し方を変えてみる（一先ず，クーロン力の大きさ（スカラー）だけを考える）．
 \begin{align}
 	F &= \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1 Q_2}{r^2} \notag\\
-	&= Q_1 {\color{teal}\left(\bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_2}{r^2}\right)} \label{equ5-1}
+	&= Q_2 {\color{teal}\left(\bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1}{r^2}\right)} \label{equ5-1}
 \end{align}
 式(\ref{equ5-1})をこういう見方で考える．
 \begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
-	\item $Q_1$の存在は置いといて，点電荷$Q_2$があることによって$Q_2$が周りの空間にある影響$E$を作り出す（本来はベクトル）．これは式(\ref{equ5-1})の\textcolor{teal}{青緑色}の部分に該当する．
-	\item $Q_1$は，$E$を感じてクーロン力を受ける．
+	\item $Q_2$の存在は置いといて，点電荷$Q_1$があることによって$Q_1$が周りの空間にある影響$E$を作り出す（本来はベクトル$\bm{E}$）．これは式(\ref{equ5-1})の\textcolor{teal}{青緑色}の部分に該当する．
+	\item $Q_2$は，$E$を感じてクーロン力を受ける．
 \end{enumerate}
 
 \begin{kousiki}{電場(1)}
@@ -241,15 +427,42 @@ $Q$と$q$が同符号の場合，$q$には引力が働くので向きは$\bm{r}$
 では，このことをベクトルでまとめる．
 
 \begin{kousiki}{電場(2)}
-	原点にある電荷$Q_2$があって，この電荷が周りの空間のある1点$\bm{r} = (x,\ y,\ z)$に
+	原点にある電荷$Q_1$があって，この電荷が周りの空間のある1点$\bm{r} = (x,\ y,\ z)$に
 	\begin{equation}
-		\bm{E}(x,\ y,\ z) = \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_2}{|\bm{r}|^2}\bunsuu{\bm{r}}{|\bm{r}|}
+		\bm{E}(x,\ y,\ z) = \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1}{|\bm{r}|^2}\bunsuu{\bm{r}}{|\bm{r}|}
 	\end{equation}
-	だけの電場を作っていると考える．そして，その電場に入った電荷$Q_1$は，電場から
+	だけの電場を作っていると考える．そして，その電場に入った電荷$Q_2$は，電場から
 	\begin{equation}
-		\bm{F} = Q_1 \bm{E}
+		\bm{F} = Q_2 \bm{E}
 	\end{equation}
-	と表せる力を受ける．このことから，電場$\bm{E}$の単位は$\mathrm{N/C}$である．
+	と表せる力を受ける．電場$\bm{E}$の単位は$\mathrm{N/C}$である．よって，電場は「$1\,\mathrm{C}$の電荷に働くクーロン力」ということもできる．
 \end{kousiki}
 
 電場の向きは$\bm{r}$に平行である．$Q_2 < 0$であれば，$\bm{r}$と反対向きになる．
+
+
+
+\subsection{電荷の分布}
+
+今までは点電荷について進めてきたが，実際電荷は空間にどのように分布しているか考える．
+
+\textbf{点電荷}は，空間のある1点に存在する電荷で，大きさをもたない．これでは現実味に欠けるので，空間的な広がりを与えていく．
+
+まず，点電荷がある1方向に広がって分布する\textbf{線電荷}を考える．このとき，単位長さ（MKS単位系では$1\,\mathrm{m}$）あたりの電荷量を\textbf{線電荷密度}といい，$\lambda$で表す．単位は$\mathrm{C / m}$である．経路$C$上に存在する電荷の総量，つまり経路$C$にある総電荷$Q$は，以下のように線積分で求めることができる．
+\begin{equation}
+	Q = \int_{C} \lambda\,dl
+\end{equation}
+
+しかし，この線電荷は1方向には広がりを持つが，太さを持たない線であることが条件である．これではまだ非現実的なので，もう1方向に広がって分布する\textbf{面電荷}を考える．面$H$上の面電荷について，単位面積（MKS単位系では$1\,\mathrm{m^2}$）あたりの電荷量を\textbf{面電荷密度}といい，$\sigma$で表す．単位は$\mathrm{C / m^2}$である．面$H$上に存在する電荷の総量（総電荷）$Q$は，以下のように面積分で求めることができる．
+\begin{equation}
+	Q = \int_{H} \sigma\,dS
+\end{equation}
+
+しかし，これも面に厚みがないものとするので，これでも現実的な電荷分布とは言えない．更にもう1方向に広がって分布する電荷を考える．これは風船のような空間の体積領域$V$の内部に電荷が分布していると考える．このとき，単位体積（MKS単位系では$1\,\mathrm{m^3}$）あたりの電荷量を\textbf{電荷密度}といい，$\rho$で表す．単位は$\mathrm{C / m^3}$である．体積領域$V$に存在する電荷の総量（総電荷）$Q$は，以下のように体積分で求めることができる．
+\begin{equation}
+	Q = \int_{V} \rho\,dV
+\end{equation}
+
+
+
+\subsection{電場（２）}
