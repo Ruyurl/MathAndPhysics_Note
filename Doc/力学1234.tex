@@ -22,13 +22,13 @@
 		\begin{enumerate}[label=(\arabic*), labelsep=10pt, leftmargin=23pt]
 			\item 図で，$\mathrm{P}$から$x$軸と$x'$軸にそれぞれ垂線$\mathrm{PA,\ PB}$を下す．$\mathrm{A}$から$x'$軸に垂線$\mathrm{AA'}$を下すと
 			\begin{equation}
-				x' = \mathrm{OB} + \mathrm{OA'} + \mathrm{A'B} = \mathrm{OA}\cos\bunsuu{\pi}{4} + \mathrm{AP}\sin\bunsuu{\pi}{4} = \bunsuu{1}{\sqrt{2}}(x + y) \label{equ4-1}
+				x' = \mathrm{OB} + \mathrm{OA'} + \mathrm{A'B} = \mathrm{OA}\cos\bunsuu{\pi}{4} + \mathrm{AP}\sin\bunsuu{\pi}{4} = \bunsuu{1}{\sqrt{2}}(x + y) \label{equ:NR1-1}
 			\end{equation}
 			また
 			\begin{equation}
-				y' = \mathrm{AP}\cos\bunsuu{\pi}{4} - \mathrm{OA}\sin\bunsuu{\pi}{4} = \bunsuu{1}{\sqrt{2}}(-x + y) \label{equ4-2}
+				y' = \mathrm{AP}\cos\bunsuu{\pi}{4} - \mathrm{OA}\sin\bunsuu{\pi}{4} = \bunsuu{1}{\sqrt{2}}(-x + y) \label{equ:NR1-2}
 			\end{equation}
-			式(\ref{equ4-1})，式(\ref{equ4-2})が$x',\ y'$を$x,\ y$で表す式である．$x,\ y$について解けば
+			式(\ref{equ:NR1-1})，式(\ref{equ:NR1-2})が$x',\ y'$を$x,\ y$で表す式である．$x,\ y$について解けば
 			\begin{gather}
 				x = \bunsuu{1}{\sqrt{2}}(x' - y')\\
 				y = \bunsuu{1}{\sqrt{2}}(x' + y')
@@ -121,7 +121,7 @@ $\mathrm{P}$点の位置を辿ると曲線を描く（\textbf{軌道}または\t
 	\bunsuu{d\bm{r}}{dt} = \bunsuu{d\bm{R}}{dt} + \bunsuu{d\bm{r}'}{dt}\\
 	\bunsuu{d^2\bm{r}}{dt^2} = \bunsuu{d^2\bm{R}}{dt^2} + \bunsuu{d^2\bm{r}'}{dt^2}
 \end{gather}
-となる．従って，運動方程式（\ref{sec4-2-3}節を参照）より
+となる．従って，運動方程式（\ref{sec:NR1-2-3}節を参照）より
 \begin{equation}
 	m\bunsuu{d^2\bm{r}}{dt^2} = m\bunsuu{d^2\bm{R}}{dt^2} + m\bunsuu{s^2\bm{r}'}{dt^2} = \bm{F}
 \end{equation}
@@ -186,28 +186,28 @@ $\mathrm{S}'(\mathrm{O}',\ x',\ y',\ z')$
 
 任意の点$\mathrm{P}$の座標を$(x,\ y,\ z),\ (x',\ y',\ z')$とすれば
 \begin{align}
-	x &= x_0 + x' & y &= y_0 + y' & z &= z_0 + z' \label{equ4-3}\\
-	x' &= x - x_0 & y' &= y - y_0 & z' &= z - z_0 \label{equ4-4}
+	x &= x_0 + x' & y &= y_0 + y' & z &= z_0 + z' \label{equ:NR1-3}\\
+	x' &= x - x_0 & y' &= y - y_0 & z' &= z - z_0 \label{equ:NR1-4}
 \end{align}
 である．これらを$t$で微分すると
 \begin{align}
-	u &= u_0 + u' & v &= v_0 + v' & w &= w_0 + w' \label{equ4-5}\\
-	u' &= u - u_0 & v' &= v - v_0 & w' &= w - w_0 \label{equ4-6}
+	u &= u_0 + u' & v &= v_0 + v' & w &= w_0 + w' \label{equ:NR1-5}\\
+	u' &= u - u_0 & v' &= v - v_0 & w' &= w - w_0 \label{equ:NR1-6}
 \end{align}
-となる．式(\ref{equ4-5})を更に$t$で微分すると$\bunsuu{du_0}{dt} = 0,\ \bunsuu{dv_0}{dt} = 0,\ \bunsuu{dw_0}{dt} = 0$なので
+となる．式(\ref{equ:NR1-5})を更に$t$で微分すると$\bunsuu{du_0}{dt} = 0,\ \bunsuu{dv_0}{dt} = 0,\ \bunsuu{dw_0}{dt} = 0$なので
 \begin{align}
 	\bunsuu{du}{dt} &= \bunsuu{du'}{dt} &
 	\bunsuu{dv}{dt} &= \bunsuu{dv'}{dt} &
 	\bunsuu{dw}{dt} &= \bunsuu{dw'}{dt} \label{equ4-7}
 \end{align}
-となる．式(\ref{equ4-3})～式(\ref{equ4-7})を\textbf{ガリレイ変換}という．例えば，式(\ref{equ4-6})は速度$u$で飛んでいる鳥を同方向に速度$u_0$で走っている列車から見ると相対的に$u - u_0$の速度で飛んでいるように見えるということ．
+となる．式(\ref{equ:NR1-3})～式(\ref{equ:NR1-7})を\textbf{ガリレイ変換}という．例えば，式(\ref{equ:NR1-6})は速度$u$で飛んでいる鳥を同方向に速度$u_0$で走っている列車から見ると相対的に$u - u_0$の速度で飛んでいるように見えるということ．
 
 $\bm{v}$が一定であるとき，$\mathrm{S}$が慣性系ならば$\mathrm{S}'$も慣性系である．
 
 
 
 \subsection{力と加速度（運動の第2法則）}
-\label{sec4-2-3}
+\label{sec:NR1-2-3}
 
 \begin{tcolorbox}[colback=white]
 	質点に他の物体から力が働いた結果，加速度が生じる．このとき
@@ -225,7 +225,7 @@ $\bm{v}$が一定であるとき，$\mathrm{S}$が慣性系ならば$\mathrm{S}'
 \end{equation*}
 と表される．運動の変化は加えられた駆動力（＝力×力を加えた時間）によって起こるので，
 \begin{equation}
-	\label{equ4-8}
+	\label{equ:NR1-8}
 	\varDelta \bm{p} = \bm{F}\varDelta t
 \end{equation}
 と書くことができる．しかし，実際$\bm{F}$は変化するので積分を用いることで一般化ができる．力を時間で積分したものを\textbf{力積}$\bm{I}$といい
@@ -234,7 +234,7 @@ $\bm{v}$が一定であるとき，$\mathrm{S}$が慣性系ならば$\mathrm{S}'
 \end{equation*}
 で定義される．つまり運動の変化$\varDelta\bm{p}$は力積$\bm{I}$に等しい．
 
-運動の変化率は式(\ref{equ4-8})から
+運動の変化率は式(\ref{equ:NR1-8})から
 \begin{equation*}
 	\bunsuu{\varDelta \bm{p}}{\varDelta t} = \bm{F}
 \end{equation*}
@@ -377,11 +377,11 @@ $\bm{v}$が一定であるとき，$\mathrm{S}$が慣性系ならば$\mathrm{S}'
 \end{equation*}
 よって，
 \begin{equation}
-	v = \bunsuu{mg}{\alpha}\left\{1 - \exp\left(-\bunsuu{\alpha}{m}t\right)\right\} \label{equ4-9}
+	v = \bunsuu{mg}{\alpha}\left\{1 - \exp\left(-\bunsuu{\alpha}{m}t\right)\right\} \label{equ:NR1-9}
 \end{equation}
 となる．
 
-式(\ref{equ4-9})で，$t \to \infty$とすると
+式(\ref{equ:NR1-9})で，$t \to \infty$とすると
 \begin{equation}
 	v_{\infty} = \bunsuu{mg}{\alpha}
 \end{equation}
@@ -526,3 +526,91 @@ $\bm{v}$が一定であるとき，$\mathrm{S}$が慣性系ならば$\mathrm{S}'
 \end{align}
 となる．
 
+
+
+
+
+
+
+
+
+
+\subsection{3節問題}
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 全質量$M$の風船が$\alpha$の加速度で落ちている．逆に上向きに加速度$\alpha$の運動をするためにはどれだけの質量の砂袋を捨てなければならないか．
+	\item 軽い定滑車に糸をかけてその両端に質量$m_1,\ m_2$の質量をつるして放す．両質点の加速度を求めよ．また，糸の張力を求めよ．（この装置をアトウッドの装置とよぶ）．
+	\item 前の問題で滑車を$\beta$の加速度で引き上げるとき，両質点の滑車に対する加速度と糸の張力はどうなるか．
+	\item 地上から一定の速さで石を投げるとき地面の達することのできる区域の面積は$S_0$である．地上から上方$h$のところから同じ速さで投げると区域は$S_h = S_0 + 2h\sqrt{\pi s_0}$で与えられることを証明せよ．
+	\item 物体を投げるときの初速を知りたいがこれを直接に測ることが難しい．それで投射距離と時間を測定してこれを求めたいと考える．公式を求めよ．
+	\item 図に示すように，正，負に帯電した平行金属板（偏向板）の間に電子（質量$m$）を両板に走らせる．電子には一方の力$eE$（$e$：電子の荷電，$E$：電場の強さ）が負の方から正の方に働く．電子が偏向板の間を$l$だけ走ってその端に来たとき，はじめ目指していた位置からどれだけずれるか．またそのときはじめの方向とどれだけの角をつくる方向に運動するか．
+	\item 空気抵抗が速さに比例する大きさ（$kmV$）を持つときの放物運動で，抵抗が小さいとして放物距離の近似式を求めよ．
+	\item 放物運動を行う物体に及ぼす空気の抵抗が$m\phi(V)$（ただし，$\phi$は任意の関数）であるとき，速さ$V$，鉛直線と軌道の接線のつくる角$\psi$の関係は
+		\begin{equation*}
+			\bunsuu{1}{V}\bunsuu{dV}{d\psi} = -\bunsuu{\psi(V)}{g\sin \psi} - \cot \psi
+		\end{equation*}
+		を積分することによって求められることを示せ．
+	\item 前の問題で$\phi(V) = mkV^2$の場合どうなるかを論ぜよ．
+	\item 角振動数$\omega_0$で単振動を行っている質点に，角振動数$\omega_1,\ \omega_2$の周期的な2つの力が作用するときこの質点はどのような運動を行うか．
+	\item 上の問題で質点に$T$を周期とする周期的な力$f(t)$が働く時を考えよ．$f(t)$の平均値は$0$とする．
+\end{enumerate}
+
+
+
+\section{運動方程式の変換}
+\subsection{4節問題}
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 螺旋
+		\begin{equation*}
+			x = a\cos \phi,\quad y = a\sin\phi,\quad z = k\phi \quad \text{（$a,\ k$は定数）}
+		\end{equation*}
+		の接線，主法線，陪法線の方向を求めよ．\\
+		この螺旋に沿って上向きに一定の速さ$V$で昇る点の加速度を求めよ．
+	\item 環面
+		\begin{equation*}
+			x = (c + a\sin\theta)\cos\phi,\quad y = (c + a\sin\theta)\sin\phi,\quad z = a\cos\theta
+		\end{equation*}
+		の上を運動する点の子午線方向（$\phi = \text{一定}$）で$\theta$だけが増す方向），法線方向，方位角方向（$\phi$だけが増す方向）の加速度成分を求めよ．
+	\item $(x,\ y)$面を運動する点の描く軌道が$r = a\sin n\phi$（$a,\ n$は定数）で与えられ，加速度$\dot{\phi}$が$r^2$に反比例するとき，この点の加速度を求めよ．
+\end{enumerate}
+
+
+
+\section{力学的エネルギー　面積の原理}
+\subsection{5節問題}
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 平面内を運動する質点に働く力の成分が質点の座標を$x,\ y$として
+		\begin{equation*}
+			X = axy,\quad Y = \bunsuu{1}{2}ax^2
+		\end{equation*}
+		で与えられるとき，保存力かどうか調べよ．保存力ならば位置エネルギーはどうなるか．
+	\item 一平面内を運動する質点に働く力の成分が，質点の座標を$x,\ y$として
+		\begin{equation*}
+			X = axy,\quad Y = by^2
+		\end{equation*}
+		で与えられるとき，保存力かどうか調べよ．また，$x$軸上の$(r,\ 0)$で与えられる点$\mathrm{A}$から，$y$軸上の$(0,\ r)$で与えられる点$\mathrm{C}$まで，円周$\mathrm{ABC}$に沿ってゆく場合と，弦$\mathrm{AB'C}$に沿ってゆく場合とで，この力の行う仕事を比較せよ．
+	\item 次の諸式を証明せよ．
+		\begin{enumerate}[label={(\alph*)}, labelsep=10pt]
+			\item $\bm{A} \times (\bm{B} \times \bm{C}) = \bm{B}(\bm{A} \cdot \bm{C}) - \bm{C}(\bm{A} \cdot \bm{B})$
+			\item $(\bm{A} \times \bm{B}) \cdot (\bm{C} \times \bm{D}) = (\bm{A} \cdot \bm{C})(\bm{B} \cdot \bm{D}) - (\bm{B} \cdot \bm{C})(\bm{A} \cdot \bm{D})$
+			\item $(\bm{B} \times \bm{C})\cdot(\bm{A} \times \bm{D}) + (\bm{C} \times \bm{A}) \cdot (\bm{B} \times \bm{D}) + (\bm{A} \times \bm{B}) \cdot (\bm{C} \times \bm{D}) = 0$
+		\end{enumerate}
+	\item $\bm{A},\ \bm{B},\ \bm{C}$がこの順に右手系（一般に互いに直角でなくでよい）をつくっているとすれば
+		\begin{equation*}
+			\bm{A} \cdot (\bm{B} \times \bm{C}) = \bm{B} \cdot (\bm{C} \times \bm{A}) = \bm{C} \cdot (\bm{A} \times \bm{B})
+		\end{equation*}
+		は$\bm{A},\ \bm{B},\ \bm{C}$を稜（かど）とする六面体の体積であることを証明せよ．
+	\item 1つの単位ベクトルを$\bm{n}$とすれば，任意のベクトル$\bm{A}$は
+		\begin{equation*}
+			\bm{A} = (\bm{A} \cdot \bm{n})\bm{n} + \bm{n} \times (\bm{A} \times \bm{n})
+		\end{equation*}
+		と書くことができることを示せ．
+	\item 滑らかな水平板の上においてある質点に糸を結び付け，その糸を板にあけた穴$\mathrm{O}$に通しておく．質点を，はじめOのまわりにある角速度で運動させ，糸を引っ張ってOと質点との距離を変えるとき，質点の角速度はどう変わっていくか．
+	\item 一平面内で
+		\begin{equation*}
+			r = a(1 + c\cos \varphi)\qquad (0 < c < 1)
+		\end{equation*}
+		で与えられる軌道を描く質点に働く中心力はどんな力か．
+\end{enumerate}

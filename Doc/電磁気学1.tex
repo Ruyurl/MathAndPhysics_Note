@@ -6,101 +6,14 @@
 
 
 
-\section{線積分，面積分，体積分}
-
-電磁気学を学ぶには，線積分，面積分，体積分の3つの積分の知識が必要不可欠である．
-
-
-
-\subsection{スカラー場の線積分}
-
-\textbf{線積分}とは，ある線分に沿って物理量を足していくことである．
-
-空間上に曲線$C$がある．この$C$を\textbf{経路}という．線積分は，その経路上の各点に存在する物理量（今から説明するのはスカラー場$f$）を足して合わせていくことを考える．経路上の位置$\bm{r}$に存在するスカラー場$f(\bm{r})$が与えられているとする．
-
-まず，経路$C$を$n$個の小区間に分割する．$C$の始点を点$\mathrm{A}$，終点を点$\mathrm{B}$として$\mathrm{A}$から順に，分点
-\begin{equation*}
-	\mathrm{A} = \mathrm{P}_0,\ \mathrm{P}_1,\ \mathrm{P}_2,\ \cdots,\ \mathrm{P}_n = \mathrm{B}
-\end{equation*}
-をとる．点$\mathrm{P}_k$の位置ベクトルを$\bm{r}_k$とし，$\varDelta s_k = \mathrm{P}_k - \mathrm{P}_{k - 1}$とする．
-
-この小区間$\varDelta s_k$とスカラー場$f(\bm{r}_k)$をかけたものを足し合わせていく：
-\begin{equation*}
-	\sum_{k = 1}^{n} f(\bm{r}_k)\varDelta s_k
-\end{equation*}
-ここで，$n$を無限大までに増やして小区間の長さを限りなく0に近づかせると次のように積分の形に表すことができる．これを経路$C$に沿うスカラー場の線積分という．
-\begin{equation}
-	\sum_{k = 1}^{n} f(\bm{r}_k)\varDelta s_k \quad\xrightarrow{n \to \infty}\quad \int_{C} f(\bm{r})\,ds
-\end{equation}
-
-
-
-\subsection{ベクトル場の線積分}
-
-経路$C$上にベクトル場$\bm{F}(\bm{r})$が与えられているとする．
-
-ベクトルの線積分も基本的な考え方はスカラーのときと同じである．ただし，ベクトル場の線積分では，\textcolor{teal}{ベクトル場の経路に沿った方向の成分}を積分する．この成分は，ベクトル$\bm{F}$と単位接線ベクトル$\bm{t}$の内積で求めることができる．よって，ベクトル場$\bm{F}(\bm{r})$の線積分は以下の式である．
-\begin{equation}
-	\int_{C} \bm{F}(\bm{r}) \cdot \bm{t}\,ds = \int_{C} \bm{F}(\bm{r}) \cdot d\bm{r}
-\end{equation}
-
-経路の始点Aと終点Bが一致している曲線（経路）を\textbf{閉曲線}という．例えば$C: x^2 + y^2 = 1$は円なので閉曲線である．経路が閉曲線の場合の線積分を\textbf{周回積分}といい，次のように表す．
-\begin{equation}
-	\oint_{C} \bm{F}(\bm{r}) \cdot \bm{t}\,ds
-\end{equation}
-
-
-
-\subsection{スカラー場の面積分}
-
-\textbf{面積分}とは，ある面全体について物理量を足し合わせていくことである．
-
-空間上に曲面$S$があり，$S$上でスカラー場$f(\bm{r})$が定義されているとする．曲面を網目状の微小な面積$\varDelta S$に分け，それにスカラー場$f(\bm{r})$を掛けたものを足し合わせることを考える．そして，分割数を増やして$\varDelta S \to 0$としていけば面積分が得られる．
-\begin{equation}
-	\int_{\color{teal}S} f(\bm{r})\,d{\color{cyan}S} \label{equ5-1-1}
-\end{equation}
-ここで注意なのが，\textcolor{teal}{青緑色}の$S$は，曲面$S$上の面積分という意味での$S$であり，\textcolor{cyan}{水色}の$S$は，面積の$S$という意味である．
-
-$dS$は微小な長方形の面積なので$dS = dxdy$である．よって，式(\ref{equ5-1-1})は
-\begin{equation}
-	\iint_{D} f(\bm{r})\,dxdy
-\end{equation}
-のように表すこともできる．$D$は曲面$S$が定義されている領域である．
-
-
-
-\subsection{ベクトル場の面積分}
-
-曲面$S$上にベクトル場$\bm{F}(\bm{r})$が与えられているとする．
-
-ベクトル場の面積分では，\textcolor{teal}{ベクトル場の単位法線ベクトル方向の成分}を積分する．この成分は，ベクトル$\bm{F}$と単位法線ベクトル$\bm{n}$の内積で求めることができる．よって，ベクトル場$\bm{F}(\bm{r})$の面積分は以下の式である．
-\begin{equation}
-	\int_{S} \bm{F}(\bm{r}) \cdot \bm{n} \, dS
-\end{equation}
-
-球面のような閉じた面を\textbf{閉曲面}という．曲面が閉曲面の場合の面積分は次のように表す．
-\begin{equation}
-	\oint_{S} \bm{F}(\bm{r}) \cdot \bm{n}\,dS
-\end{equation}
-
-
-
-\subsection{体積分}
-
-\textbf{体積分}とは，ある体積領域全体について物理量を足し合わせていくことである．
-
-空間上に体積領域$V$があり，$V$上でスカラー場$f(\bm{r})$が定義されているとする．この領域を微小な体積領域$\varDelta V$に分け，それにスカラー場$f(\bm{r})$を掛けたものを足し合わせることを考える．そして，分割数を増やして$\varDelta V \to 0$としていけば体積分が得られる．
-\begin{equation}
-	\int_{V} f(\bm{r})\,dV
-\end{equation}
-
-
-
-\section{ベクトル場の微分：勾配，発散，回転}
-
+\section{諸定義}
 \subsection{ハミルトンの演算子}
 
-\textbf{ハミルトンの演算子}は，以下のような形式的なベクトルであり，\textbf{ナブラ}と読む．
+位置ベクトルを$\bm{r} =
+\begin{bmatrix}
+	x\\ y\\ z
+\end{bmatrix}$とする．以下で定義される微分演算子のベクトルを\textbf{ハミルトンの演算子}といい，\textbf{ナブラ}と読む．
+
 \begin{equation}
 	\bm{\nabla} =
 	\begin{bmatrix}
@@ -201,6 +114,16 @@ $dS$は微小な長方形の面積なので$dS = dxdy$である．よって，�
 
 
 
+\subsection{ラプラシアン（Laplacian）}
+
+以下で定義される微分演算子を\textbf{ラプラシアン}という．
+\begin{equation}
+	\Delta = \bm{\nabla} \cdot \bm{\nabla} = \bunsuu{\partial^2}{\partial x} + \bunsuu{\partial^2}{\partial y} + \bunsuu{\partial^2}{\partial z}
+\end{equation}
+
+
+
+\section{ベクトル場の微分：勾配，発散，回転}
 \subsection{勾配（グラディエント）}
 
 スカラー場$\varphi(x,\ y,\ z)$が直交座標で定義されているとする．このとき，$x$についての偏微分を$x$成分，$y$についての偏微分を$y$成分，$z$についての偏微分を$z$成分とするベクトル場を$\varphi$の\textbf{勾配}または\textbf{グラディエント}といい，$\grad \varphi$や$\bm{\nabla} \varphi$で表す．
@@ -267,48 +190,30 @@ $dS$は微小な長方形の面積なので$dS = dxdy$である．よって，�
 《注》回転は，入力をベクトル場として，ベクトル場を出力する．
 
 
+
+\section{線積分，面積分，体積分}
+\subsection{線積分}
+
+曲線$C: \bm{r}(t) =
+\begin{bmatrix}
+	x(t)\\ y(t)\\ z(t)
+\end{bmatrix}\ (\alpha \le t \le \beta)$に沿うスカラー場$\varphi(\bm{r})$の\textbf{線積分}は，$s$を曲線の長さとすると
+\begin{equation}
+	\int_{C} \varphi\,\md s = \int_{\alpha}^{\beta} \varphi\,\bunsuu{\md s}{\md t}dt = \int_{\alpha}^{\beta} \varphi\,\left|\bunsuu{\md\bm{r}}{\md t}\right|\md t
+\end{equation}
+
+また，ベクトル場$\bm{A}(\bm{r})$の線積分は，$\md\bm{r} =
+\begin{bmatrix}
+	\md x\\ \md y\\ \md z
+\end{bmatrix}
+$とすると
+\begin{equation}
+	\int_{C} \bm{A} \cdot \md\bm{r} = \int_{\alpha}^{\beta} \bm{A} \cdot \bunsuu{\md\bm{r}}{\md t}\,\md t
+\end{equation}
+
+
+
 \section{クーロン力と電場}
-% \subsection{万有引力の法則}
-
-% クーロン力（静電気力）は，重力と対比すると分かりやすい．理由はクーロンの法則と万有引力の法則が非常に似ているからである．ここでは万有引力の法則を振り返る．
-
-% \begin{kousiki}{万有引力の法則}
-% 	2つの物体1，2の位置ベクトルをそれぞれ$\bm{r}_1,\ \bm{r}_2$とする．物体1が物体2から受ける\textbf{万有引力}$\bm{F}_{12}$，物体2が物体1から受ける万有引力$\bm{F}_{21}$はそれぞれ
-% 	\begin{gather}
-% 		\bm{F}_{12} = {\color{blue}
-% 			G\bunsuu{m_1 m_2}{|\bm{r}_1 - \bm{r}_2|^2}
-% 		}
-% 		\cdot 
-% 		{\color{red}
-% 			\left(-\bunsuu{\bm{r}_1 - \bm{r}_2}{|\bm{r}_1 - \bm{r}_2|}\right)
-% 		}\\
-% 		\bm{F}_{21} = {\color{blue}
-% 			G\bunsuu{m_1 m_2}{|\bm{r}_2 - \bm{r}_1|^2}
-% 		}
-% 		\cdot 
-% 		{\color{red}
-% 			\left(-\bunsuu{\bm{r}_2 - \bm{r}_1}{|\bm{r}_2 - \bm{r}_1|}\right)
-% 		}
-% 	\end{gather}
-% 	\textcolor{blue}{青字}は万有引力の大きさ，\textcolor{red}{赤字}は万有引力の向きを表す．
-% \end{kousiki}
-
-
-
-% \subsubsection*{大きさ}
-
-% $m$は\textbf{重力質量}という．万有引力から定義されるのでこう呼ばれる．$1\,\mathrm{N}$とは，$1\,\mathrm{kg}$の質量をもつ物体に$1\,\mathrm{m/s^2}$の加速度を与える力の大きさである．$G$は\textbf{万有引力定数}といい，$G \approx 6.674 \times 10^{-11}\,\mathrm{N \cdot m^2 / kg^2}$と測定されている．
-
-% $|\bm{r}_1 - \bm{r}_2|$は2点間の距離を表す．万有引力の法則は距離の2乗に反比例する．
-
-
-
-% \subsubsection*{向き（$\bm{F}_{12}$の場合）}
-
-% $\bm{r}_1 - \bm{r}_2$は物体2から物体1へ向かう向きである．$\bm{F}_{12}$は物体1に働く\textbf{引力}なので，マイナスが付く．すると物体1は物体2に引きつけられる．また，向きのみを表すため，大きさが変わってはいけないので，絶対値で割って大きさを$1$にする．
-
-
-
 \subsection{クーロン力（静電気力）}
 
 クーロン力が起こる原因になるものを\textbf{電荷}という．電荷には正負があり，正の電荷をもつ代表的なものに陽子，負の電荷をもつ代表的なものに電子がある．電荷の量を\textbf{電荷量}といい，$q$と表す．単位は$\mathrm{C}$である．
@@ -412,11 +317,11 @@ $Q$と$q$が同符号の場合，$q$には引力が働くので向きは$\bm{r}$
 ここで，クーロンの法則による表し方を変えてみる（一先ず，クーロン力の大きさ（スカラー）だけを考える）．
 \begin{align}
 	F &= \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1 Q_2}{r^2} \notag\\
-	&= Q_2 {\color{teal}\left(\bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1}{r^2}\right)} \label{equ5-1}
+	&= Q_2 {\color{teal}\left(\bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1}{r^2}\right)} \label{equ:DJ1-2}
 \end{align}
-式(\ref{equ5-1})をこういう見方で考える．
+式(\ref{equ:DJ1-2})をこういう見方で考える．
 \begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
-	\item $Q_2$の存在は置いといて，点電荷$Q_1$があることによって$Q_1$が周りの空間にある影響$E$を作り出す（本来はベクトル$\bm{E}$）．これは式(\ref{equ5-1})の\textcolor{teal}{青緑色}の部分に該当する．
+	\item $Q_2$の存在は置いといて，点電荷$Q_1$があることによって$Q_1$が周りの空間にある影響$E$を作り出す（本来はベクトル$\bm{E}$）．これは式(\ref{equ:DJ1-2})の\textcolor{teal}{青緑色}の部分に該当する．
 	\item $Q_2$は，$E$を感じてクーロン力を受ける．
 \end{enumerate}
 
@@ -429,7 +334,7 @@ $Q$と$q$が同符号の場合，$q$には引力が働くので向きは$\bm{r}$
 \begin{kousiki}{電場(2)}
 	原点にある電荷$Q_1$があって，この電荷が周りの空間のある1点$\bm{r} = (x,\ y,\ z)$に
 	\begin{equation}
-		\bm{E}(x,\ y,\ z) = \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1}{|\bm{r}|^2}\bunsuu{\bm{r}}{|\bm{r}|}
+		\bm{E}(x,\ y,\ z) = \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1}{|\bm{r}|^2}\bunsuu{\bm{r}}{|\bm{r}|} \label{equ:DJ1-3}
 	\end{equation}
 	だけの電場を作っていると考える．そして，その電場に入った電荷$Q_2$は，電場から
 	\begin{equation}
@@ -460,9 +365,24 @@ $Q$と$q$が同符号の場合，$q$には引力が働くので向きは$\bm{r}$
 
 しかし，これも面に厚みがないものとするので，これでも現実的な電荷分布とは言えない．更にもう1方向に広がって分布する電荷を考える．これは風船のような空間の体積領域$V$の内部に電荷が分布していると考える．このとき，単位体積（MKS単位系では$1\,\mathrm{m^3}$）あたりの電荷量を\textbf{電荷密度}といい，$\rho$で表す．単位は$\mathrm{C / m^3}$である．体積領域$V$に存在する電荷の総量（総電荷）$Q$は，以下のように体積分で求めることができる．
 \begin{equation}
-	Q = \int_{V} \rho\,dV
+	Q = \int_{V} \rho\,dV \label{equ:DJ1-4}
 \end{equation}
 
 
 
 \subsection{電場（２）}
+
+電荷が先程述べた通り3次元的に分布しているとする．この電荷が分布している体積領域$V$の外側に点（点の位置ベクトルを$\bm{r}$とする）があるとして，その点に作られる電場を表現する．重ね合わせの原理から，外側の点で作られる電場は，体積領域$V$の中にあるすべての電荷からの影響の総和である．
+
+まず，体積領域$V$の中の微小体積$dV$を考え，$dV$の中にある電荷が作る微小電場$d\bm{E}$を求める．$dV$の中に存在する電荷の総量は式(\ref{equ:DJ1-4})より，$\rho\,dV$である．さらに，$dV$が存在する場所の位置ベクトルを$\bm{r}'$とすると式(\ref{equ:DJ1-3})より$d\bm{E}$は次のように表される．
+\begin{equation}
+	d\bm{E} = \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{\rho(\bm{r}')\,dV}{|\bm{r} - \bm{r}'|^2}\bunsuu{\bm{r} - \bm{r}'}{|\bm{r} - \bm{r}'|}
+\end{equation}
+
+$\bm{r} - \bm{r}'$は，微小体積（位置ベクトル$\bm{r}'$）から体積領域の外側の点（位置ベクトル$\bm{r}$）へ向かうベクトルである．
+
+体積領域$V$の中の微小体積$dV$の中にある電荷が作る電場を求めたので，$V$の中にある電荷が作る電場は領域$V$で体積分することによって求めることができる．
+
+\begin{kousiki}{電場(3)－電場の一般的な表現}
+	あ
+\end{kousiki}

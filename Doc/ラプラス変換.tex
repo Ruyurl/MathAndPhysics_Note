@@ -227,6 +227,17 @@ $f(+0)$は，$t \to +0$のときの$f(t)$の極限値を表す．原関数の微
 	\end{enumerate}
 \end{kousiki}
 
+\begin{enumerate}[leftmargin=18pt, labelsep=10pt, itemindent=9pt]
+	\item[\f{例}] \underline{$\dint_{0}^{t} e^{-2\tau}\,d\tau$のラプラス変換}
+		\begin{equation*}
+			\mathcal{L}[e^{-2t}] = \bunsuu{1}{s + 2}
+		\end{equation*}
+		であるので，
+		\begin{equation*}
+			\mathcal{L}\left[\int_{0}^{t} e^{-2\tau}\,d\tau\right] = \bunsuu{1}{s}\mathcal{L}[e^{-2t}] = \bunsuu{1}{s(s + 2)}
+		\end{equation*}
+\end{enumerate}
+
 
 
 \subsection{たたみこみ}
@@ -241,3 +252,70 @@ $f(+0)$は，$t \to +0$のときの$f(t)$の極限値を表す．原関数の微
 		\mathcal{L}[(f * g)(t)] = \mathcal{L}[f(t)]\mathcal{L}[g(t)]
 	\end{equation}
 \end{kousiki}
+
+\begin{enumerate}[leftmargin=18pt, labelsep=10pt, itemindent=9pt]
+	\item[\f{例}] \underline{$f(t) = \sin t$，$g(t) = \cos t$について，たたみこみ$(f * g)(t)$を求める．}
+		\begin{align*}
+			(f * g)(t) &= \int_{0}^{t} \sin \tau \cos(t - \mu)\,d\tau\\
+			&= \bunsuu{1}{2}\int_{0}^{t} \{\sin t + \sin(2\tau - t)\}\,d\tau\\
+			&= \bunsuu{1}{2}\teisekibun{\tau\sin t - \bunsuu{1}{2}\cos(2\tau - t)}{0}{t}\\
+			&= \bunsuu{1}{2}t\sin t
+		\end{align*}
+		\underline{たたみこみのラプラス変換}
+		\begin{align*}
+			\mathcal{L}\left[\bunsuu{1}{2}t\sin t\right] &= \mathcal{L}[\sin t * \cos t] = \mathcal{L}[\sin t]\mathcal{L}[\cos t]\\
+			&= \bunsuu{1}{s^2 + 1}\bunsuu{s}{s^2 + 1} = \bunsuu{s}{(s^2 + 1)^2}
+		\end{align*}
+\end{enumerate}
+
+
+
+\section{ラプラス変換の表}
+\subsection{主な性質}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c|c}
+		\hline
+		\textsf{原関数} & \textsf{像関数}\\
+		\hline
+		$\alpha f(t) + \beta g(t)$ & $\alpha F(s) + \beta G(s)$\\[3mm]
+		$f(at)$ & $\bunsuu{1}{a}F\left(\bunsuu{s}{a}\right) \quad (a > 0)$\\[3mm]
+		$e^{\alpha t}f(t)$ & $F(s - \alpha)$\\[3mm]
+		$f(t - \mu)U(t - \mu)$ & $e^{-\mu s} F(s) \qquad (\mu > 0)$\\[3mm]
+		$f'(t)$ & $s F(s) - f(+0)$\\[3mm]
+		$f^{(n)}(t)$ & $s^n F(s) - s^{n - 1}f(+0) - s^{n - 2}f'(+0) - \cdots - f^{(n - 1)}(+0)$\\[3mm]
+		$tf(t)$ & $-F'(s)$\\[3mm]
+		$t^n f(t)$ & $(-1)^n F^{(n)}(s)$\\[3mm]
+		$\dint_{0}^{t} f(\tau)\,d\tau$ & $\bunsuu{F(s)}{s}$\\[3mm]
+		$\bunsuu{f(t)}{t}$ & $\dint_{s}^{\infty} F(\sigma)\,d\sigma$\\[3mm]
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+\subsection{いろいろな関数のラプラス変換}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c|c}
+		\hline
+		\hspace*{6\zw}\textsf{原関数}\hspace*{6\zw} & \hspace*{6\zw}\textsf{像関数}\hspace*{6\zw}\\
+		\hline
+		\raisebox{-1mm}{$1$} & \raisebox{-1mm}{$\bunsuu{1}{s}$}\\[4mm]
+		$t$ & $\bunsuu{1}{s^2}$\\[3mm]
+		$t^n$ & $\bunsuu{n!}{s^{n + 1}}$\\[3mm]
+		$e^{\alpha t}$ & $\bunsuu{1}{s - \alpha}$\\[3mm]
+		$te^{\alpha t}$ & $\bunsuu{1}{(s - \alpha)^2}$\\[3mm]
+		$t^n e^{\alpha t}$ & $\bunsuu{n!}{(s - \alpha)^{n + 1}}$\\[3mm]
+		$\sin \omega t$ & $\bunsuu{\omega}{s^2 + \omega^2}$\\[3mm]
+		$\cos \omega t$ & $\bunsuu{s}{s^2 + \omega^2}$\\[3mm]
+		$t\sin \omega t$ & $\bunsuu{2\omega s}{(s^2 + \omega^2)^2}$\\[3mm]
+		$t\cos \omega t$ & $\bunsuu{s^2 - \omega^2}{(s^2 + \omega^2)^2}$\\[3mm]
+		$\sinh \omega t$ & $\bunsuu{\omega}{s^2 - \omega^2}$\\[3mm]
+		$\cosh \omega t$ & $\bunsuu{s}{s^2 - \omega^2}$\\[3mm]
+		$U(t - \alpha)$ & $\bunsuu{e^{-as}}{s} \quad (a \ge 0)$\\[3mm]
+		\hline
+	\end{tabular}
+\end{table}

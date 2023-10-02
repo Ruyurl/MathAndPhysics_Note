@@ -1,8 +1,8 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2023.8.9)  8 SEP 2023 23:56
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2023.8.9)  2 OCT 2023 22:38
  restricted system commands enabled.
  file:line:error style messages enabled.
-**c:/Users/User/Documents/TeX/講義ノート/MathAndPhysics_Note/Doc/メイン
-(c:/Users/User/Documents/TeX/講義ノート/MathAndPhysics_Note/Doc/メイン.tex
+**c:/Users/User/Documents/TeX/MathAndPhysics_Note/Doc/メイン
+(c:/Users/User/Documents/TeX/MathAndPhysics_Note/Doc/メイン.tex
 LaTeX2e <2020-10-01> patch level 1
 Lua module: luaotfload-main 2020-09-02 3.15 luaotfload entry point
 Lua module: luaotfload-init 2020-09-02 3.15 luaotfload submodule / initialization
@@ -576,9 +576,9 @@ Package fontspec Info: Font family 'QTEurotype(0)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 7.28989pt on input line 53.
+(Font)              scaled to size 7.28989pt on input line 52.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 7.28989pt on input line 53.
+(Font)              scaled to size 7.28989pt on input line 52.
  (c:/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
  (c:/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
@@ -1716,7 +1716,30 @@ LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
 (Font)              scaled to size 9.71992pt on input line 317.
 [1
 
-] (./偏微分法.tex
+]
+LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/b/n' will be
+(Font)              scaled to size 8.09995pt on input line 320.
+ (./偏微分法.tex
+LaTeX Font Info:    Font shape `JT3/KozGoPro-Medium.otf(0)/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 1.
+LaTeX Font Info:    Font shape `JY3/KozGoPro-Medium.otf(0)/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 1.
+LaTeX Font Info:    Font shape `JT3/KozGoPro-Medium.otf(0)/b/n' will be
+(Font)              scaled to size 8.09995pt on input line 1.
+LaTeX Font Info:    Font shape `JY3/KozGoPro-Medium.otf(0)/b/n' will be
+(Font)              scaled to size 8.09995pt on input line 1.
+LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
+(Font)              scaled to size 7.28989pt on input line 1.
+LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
+(Font)              scaled to size 5.10289pt on input line 1.
+LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
+(Font)              scaled to size 3.64494pt on input line 1.
+
+
+LaTeX Font Warning: Font shape `U/esvect/m/n' in size <4.04997> not available
+(Font)              size <5> substituted on input line 1.
+
+[2]
 LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
 (Font)              scaled to size 16.19989pt on input line 2.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
@@ -1753,29 +1776,7 @@ LaTeX Font Info:    Font shape `JT3/KozGoPro-Medium.otf(0)/b/n' will be
 (Font)              scaled to size 11.33992pt on input line 4.
 LaTeX Font Info:    Font shape `JY3/KozGoPro-Medium.otf(0)/b/n' will be
 (Font)              scaled to size 11.33992pt on input line 4.
-LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 8.09995pt on input line 5.
-) (./ベクトル解析.tex
-LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 7.28989pt on input line 1.
-LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 5.10289pt on input line 1.
-LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 3.64494pt on input line 1.
-
-
-LaTeX Font Warning: Font shape `U/esvect/m/n' in size <4.04997> not available
-(Font)              size <5> substituted on input line 1.
-
-LaTeX Font Info:    Font shape `JT3/KozGoPro-Medium.otf(0)/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 1.
-LaTeX Font Info:    Font shape `JY3/KozGoPro-Medium.otf(0)/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 1.
-LaTeX Font Info:    Font shape `JT3/KozGoPro-Medium.otf(0)/b/n' will be
-(Font)              scaled to size 8.09995pt on input line 1.
-LaTeX Font Info:    Font shape `JY3/KozGoPro-Medium.otf(0)/b/n' will be
-(Font)              scaled to size 8.09995pt on input line 1.
-
+) (./常微分方程式.tex
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
@@ -1784,50 +1785,57 @@ LaTeX Font Info:    Font shape `JT3/KozGoPro-Bold.otf(0)/b/n' will be
 (Font)              scaled to size 16.19989pt on input line 2.
 LaTeX Font Info:    Font shape `JY3/KozGoPro-Bold.otf(0)/b/n' will be
 (Font)              scaled to size 16.19989pt on input line 2.
-(load cache: extra_lmroman10-bold.luc)
+LaTeX Font Info:    Font shape `JT3/KozGoPro-Medium.otf(0)/m/n' will be
+(Font)              scaled to size 9.71992pt on input line 25.
+LaTeX Font Info:    Font shape `JY3/KozGoPro-Medium.otf(0)/m/n' will be
+(Font)              scaled to size 9.71992pt on input line 25.
+LaTeX Font Info:    Font shape `JT3/KozGoPro-Medium.otf(0)/b/n' will be
+(Font)              scaled to size 9.71992pt on input line 25.
+LaTeX Font Info:    Font shape `JY3/KozGoPro-Medium.otf(0)/b/n' will be
+(Font)              scaled to size 9.71992pt on input line 25.
+(load cache: extra_lmroman6-regular.luc)
+LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
+(Font)              scaled to size 5.39996pt on input line 48.
+(load cache: extra_lmroman5-regular.luc)
+LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
+(Font)              scaled to size 4.49997pt on input line 48.
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1
+
+]) (./ベクトル解析.tex
+warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
+[2](load cache: extra_lmroman10-bold.luc)
 LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 9.71992pt on input line 46.
+(Font)              scaled to size 9.71992pt on input line 24.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 9.71992pt on input line 46.
+(Font)              scaled to size 9.71992pt on input line 24.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 ]
-LaTeX Font Info:    Font shape `JT3/KozGoPro-Medium.otf(0)/m/n' will be
-(Font)              scaled to size 9.71992pt on input line 108.
-LaTeX Font Info:    Font shape `JY3/KozGoPro-Medium.otf(0)/m/n' will be
-(Font)              scaled to size 9.71992pt on input line 108.
-LaTeX Font Info:    Font shape `JT3/KozGoPro-Medium.otf(0)/b/n' will be
-(Font)              scaled to size 9.71992pt on input line 108.
-LaTeX Font Info:    Font shape `JY3/KozGoPro-Medium.otf(0)/b/n' will be
-(Font)              scaled to size 9.71992pt on input line 108.
- [2] [3](load cache: extra_lmroman6-regular.luc)
-LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 5.39996pt on input line 274.
-(load cache: extra_lmroman5-regular.luc)
-LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 4.49997pt on input line 274.
- [4] [5]
-LaTeX Font Info:    Calculating math sizes for size <10.8> on input line 527.
+warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
+[2] [3] [4] [5]
+LaTeX Font Info:    Calculating math sizes for size <10.8> on input line 505.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.8> on input line 527.
+(Font)              <10.8> on input line 505.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.55997> on input line 527.
+(Font)              <7.55997> on input line 505.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.4> on input line 527.
+(Font)              <5.4> on input line 505.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 6.80391pt on input line 527.
+(Font)              scaled to size 6.80391pt on input line 505.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 4.85995pt on input line 527.
+(Font)              scaled to size 4.85995pt on input line 505.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 6.80391pt on input line 527.
+(Font)              scaled to size 6.80391pt on input line 505.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 4.85995pt on input line 527.
+(Font)              scaled to size 4.85995pt on input line 505.
 
 
 LaTeX Font Warning: Font shape `U/esvect/m/n' in size <7.55997> not available
-(Font)              size <8> substituted on input line 527.
+(Font)              size <8> substituted on input line 505.
 
 [6]) (./ラプラス変換.tex [7]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
@@ -1840,12 +1848,18 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.3'
 [3]) (./力学1234.tex
 warning  (pdf backend): ignoring duplicate destination with the name 'page.4'
 [4]
+warning  (pdf backend): ignoring duplicate destination with the name 'page.5'
+[5]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 ]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
 [2]
+
+LaTeX Warning: Reference `equ:NR1-7' on page 3 undefined on input line 203.
+
+
 warning  (pdf backend): ignoring duplicate destination with the name 'page.3'
 [3]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.4'
@@ -1853,47 +1867,44 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.4'
 warning  (pdf backend): ignoring duplicate destination with the name 'page.5'
 [5]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.6'
-[6]) (./電磁気学1.tex
+[6]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.7'
-[7]
+[7] [8]) (./電磁気学1.tex [9]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 ]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
 [2]
-warning  (pdf backend): ignoring duplicate destination with the name 'page.3'
-[3]
 LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 6.47998pt on input line 350.
+(Font)              scaled to size 6.47998pt on input line 255.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 6.47998pt on input line 350.
-LaTeX Font Info:    Calculating math sizes for size <7.20003> on input line 350.
+(Font)              scaled to size 6.47998pt on input line 255.
+LaTeX Font Info:    Calculating math sizes for size <7.20003> on input line 255.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.20003> on input line 350.
+(Font)              <7.20003> on input line 255.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.04> on input line 350.
+(Font)              <5.04> on input line 255.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <3.6> on input line 350.
+(Font)              <3.6> on input line 255.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 4.53595pt on input line 350.
+(Font)              scaled to size 4.53595pt on input line 255.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 3.23997pt on input line 350.
+(Font)              scaled to size 3.23997pt on input line 255.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 6.47998pt on input line 350.
+(Font)              scaled to size 6.47998pt on input line 255.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 4.53595pt on input line 350.
+(Font)              scaled to size 4.53595pt on input line 255.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 3.23997pt on input line 350.
+(Font)              scaled to size 3.23997pt on input line 255.
 
 
 LaTeX Font Warning: Font shape `U/esvect/m/n' in size <3.6> not available
-(Font)              size <5> substituted on input line 350.
+(Font)              size <5> substituted on input line 255.
 
 
-Overfull \vbox (1.14098pt too high) has occurred while \output is active []
-
-
+warning  (pdf backend): ignoring duplicate destination with the name 'page.3'
+[3]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.4'
 [4])
 warning  (pdf backend): ignoring duplicate destination with the name 'page.5'
@@ -1905,22 +1916,25 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 )
 
 Here is how much of LuaTeX's memory you used:
- 53299 strings out of 479059
- 477808,1977958 words of node,token memory allocated
- 57551 words of node memory still in use:
-   30 hlist, 2 vlist, 15 rule, 2 math, 194 glue, 219 kern, 18 penalty, 2 glyph, 16872 attribute, 3301 glue_spec, 1108 attribute_list, 2 write, 486 user_defined, 16 pdf_literal, 16 pdf_colorstack nodes
-   avail lists: 1:23,2:101507,3:3630,4:1517,5:735,6:101,7:11381,8:106,9:5363,10:53,11:6
- 70356 multiletter control sequences out of 65536+600000
- 273 fonts using 177091227 bytes
- 126i,21n,121p,1275b,1343s stack positions out of 5000i,500n,10000p,200000b,200000s
-{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman9-bold.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/KozGoPro-Medium.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/KozGoPro-Bold.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/qualitype/QTEurotype-Bold.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/ChikuPori-Regular2.ttf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/DelaGothicOne-Regular.ttf><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/esvect/vect9.pfb>
-Output written on メイン.pdf (25 pages, 669109 bytes).
+ 53378 strings out of 479059
+ 477810,1977958 words of node,token memory allocated
+ 65524 words of node memory still in use:
+   30 hlist, 2 vlist, 15 rule, 2 math, 204 glue, 248 kern, 48 penalty, 2 glyph, 19215 attribute, 3777 glue_spec, 1263 attribute_list, 2 write, 559 user_defined, 16 pdf_literal, 16 pdf_colorstack nodes
+   avail lists: 1:17,2:97041,3:3604,4:1522,5:732,6:103,7:10494,8:106,9:5363,10:53,11:6
+ 70383 multiletter control sequences out of 65536+600000
+ 273 fonts using 177091867 bytes
+ 126i,21n,121p,1259b,1343s stack positions out of 5000i,500n,10000p,200000b,200000s
+{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman9-bold.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/KozGoPro-Bold.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/KozGoPro-Medium.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/qualitype/QTEurotype-Bold.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/ChikuPori-Regular2.ttf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/DelaGothicOne-Regular.ttf><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy9.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/esvect/vect9.pfb>
+Output written on メイン.pdf (31 pages, 703239 bytes).
 
-PDF statistics: 804 PDF objects out of 1000 (max. 8388607)
- 696 compressed objects within 7 object streams
- 268 named destinations out of 1000 (max. 131072)
- 744 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 900 PDF objects out of 1000 (max. 8388607)
+ 785 compressed objects within 8 object streams
+ 313 named destinations out of 1000 (max. 131072)
+ 824 words of extra memory for PDF output out of 10000 (max. 100000000)
 

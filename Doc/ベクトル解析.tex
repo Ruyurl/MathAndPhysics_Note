@@ -1,28 +1,6 @@
 \chapter{ベクトル解析}
 \setcounter{page}{1}
 
-\noindent
-\textbf{【注意】}
-\begin{enumerate}[leftmargin=15pt]
-	\item 特に断りがない限り，ベクトル$\bm{a} =
-			\begin{bmatrix}
-				a_x\\ a_y\\ a_z
-			\end{bmatrix}
-			$とする．$\bm{b},\ \bm{c},\ \cdots$も同様．
-	\item 行列$A$の転置行列は$A^\top$と表す．ここでは列ベクトルに分数が入って縦に長くなったときに使う．\\
-	\f{例} $\bm{a} =
-	\begin{bmatrix}
-		a_x\\ a_y\\ a_z
-	\end{bmatrix}
-	=
-	{
-		\begin{bmatrix}
-			a_x & a_y & a_z
-		\end{bmatrix}
-	}^\top
-	$
-	\item $\bm{i},\ \bm{j},\ \bm{k}$はそれぞれ$x$軸，$y$軸，$z$軸方向の基本ベクトルとする．
-\end{enumerate}
 
 
 
@@ -250,7 +228,7 @@ $t$の微小変化$\varDelta t$に対応する$\bm{r}(t)$の変化を$\varDelta 
 
 接線ベクトルを自身の大きさで割った，大きさ$1$の接線ベクトルを\textbf{単位接線ベクトル}$\bm{t}$という．
 \begin{equation}
-	\bm{t} = \bunsuu{\bunsuu{d\bm{r}}{dt}}{\left|\bunsuu{d\bm{r}}{dt}\right|} \label{equ2-16}
+	\bm{t} = \bunsuu{\bunsuu{d\bm{r}}{dt}}{\left|\bunsuu{d\bm{r}}{dt}\right|} \label{equ:VK-1}
 \end{equation}
 
 曲線上のある定点$\mathrm{A}$を基準として，そこからの長さ$s$によって位置ベクトル$\bm{r}(s)$を定義する方法をとる．$\mathrm{A,\ P}$の位置ベクトルをそれぞれ$\bm{r}(\alpha),\ \bm{r}(t)$とすると，$\mathrm{AP}$の長さ$s$が次のようになるので，$\bunsuu{ds}{dt}$が求められる．
@@ -263,7 +241,7 @@ $t$の微小変化$\varDelta t$に対応する$\bm{r}(t)$の変化を$\varDelta 
 \begin{equation}
 	\bunsuu{d\bm{r}}{ds} = \bunsuu{d\bm{r}}{dt}\bunsuu{dt}{ds} = \bunsuu{\bunsuu{d\bm{r}}{dt}}{\bunsuu{ds}{dt}} = \bunsuu{\bunsuu{d\bm{r}}{dt}}{\left|\bunsuu{d\bm{r}}{dt}\right|}
 \end{equation}
-これは式(\ref{equ2-16})と同じ式である．よって次が成り立つ．
+これは式(\ref{equ:VK-1})と同じ式である．よって次が成り立つ．
 
 \begin{kousiki}{単位接線ベクトル}
 	\begin{equation}

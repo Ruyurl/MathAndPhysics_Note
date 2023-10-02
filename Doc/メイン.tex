@@ -36,7 +36,6 @@
 \setsansjfont{KozGoPro-Medium.otf}[BoldFont=KozGoPro-Bold.otf]
 \usepackage{fontspec}
 \setsansfont{QTEurotype}
-% \setsansfont{Arial}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ノンブル、柱の設定
 \ModifyPageStyle{headings}{
@@ -140,6 +139,7 @@
 \newcommand{\diint}{\displaystyle\iint}
 \newcommand{\dsum}{\displaystyle\sum}
 \renewcommand{\dlim}{\lim\limits}
+\newcommand{\md}{\mathrm{d}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 積分記号，和，極限（常にdisplaystyle）
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -316,8 +316,24 @@
 \maketitle
 
 
+\noindent
+\textbf{【注意】}
+\begin{enumerate}[leftmargin=15pt]
+	\item ベクトルは$[\quad]$で表す．また，原則列ベクトル表記$\bm{a} =
+		\begin{bmatrix}
+			a_x\\ a_y\\ a_z
+		\end{bmatrix}$とする．紙面上の関係で行ベクトル表記で表すときは転置行列を表す$\top$を付けて$\bm{a} =
+		{
+			\begin{bmatrix}
+			a_x & a_y & a_z
+		\end{bmatrix}
+		}^\top$と表す．
+	\item $\bm{i},\ \bm{j},\ \bm{k}$はそれぞれ$x$軸，$y$軸，$z$軸方向の基本ベクトルとする．
+\end{enumerate}
+
 
 \input{偏微分法.tex}
+\input{常微分方程式.tex}
 \input{ベクトル解析.tex}
 \input{ラプラス変換.tex}
 \input{力学1234.tex}
