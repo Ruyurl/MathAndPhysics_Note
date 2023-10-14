@@ -1,0 +1,60 @@
+\chapter{ベクトル空間}
+\setcounter{page}{1}
+
+
+
+\section{数ベクトル空間}
+\subsection{数ベクトル空間}
+
+平面のベクトル全体，空間のベクトル全体の集合をそれぞれ$\mathbb{R}^2,\ \mathbb{R}^3$と表す：
+\begin{equation}
+	\mathbb{R}^2 =
+	\left\{
+		\begin{bmatrix}
+			x_1\\ x_2
+		\end{bmatrix}
+		\relmiddle|
+		x_1,\ x_2 \in \mathbb{R}
+	\right\},\quad
+	\mathbb{R}^3 =
+	\left\{
+		\begin{bmatrix}
+			x_1\\ x_2\\ x_3
+		\end{bmatrix}
+		\relmiddle|
+		x_1,\ x_2,\ x_3 \in \mathbb{R}
+	\right\}
+\end{equation}
+
+これを拡張して，$n$個の実数の組を\textbf{$n$次元数ベクトル}といい，その全体を\textbf{$n$次元数ベクトル空間}$\mathbb{R}^n$という．
+\begin{equation}
+	\bm{x} =
+	\begin{bmatrix}
+		x_1\\ x_2\\ \vdots\\ x_n
+	\end{bmatrix}
+	,\quad \mathbb{R}^n =
+	\left\{
+		\bm{x} =
+		\begin{bmatrix}
+			x_1\\ x_2\\ \vdots\\ x_n
+		\end{bmatrix}
+		\relmiddle|
+		x_1,\ x_2,\ \cdots,\ x_n \in \mathbb{R}
+	\right\}
+\end{equation}
+
+《注》ベクトルを行ベクトルによって書くこともある．
+
+\begin{kousiki}{ベクトルの性質}
+	$\bm{x},\ \bm{y},\ \bm{z}$がベクトルで，$\lambda,\ \mu$がスカラーのとき
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\bm{x} + \bm{y} = \bm{y} + \bm{x}$
+		\item $(\bm{x} + \bm{y}) + \bm{z} = \bm{x} + (\bm{y} + \bm{z})$
+		\item $\bm{x} + \bm{0} = \bm{x}$
+		\item $\bm{x} + (-\bm{x}) = \bm{0}$
+		\item $\lambda(\mu\bm{x}) = (\lambda\mu)\bm{x}$
+		\item $(\lambda + \mu)\bm{x} = \lambda\bm{x} + \mu\bm{x}$
+		\item $\lambda(\bm{x} + \bm{y}) = \lambda\bm{x} + \lambda\bm{y}$
+		\item $1\bm{x} = \bm{x}$
+	\end{enumerate}
+\end{kousiki}

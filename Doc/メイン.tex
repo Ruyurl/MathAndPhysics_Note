@@ -32,8 +32,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % フォント関係
 \usepackage{luatexja-fontspec}
-\setmainjfont{ChikuPori-Regular2.ttf}[BoldFont=KozGoPro-Medium.otf]
-\setsansjfont{KozGoPro-Medium.otf}[BoldFont=KozGoPro-Bold.otf]
+\setmainjfont{ChikuPori-Regular2.ttf}[BoldFont=LINESeedJP_OTF_Rg.otf]
+\setsansjfont{LINESeedJP_OTF_Rg.otf}[BoldFont=LINESeedJP_OTF.otf]
 \usepackage{fontspec}
 \setsansfont{QTEurotype}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -41,10 +41,6 @@
 \ModifyPageStyle{headings}{
 	% 柱
 	running_head_position=top-center,
-	% 奇数ページの柱内容
-	odd_running_head={_chapter},
-	% 偶数ページの柱内容
-	even_running_head={_section},
 	% 柱，ノンブル
 	nombre={\thechapter-\thepage},
 	nombre_position=top-right,
@@ -60,12 +56,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % xcolor    dvipsnamesをつけるといろいろな名前が使える：
 % https://mathlandscape.com/latex-color/#toc3
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 目次
-\usepackage[colorlinks,linkcolor=black,urlcolor=black]{hyperref}
-\setcounter{tocdepth}{2}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% hyperref  目次リンク
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{multicol, here, multirow, fancybox, array, incgraph, wrapfig, caption, paralist, ascmac}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -118,7 +108,7 @@
 %%%%%%%%%%           数式関係           %%%%%%%%%%
 %%%%%%%%%%                              %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{amsmath, emath, mathtools, extarrows, cancel, ulem, enumitem, mleftright, emathMw, siunitx, bm}
+\usepackage{amsmath, emath, mathtools, extarrows, cancel, ulem, enumitem, mleftright, emathMw, siunitx}
 \mleftright
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % amsmath   いろいろな機能を追加．
@@ -281,7 +271,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 章
 \ModifyHeading{chapter}{
-	font={\huge\jfontspec{KozGoPro-Bold.otf}\bfseries},
+	font={\huge\sffamily\bfseries},
 	format={%
 		{\color[gray]{0.5}\rule[-0.5\zw]{2\zw}{1.8\zw}}%
 		\if@mainmatter
@@ -310,6 +300,11 @@
 
 
 
+% hyperref  目次リンク
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \begin{document}
 \title{\fontsize{40pt}{1\zh} \jfontspec{DelaGothicOne-Regular.ttf}数学・物理 回憶錄}
 \date{\LARGE 最終更新日: \today}
@@ -332,8 +327,19 @@
 \end{enumerate}
 
 
+\input{微分法.tex}
+\input{積分法.tex}
+\input{数列の極限.tex}
+\input{関数の展開.tex}
 \input{偏微分法.tex}
+\input{重積分法.tex}
 \input{常微分方程式.tex}
+\input{ベクトル.tex}
+\input{行列.tex}
+\input{行列式.tex}
+\input{線形変換.tex}
+\input{固有値とその応用.tex}
+\input{ベクトル空間.tex}
 \input{ベクトル解析.tex}
 \input{ラプラス変換.tex}
 \input{力学1234.tex}

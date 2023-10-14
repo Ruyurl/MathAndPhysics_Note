@@ -1,0 +1,220 @@
+\chapter{ベクトル}
+\setcounter{page}{1}
+
+\section{ベクトルの成分表示}
+\vskip-2\baselineskip
+\begin{equation}
+	\bm{a} = a_1\bm{i} + a_2\bm{j} + a_3\bm{k} =
+	\begin{bmatrix}
+		a_1\\ a_2\\ a_3
+	\end{bmatrix}
+\end{equation}
+
+
+
+\section{ベクトルの大きさ（ノルム）}
+\vskip-\baselineskip
+\begin{equation}
+	|\bm{a}| = \sqrt{a_1{}^2 + a_2{}^2 + a_3{}^2}
+\end{equation}
+
+
+
+\section{内積（スカラー積）\texorpdfstring{$\bm{a} \cdot \bm{b}$}{AdotB}}
+
+$\bm{0}$でない2つのベクトル$\bm{a},\ \bm{b}$のなす角が$\theta\ (0 \le \theta \le \pi)$のとき，
+\begin{align}
+	\bm{a} \cdot \bm{b} &= |\bm{a}||\bm{b}|\cos\theta\\
+						&=
+						\begin{bmatrix}
+							a_x\\ a_y \\ a_z
+						\end{bmatrix}
+						\cdot
+						\begin{bmatrix}
+							b_x\\ b_y \\ b_z
+						\end{bmatrix}
+						= a_x b_x + a_y b_y + a_z b_z
+\end{align}
+
+\begin{kousiki}{内積の性質}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\bm{a} \cdot \bm{b} = \bm{b} \cdot \bm{a}$ \qquad $\bm{a} \cdot \bm{a} = |\bm{a}|^2$
+		\item $\bm{a} \cdot (\bm{b} + \bm{c}) = \bm{a} \cdot \bm{b} + \bm{a} \cdot \bm{c}$ \qquad $(\bm{a} + \bm{b}) \cdot \bm{c} = \bm{a} \cdot \bm{c} + \bm{b} \cdot \bm{c}$
+		\item $k(\bm{a} \cdot \bm{b}) = (k\bm{a}) \cdot \bm{b} = \bm{a} \cdot (k\bm{b})$ \qquad $(k \in \mathbb{R})$
+		\item
+			\begin{enumerate}[label=(\roman*), labelsep=10pt, leftmargin=23pt]
+				\item $\bm{i} \cdot \bm{i} = \bm{j} \cdot \bm{j} = \bm{k} \cdot \bm{k} = 1$
+				\item $\bm{i} \cdot \bm{j} = \bm{j} \cdot \bm{k} = \bm{k} \cdot \bm{i} = 0$
+			\end{enumerate}
+		\item $\bm{a} \ne \bm{0},\ \bm{b} \ne \bm{0}$のとき，$\bm{a} \perp \bm{b} \iff \bm{a} \cdot \bm{b} = 0$
+	\end{enumerate}
+	
+\end{kousiki}
+
+
+
+\section{外積（ベクトル積）\texorpdfstring{$\bm{a} \times \bm{b}$}{AtimesB}}
+
+$\bm{0}$でない2つのベクトル$\bm{a},\ \bm{b}$のなす角が$\theta\ (0 < \theta < \pi)$のとき，
+\begin{align}
+	\bm{a} \times \bm{b} &= (|\bm{a}||\bm{b}|\sin\theta)\bm{e}\\
+	&= \det
+	\begin{bmatrix}
+		\bm{i} & a_x & b_x\\
+		\bm{j} & a_y & b_y\\
+		\bm{k} & a_z & b_z
+	\end{bmatrix}
+\end{align}
+$\bm{e}$は，$\bm{a},\ \bm{b},\ \bm{e}$がこの順で右手系を成す向き．$\bm{a} = \bm{0},\ \bm{b} = \bm{0}$のとき，又は$\theta = 0,\ \pi$のときは$\bm{a} \times \bm{b} = \bm{0}$とする．
+
+\begin{kousiki}{外積の性質}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\bm{a} \times \bm{b} = -\bm{b} \times \bm{a}$
+		\item 
+			\begin{enumerate}[label=(\roman*), labelsep=10pt, leftmargin=23pt]
+				\item $\bm{a} \times (\bm{b} + \bm{c}) = \bm{a} \times \bm{b} + \bm{a} \times \bm{c}$
+				\item $(\bm{a} + \bm{b}) \times \bm{c} = \bm{a} \times \bm{c}$
+			\end{enumerate}
+		\item $k(\bm{a} \times \bm{b}) = (k\bm{a}) \times \bm{b} = \bm{a} \times (k\bm{b})$ \qquad $(k \in \mathbb{R})$
+		\item
+			\begin{enumerate}[label=(\roman*), labelsep=10pt, leftmargin=23pt]
+				\item $\bm{i} \times \bm{i} = \bm{j} \times \bm{j} = \bm{k} \times \bm{k} = \bm{0}$
+				\item $\bm{i} \times \bm{j} = \bm{k},\quad \bm{j} \times \bm{k} = \bm{i},\quad \bm{k} \times \bm{i} = \bm{j}$
+			\end{enumerate}
+		\item $\bm{a} \ne \bm{0},\ \bm{b} \ne \bm{0}$のとき，$\bm{a} \heikou \bm{b} \iff \bm{a} \times \bm{b} = \bm{0}$
+	\end{enumerate}
+	
+\end{kousiki}
+
+$\bm{a}$と$\bm{b}$の成す平行四辺形の面積$S$は
+\begin{equation}
+	S = |\bm{a} \times \bm{b}|
+\end{equation}
+で求められる．
+
+
+
+\section{三重積}
+\subsection{スカラー三重積}
+
+3つのベクトル$\bm{a},\ \bm{b},\ \bm{c}$について
+\begin{align}
+	\bm{a} \cdot (\bm{b} \times \bm{c}) &= |\bm{a}||\bm{b} \times \bm{c}|\cos\varphi \\
+	&= \det
+	\begin{bmatrix}
+		\bm{a} & \bm{b} & \bm{c}
+	\end{bmatrix}
+	= \det
+	\begin{bmatrix}
+		a_x & b_x & c_x\\
+		a_y & b_y & c_y\\
+		a_z & b_z & c_z
+	\end{bmatrix}
+\end{align}
+を\textbf{スカラー三重積}という．$\varphi$は$\bm{a}$と$\bm{b} \times \bm{c}$の成す角である．
+
+\begin{kousiki}{スカラー三重積の性質}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\bm{a} \cdot (\bm{b} \times \bm{c}) = \bm{b} \cdot (\bm{c} \times \bm{a}) = \bm{c} \cdot (\bm{a} \times \bm{b})$
+		\item $\bm{a},\ \bm{b},\ \bm{c}$が同一平面上になく，この順で右手系を成すとき，$\bm{a},\ \bm{b},\ \bm{c}$の成す平行六面体の体積$V$は
+		\begin{equation}
+			V = \bm{a} \cdot (\bm{b} \times \bm{c})
+		\end{equation}
+		で求められる．
+	\end{enumerate}
+\end{kousiki}
+
+\textbf{[1]}は，行列式の性質から分かる．\textbf{[2]}について，$\bm{a},\ \bm{b},\ \bm{c}$がこの順で左手系を成すとき$\left(\bunsuu{\pi}{2} < \varphi \le \pi\right)$，$V$は
+\begin{equation}
+	V = -\bm{a} \cdot (\bm{b} \times \bm{c})
+\end{equation}
+である．
+
+
+
+\subsection{ベクトル三重積}
+
+3つのベクトル$\bm{a},\ \bm{b},\ \bm{c}$について
+\begin{equation}
+	\bm{a} \times (\bm{b} \times \bm{c})
+\end{equation}
+を\textbf{ベクトル三重積}という．
+
+\begin{kousiki}{Lagrangeの公式}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\bm{a} \times (\bm{b} \times \bm{c}) = (\bm{a} \cdot \bm{c})\bm{b} - (\bm{a} \cdot \bm{b})\bm{c}$
+		\item $(\bm{a} \times \bm{b}) \times \bm{c} = (\bm{a} \cdot \bm{c})\bm{b} - (\bm{b} \cdot \bm{c})\bm{a}$
+	\end{enumerate}
+\end{kousiki}
+
+
+
+\section{ベクトルの平行条件・垂直条件}
+
+$\bm{a} \ne \bm{0}$，$\bm{b} \ne \bm{0}$のとき
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item $\bm{a} \heikou \bm{b} \iff \bm{a} \times \bm{b} = \bm{0} \iff \text{$\bm{b} = k\bm{a}$を満たす$k \in \mathbb{R}$が存在}$
+	\item $\bm{a} \perp \bm{b} \iff \bm{a} \cdot \bm{b} = 0$
+\end{enumerate}
+
+
+
+\section{図形への応用}
+\subsection{内分点}
+
+$\mathrm{A}(\bm{a})$と$\mathrm{B}(\bm{b})$を結ぶ線分を$m : n$に内分する点の位置ベクトル$\mathrm{P}(\boldsymbol{p})$
+\begin{equation}
+	\bm{p} = \bunsuu{n\bm{a} + m\bm{b}}{m + n}
+\end{equation}
+
+
+
+\subsection{外分点}
+
+$\mathrm{A}(\bm{a})$と$\mathrm{B}(\bm{b})$を結ぶ線分を$m : n$に外分する点の位置ベクトル$\mathrm{Q}(\bm{q})$
+\begin{equation}
+	\bm{q} = \bunsuu{-n\bm{a} + m\bm{b}}{m - n}
+\end{equation}
+
+
+
+\subsection{中点}
+
+$\mathrm{A}(\bm{a})$と$\mathrm{B}(\bm{b})$を結ぶ線分の中点の位置ベクトル$\mathrm{M}(\bm{m})$
+\begin{equation}
+	\bm{m} = \bunsuu{\bm{a} + \bm{b}}{2}
+\end{equation}
+
+
+
+\subsection{重心}
+
+$\mathrm{A}(\bm{a})$，$\mathrm{B}(\bm{b})$，$\mathrm{C}(\bm{c})$を結んでできる三角形の重心の位置ベクトル$\mathrm{G}(\bm{g})$
+\begin{equation}
+	\bm{g} = \bunsuu{\bm{a} + \bm{b} + \bm{c}}{3}
+\end{equation}
+
+
+
+\subsection{直線のベクトル方程式}
+
+直線上の1点を$\mathrm{P}(\bm{p})$とする．
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item $\mathrm{A}(a)$を通り$\bm{u}$に平行
+		\begin{equation}
+			\bm{p} = \bm{a} + t\bm{u} \quad (t \in \mathbb{R})
+		\end{equation}
+	\item $\mathrm{A}(\bm{a})$，$\mathrm{B}(\bm{b})$を通る
+		\begin{equation}
+			\bm{p} = (1 - t)\bm{a} + t\bm{b} \hspace*{4\zw} \text{（$\bm{u} = \bm{b} - \bm{a}$とする）}
+		\end{equation}
+	\item $\mathrm{A}(\bm{a})$を通り，$\bm{n} (\ne \bm{0})$に垂直な直線
+		\begin{equation}
+			\bm{n} \cdot (\bm{p} - \bm{a}) = 0
+		\end{equation}
+		直線が$ax + by + c = 0$のとき，$\bm{n} =
+		\begin{bmatrix}
+			a\\ b
+		\end{bmatrix}
+		$
+\end{enumerate}
