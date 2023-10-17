@@ -1,2 +1,96 @@
 \chapter{重積分法}
 \setcounter{page}{1}
+
+\section{2重積分}
+\subsection{定義}
+\vskip-\baselineskip
+\begin{equation}
+	\iint_{D} f(x,\ y)\,dxdy = \lim_{|\varDelta| \to 0} \sum_{i = 1}^{l}\sum_{j = 1}^{m} f(\xi_i,\ \eta_j)\,\varDelta x_i \varDelta y_j
+\end{equation}
+
+
+\subsection{性質}
+\vskip-\baselineskip
+\begin{equation}
+	\left|\iint_{D} f(x,\ y)\,dxdy\right| \le \iint_{D} |f(x,\ y)|\,dxdy
+\end{equation}
+
+
+
+\subsection{累次積分（逐次積分）}
+
+\begin{kousiki}{累次積分（１）}
+	$D = \{(x,\ y) \mid a \le x \le b,\ c \le y \le d\}$とする．
+	\begin{equation}
+		\iint_{D} f(x,\ y)\,dxdy = \int_{a}^{b} \left\{\int_{c}^{d} f(x,\ y)\,dy\right\}dx = \int_{c}^{d} \left\{\int_{a}^{b} f(x,\ y)\,dx\right\}\,dy
+	\end{equation}
+\end{kousiki}
+
+範囲に関数が含まれている場合は変数を含んでいる方を先に計算する．
+\begin{kousiki}{累次積分（２）}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $D = \{(x,\ y) \mid a \le x \le b,\ {\color{cyan}\varphi_1(x)} \le y \le {\color{cyan}\varphi_2(x)}\}$とする．
+			\begin{equation}
+				\iint_{D} f(x,\ y)\,dxdy = \int_{a}^{b} \left\{\int_{\textcolor{cyan}{\varphi_1(x)}}^{\textcolor{cyan}{\varphi_2(x)}} f(x,\ y)\,dy\right\}dx
+			\end{equation}
+		\item $D = \{(x,\ y) \mid {\color{cyan}\psi_1(y)} \le x \le {\color{cyan}\psi_2(y)},\ c \le y \le d\}$とする．
+			\begin{equation}
+				\iint_{D} f(x,\ y)\,dxdy = \int_{c}^{d} \left\{\int_{\textcolor{cyan}{\psi_1(y)}}^{\textcolor{cyan}{\psi_2(y)}} f(x,\ y)\,dx\right\}dy
+			\end{equation}
+	\end{enumerate}
+\end{kousiki}
+
+
+
+\subsection{積分順序の交換}
+
+\begin{tip}{例題(1)}
+	$y = \sqrt{x}$と$y = \bunsuu{1}{2}x$に囲まれた領域
+	\tcblower
+	\begin{align*}
+		D &= \left\{(x,\ y) \relmiddle| 0 \le x \le 4,\ \bunsuu{1}{2}x \le y \le \sqrt{x}\right\}\\
+		&= \{(x,\ y) \mid y^2 \le x \le 2y,\ 0 \le y \le 2\}
+	\end{align*}
+\end{tip}
+
+\begin{tip}{例題(2)}
+	$y = \log x \qLongright x = e^y$より
+	\begin{equation*}
+		\int_{1}^{e} \left\{\int_{0}^{\log x} f(x,\ y)\,dy\right\}dx = \int_{0}^{1} \left\{\int_{e^y}^{e} f(x,\ y)\,dx\right\}\,dy
+	\end{equation*}
+\end{tip}
+
+
+
+\subsection{変数変換}
+
+\begin{kousiki}{変数変換}
+	$x = \varphi(u,\ v),\ y = \psi(u,\ v)$について
+	\begin{equation}
+		\iint_{D} f(x,\ y)\,dxdy = \iint_{D'} f(\varphi,\ \psi)\left|\det
+			\begin{bmatrix}
+				x_u & x_v\\ y_u & y_v
+			\end{bmatrix}
+		\right|\,dudv
+	\end{equation}
+\end{kousiki}
+
+$\det\begin{bmatrix}
+	x_u & x_v\\ y_u & y_v
+\end{bmatrix}$を\textbf{ヤコビアン}といい，$\bunsuu{\partial(x,\ y)}{\partial(u,\ v)}$や$J(u,\ v)$で表す．また，$D'$は$D$を$u,\ v$で表しなおした領域である．
+
+
+
+\subsection{極座標変換}
+
+$x = r\cos\theta,\ y = r\sin\theta$より
+\begin{align}
+	\iint_{D} f(x,\ y)\,dxdy &= \iint_{D'} f(r\cos\theta,\ r\sin\theta) \left|\det
+	\begin{bmatrix*}[r]
+		\cos\theta & -r\sin\theta\\ \sin\theta & r\cos\theta
+	\end{bmatrix*}
+	\right|\,drd\theta \notag\\
+	&= \iint_{D'} f(r\cos\theta,\ r\sin\theta)\,rdrd\theta
+\end{align}
+
+\newpage

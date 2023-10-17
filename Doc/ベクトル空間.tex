@@ -58,3 +58,163 @@
 		\item $1\bm{x} = \bm{x}$
 	\end{enumerate}
 \end{kousiki}
+
+
+
+\subsection{線形独立}
+
+$m$個の$n$次元数ベクトル$\bm{x}_1,\ \bm{x}_2,\ \cdots,\ \bm{x}_m$について
+\begin{equation}
+	\lambda_1\bm{x}_1 + \lambda_2\bm{x}_2 + \cdots + \lambda_m\bm{x}_m = \bm{0} \iff \lambda_1 = \lambda_2 = \cdots = \lambda_m = 0 \label{equ13-Senkeidokuritu}
+\end{equation}
+が成り立つとき，これらのベクトルは\textbf{線形独立}（\textbf{1次独立}）であるという．(\ref{equ13-Senkeidokuritu})の否定として
+\begin{equation*}
+	\lambda_1\bm{x}_1 + \lambda_2\bm{x}_2 + \cdots + \lambda_m\bm{x}_m = \bm{0}
+\end{equation*}
+を満たす$\lambda_1,\ \lambda_2,\ \cdots,\ \lambda_m$のうち少なくとも1つに$0$でない組が存在するとき，\textbf{線形従属}であるという．
+
+\subsubsection*{線形独立であるかの調べ方}
+
+\begin{tcolorbox}[breakable]
+	\f{例}　次の4次元数ベクトル$\bm{x}_1,\ \bm{x}_2,\ \bm{x}_3$は線形独立か線形従属か．
+	\begin{equation*}
+		\bm{x}_1 =
+			\begin{bmatrix*}[r]
+				1\\ 1\\ -1\\ 2
+			\end{bmatrix*}
+		,\ \bm{x}_2 =
+			\begin{bmatrix*}[r]
+				-2\\ -1\\ 2\\ 1
+			\end{bmatrix*}
+		,\ \bm{x}_3 =
+			\begin{bmatrix*}[r]
+				3\\ 2\\ 1\\ 1
+			\end{bmatrix*}
+	\end{equation*}
+	
+	\tcblower
+
+	\f{解}　$\lambda_1\bm{x}_1 + \lambda_2\bm{x}_2 + \lambda_3\bm{x}_3 =\bm{0}$とおくと
+	\begin{equation*}
+		\begin{bmatrix}
+			\bm{x}_1 & \bm{x}_2 & \bm{x}_3
+		\end{bmatrix}
+		\begin{bmatrix}
+			\lambda_1\\ \lambda_2\\ \lambda_3
+		\end{bmatrix}
+		= \bm{0} \iff 
+		\begin{bmatrix*}[r]
+			 1 & -2 & 3\\
+			 1 & -1 & 2\\ 
+			-1 &  2 & 1\\
+			 2 &  1 & 1
+		\end{bmatrix*}
+		\begin{bmatrix}
+			\lambda_1\\ \lambda_2\\ \lambda_3
+		\end{bmatrix}
+		= \bm{0}
+	\end{equation*}
+	$\begin{bmatrix}
+		\bm{x}_1 & \bm{x}_2 & \bm{x}_3 & \bm{0}
+	\end{bmatrix}$に対し掃き出し法を行うと
+	\begin{equation*}
+		\begin{bmatrix}
+			\bm{x}_1 & \bm{x}_2 & \bm{x}_3 & \bm{0}
+		\end{bmatrix}
+		\longrightarrow
+		\begin{bmatrix}
+			1 & -2 &  3 & 0\\
+			0 &  1 & -1 & 0\\
+			0 &  0 &  4 & 0\\
+			0 &  5 & -5 & 0
+		\end{bmatrix}
+		\longrightarrow
+		\begin{bmatrix}
+			1 & 0 &  1 & 0\\
+			0 & 1 & -1 & 0\\
+			0 & 0 &  1 & 0\\
+			0 & 0 &  0 & 0
+		\end{bmatrix}
+		\longrightarrow
+		\begin{bmatrix}
+			1 & 0 & 0 & 0\\
+			0 & 1 & 0 & 0\\
+			0 & 0 & 1 & 0\\
+			0 & 0 & 0 & 0
+		\end{bmatrix}
+	\end{equation*}
+	よって$\lambda_1 = \lambda_2 = \lambda_3 = 0$なので，$\bm{x}_1,\ \bm{x}_2,\ \bm{x}_3$は線形独立．
+\end{tcolorbox}
+
+
+
+\subsection{基底}
+
+$\mathbb{R}^n$に於いて，その\textbf{基本ベクトル}を次のように定義する．
+\begin{equation}
+	\bm{e}_1 =
+		\begin{bmatrix}
+			1\\ 0\\ \vdots\\ 0
+		\end{bmatrix}
+	,\ \bm{e}_2 =
+		\begin{bmatrix}
+			0\\ 1\\ \vdots\\ 0
+		\end{bmatrix}
+	,\ \cdots,\ \bm{e}_n =
+		\begin{bmatrix}
+			0\\ 0\\ \vdots\\ 1
+		\end{bmatrix}
+\end{equation}
+
+基本ベクトルは線形独立である．また，$\mathbb{R}^n$の任意のベクトルは，基本ベクトルの線形結合で表される．
+
+\vskip\baselineskip
+
+一般に$\mathbb{R}^n$の$m$個のベクトルの組$\varGamma = \{\bm{a}_1,\ \bm{a}_2,\ \cdots,\ \bm{a}_m\}$が，次の性質（＝基本ベクトルの性質）
+\begin{enumerate}[labelsep=10pt, leftmargin=28pt]
+	\item[(Ⅰ)] それらは線形独立である．
+	\item[(Ⅱ)] $\mathbb{R}^n$の任意のベクトルは，それらの線形結合で表される．
+\end{enumerate}
+を満たすとき，ベクトルの個数$m$は$n$に等しい．このとき，ベクトルの組$\varGamma = \{\bm{a}_1,\ \bm{a}_2,\ \cdots,\ \bm{a}_n\}$を$\mathbb{R}^n$の\textbf{基底}という．
+
+また，
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item $m > n$のとき，$\bm{a}_1,\ \bm{a}_2,\ \cdots,\ \bm{a}_m$は線形従属．
+	\item $m < n$のとき，$\bm{a}_1,\ \bm{a}_2,\ \cdots,\ \bm{a}_m$の線形結合で表されないベクトルが存在する．
+\end{enumerate}
+
+
+
+\begin{kousiki}{$\mathbb{R}^n$の基底の条件}
+	$\mathbb{R}^n$における$n$個のベクトルの組$\{\bm{a}_1,\ \bm{a}_2,\ \cdots,\ \bm{a}_n\}$について，次の条件は同値である．
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $\{\bm{a}_1,\ \bm{a}_2,\ \cdots,\ \bm{a}_n\}$は$\mathbb{R}^n$の基底．
+		\item $\bm{a}_1,\ \bm{a}_2,\ \cdots,\ \bm{a}_n$は線形独立．
+		\item 行列$
+			\begin{bmatrix}
+				\bm{a}_1 & \bm{a}_2 & \cdots & \bm{a}_n
+			\end{bmatrix}
+			$は正則．即ち
+			$
+			\begin{vmatrix}
+				\bm{a}_1 & \bm{a}_2 & \cdots & \bm{a}_n
+			\end{vmatrix}
+			\ne 0$
+	\end{enumerate}
+\end{kousiki}
+
+
+
+\subsection{基底の変換}
+
+$\mathbb{R}^n$の基底$\{\bm{a}_j\} = \{\bm{a}_1,\ \bm{a}_2,\ \cdots,\ \bm{a}_n\}$を単に$\bm{a}$，標準基底$\{\bm{e}_j\}$を$\bm{e}$と表す．$\mathbb{R}^n$の任意のベクトル$\bm{x}$は，$\bm{a}$の線形結合
+\begin{equation}
+	\bm{x} = y_1\bm{a}_1 + y_2\bm{a}_2 + \cdots + y_n\bm{a}_n
+\end{equation}
+で一意的に表される．このとき，スカラー$y_1,\ y_2,\ \cdots,\ y_n$を$\bm{x}$の$\bm{a}$に関する\textbf{成分}といい
+\begin{equation}
+	\begin{bmatrix}
+		y_1\\ y_2\\ \vdots\\ y_n
+	\end{bmatrix}_{\bm{a}}
+\end{equation}
+で表すこととする．

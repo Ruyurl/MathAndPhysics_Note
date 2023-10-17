@@ -28,12 +28,327 @@
 
 関数$z = f(x,\ y)$に於いて
 \begin{equation}
-	\bunsuu{\partial f}{\partial x} = \lim_{\varDelta x \to 0} \bunsuu{f(x + \varDelta x,\ y) - f(x,\ y)}{\varDelta x}
+	\bunsuu{\partial z}{\partial x} = \lim_{\varDelta x \to 0} \bunsuu{f(x + \varDelta x,\ y) - f(x,\ y)}{\varDelta x}
 \end{equation}
-を$f(x,\ y)$の\textbf{$x$についての偏導関数}といい，$f_x(x,\ y)$とも表す．また，
+$f(x,\ y)$の\textbf{$x$についての偏導関数}といい，$f_x$とも表す．また，
 \begin{equation}
-	\bunsuu{\partial f}{\partial y} = \lim_{\varDelta y \to 0} \bunsuu{f(x,\ y + \varDelta y) - f(x,\ y)}{\varDelta y}
+	\bunsuu{\partial z}{\partial y} = \lim_{\varDelta y \to 0} \bunsuu{f(x,\ y + \varDelta y) - f(x,\ y)}{\varDelta y}
 \end{equation}
-を$f(x,\ y)$の\textbf{$y$についての偏導関数}といい，$f_y(x,\ y)$とも表す．
+を$f(x,\ y)$の\textbf{$y$についての偏導関数}といい，$f_y$とも表す．
 
-偏微分係数$f_x(a,\ b),\ f_y(a,\ b)$はそれぞれ点$(a,\ b)$の$x$軸方向の傾き，$y$軸方向の傾きを表す．
+\textbf{$x\ (y)$について偏微分可能}であるとは，点$x = a\ (y = b)$での偏微分係数が存在することである．また，偏微分係数$f_x(a,\ b),\ f_y(a,\ b)$はそれぞれ点$(a,\ b)$の$x$軸方向の傾き，$y$軸方向の傾きを表す．
+
+
+
+\subsection{高階偏導関数}
+
+$z = f(x,\ y)$で，2階偏微分可能で全て連続のとき\quad$\bunsuu{\partial^2 z}{\partial y \partial x} = \bunsuu{\partial^2 z}{\partial x \partial y}$
+
+一般に$n$階偏微分可能で全て連続のとき，$n = k + l$とすると$\bunsuu{\partial^n z}{\partial x^k \partial y^l}$は全て等しい．
+
+
+
+\subsection{全微分可能性}
+
+\begin{itemize}
+	\item $f(x,\ y)$が点$(a,\ b)$で全微分可能 $\qLongright$ $f(x,\ y)$は$(a,\ b)$で連続かつ$(a,\ b)$で偏微分可能
+	\item $f(x,\ y)$の$\bunsuu{\partial f}{\partial x},\ \bunsuu{\partial f}{\partial y}$が$(a,\ b)$で存在してそれらが連続である $\qLongright$ $f(x,\ y)$は$(a,\ b)$で全微分可能
+	\item $f(x,\ y)$が偏微分可能であっても全微分可能ではない（全微分の方が強い概念）．
+\end{itemize}
+\begin{equation}
+	df = \bunsuu{\partial f}{\partial x}dx + \bunsuu{\partial f}{\partial y}
+\end{equation}
+
+\newpage
+\begin{tip}{導出}
+	関数$f(x,\ y)$の$\varDelta x,\ \varDelta y$に対する増加量$\varDelta f$は
+	\begin{equation*}
+		\varDelta f = 
+		\underbrace{
+			\underbrace{
+				\bunsuu{\partial f}{\partial x}\varDelta x
+			}_{\text{$\varDelta x$についての増加量}}
+			+
+			\underbrace{
+				\bunsuu{\partial f}{\partial y}\varDelta y
+			}_{\text{$\varDelta y$についての増加量}}
+		}_{接平面の公式}
+		{} + \varepsilon
+	\end{equation*}
+	更に，$\dlim_{\scalebox{0.5}{$(\varDelta x,\ \varDelta y) \to (0,\ 0)$}} \bunsuu{\varepsilon}{\sqrt{(\varDelta x)^2 + (\varDelta y)^2}} = 0$であれば，$f(x,\ y)$は全微分可能という．
+\end{tip}
+
+ここで，$\dlim_{\scalebox{0.5}{$(\varDelta x,\ \varDelta y) \to (0,\ 0)$}} \bunsuu{\varepsilon}{\sqrt{(\varDelta x)^2 + (\varDelta y)^2}} = 0$を，「$\varepsilon$は$\sqrt{(\varDelta x)^2 + (\varDelta y)^2}$より\textbf{高位の無限小}」という．これは，「$\varepsilon$は$\sqrt{(\varDelta x)^2 + (\varDelta y)^2}$とは比べ物にならないくらい速く$0$に近付く」という意味である．
+
+
+
+\subsection{接平面の方程式}
+
+曲面$z = f(x,\ y)$上の点$\bigl(a,\ b,\ f(a,\ b)\bigr)$に於ける接平面の方程式
+\begin{equation}
+	z - f(a,\ b) = \bunsuu{\partial f(a,\ b)}{\partial x}(x - a) + \bunsuu{\partial f(a,\ b)}{\partial y}(y - b) \label{equ5:1}
+\end{equation}
+
+曲面$f(x,\ y,\ z) = 0$上の点$(a,\ b,\ c)$に於ける接平面の方程式
+\begin{equation}
+	\begin{bmatrix}
+		\bunsuu{\partial f}{\partial x} & \bunsuu{\partial f}{\partial y} & \bunsuu{\partial f}{\partial z} 
+	\end{bmatrix}
+	\begin{bmatrix}
+		x - a\\ y - b\\ z - c
+	\end{bmatrix}
+	= 0
+\end{equation}
+
+これは，陰関数の微分法と式(\ref{equ5:1})から分かる．また，これより曲面$f(x,\ y,\ z) = 0$の法線ベクトルは以下である．
+\begin{equation}
+	{
+		\begin{bmatrix}
+			\bunsuu{\partial f}{\partial x} & \bunsuu{\partial f}{\partial y} & \bunsuu{\partial f}{\partial z}
+		\end{bmatrix}
+	}^\top
+\end{equation}
+
+
+
+\subsection{チェーン・ルール（連鎖律）}
+
+\begin{kousiki}{チェーン・ルール(1)}
+	$z = f(x,\ y)$が全微分可能で，$x = x(t),\ y = y(t)$が微分可能であるとき，$z$は$t$の関数である．
+	\begin{equation}
+		\bunsuu{dz}{dt} = \bunsuu{\partial f}{\partial x}\bunsuu{dx}{dt} + \bunsuu{\partial f}{\partial y}\bunsuu{dy}{dt}
+	\end{equation}
+\end{kousiki}
+
+\begin{kousiki}{チェーン・ルール(2)}
+	$z = f(x,\ y)$が全微分可能で，$x = x(u,\ v),\ y = y(u,\ v)$が偏微分可能であるとき
+	\begin{gather}
+		\bunsuu{\partial z}{\partial u} = \bunsuu{\partial z}{\partial x}\bunsuu{\partial x}{\partial u} + \bunsuu{\partial z}{\partial y}\bunsuu{\partial y}{\partial u}\\
+		\bunsuu{\partial z}{\partial v} = \bunsuu{\partial z}{\partial x}\bunsuu{\partial x}{\partial v} + \bunsuu{\partial z}{\partial y}\bunsuu{\partial y}{\partial v}
+	\end{gather}
+\end{kousiki}
+
+
+
+\subsection{陰関数の微分法}
+
+$f(x,\ y) = 0$によって表された$x$の関数$y$の導関数
+\begin{equation}
+	\bunsuu{dy}{dx} = -\bunsuu{\partial f}{\partial x} \left/ \bunsuu{\partial f}{\partial y}\right.
+\end{equation}
+
+\begin{tip}{導出}
+	陰関数$y(x)$より，$f\bigl(x,\ y(x)\bigr) = 0$．両辺微分して
+	\begin{equation}
+		\bunsuu{\partial f}{\partial x}\bunsuu{dx}{dx} + \bunsuu{\partial f}{\partial y}\bunsuu{dy}{dx} = 0 \iff \bunsuu{\partial f}{\partial x} + \bunsuu{\partial f}{\partial y}\bunsuu{dy}{dx} = 0 \quad \left(\because \bunsuu{dx}{dx} = 1\right)
+	\end{equation}
+\end{tip}
+
+$f(x,\ y,\ z) = 0$によって表された$x,\ y$の関数$z$の導関数
+\begin{align}
+	&\bunsuu{\partial z}{\partial x} = -\bunsuu{\partial f}{\partial x} \left/ \bunsuu{\partial f}{\partial z}\right.
+	&
+	&\bunsuu{\partial z}{\partial y} = -\bunsuu{\partial f}{\partial y} \left/ \bunsuu{\partial f}{\partial z}\right.
+\end{align}
+
+\begin{tip}{導出}
+	陰関数$z(x,\ y)$より，$f\bigl(x,\ y,\ z(x,\ y)\bigr) = 0$．両辺$x$で偏微分して
+	\begin{equation}
+		\bunsuu{\partial f}{\partial x}\bunsuu{\partial x}{\partial x} + \bunsuu{\partial f}{\partial y}\bunsuu{\partial y}{\partial x} + \bunsuu{\partial f}{\partial z}\bunsuu{\partial z}{\partial x} = 0
+		\iff \bunsuu{\partial f}{\partial x} + \bunsuu{\partial f}{\partial z}\bunsuu{\partial z}{\partial x} = 0 \quad \left(\because \bunsuu{\partial x}{\partial x} = 1,\ \bunsuu{\partial y}{\partial x} = 0\right)
+	\end{equation}
+	両辺$y$で偏微分すると第2式が得られる．
+\end{tip}
+
+
+
+\subsection{2変数のテイラーの定理}
+
+$f(x,\ y)$が$n$次までの連続な偏導関数を持つとき（$C^n$級関数），
+\begin{equation*}
+	\bunsuu{d^n f}{dt^n} = D^n f = \Bigl(h\bunsuu{\partial}{\partial x} + k\bunsuu{\partial}{\partial y}\Bigr)^n f
+\end{equation*}
+とおくと
+\begin{equation}
+	f(a + h,\ b + k) = f(a,\ b) + \bunsuu{1}{1!}Df(a,\ b) + \bunsuu{1}{2!}D^2f(a,\ b) + \cdots + \bunsuu{1}{(n - 1)!}D^{n - 1}f(a,\ b) + 
+	\underbrace{
+		\bunsuu{1}{n!}D^n f(a + \theta h,\ b + \theta k)
+	}_{R_n}
+\end{equation}
+を満たす$\theta\ (0 < \theta < 1)$が存在する（\textbf{テイラーの定理}）．
+
+また，$R_n \xrightarrow{n \to \infty} 0$であるとき
+\begin{equation}
+	f(a + h,\ b + k) = f(a,\ b) + \bunsuu{1}{1!}Df(a,\ b) + \bunsuu{1}{2!}D^2f(a,\ b) + \cdots + \bunsuu{1}{(n - 1)!}D^{n - 1}f(a,\ b) + \bunsuu{1}{n!}D^n f(a,\ b) + \cdots
+\end{equation}
+が成り立つ（\textbf{テイラー展開}）．
+
+\begin{tip}{補足}
+	$z = f(x,\ y)$で，$x = a + ht$，$y = b + kt$とすると，$z = f(a + ht,\ b + kt)$より，1変数$t$の関数になる．微分して
+	\begin{equation}
+		\bunsuu{df}{dt} = \bunsuu{dx}{dt}\bunsuu{\partial f}{\partial x} + \bunsuu{dy}{dt}\bunsuu{\partial f}{\partial y} = h\bunsuu{\partial f}{\partial x} + k\bunsuu{\partial f}{\partial y} \label{equ5:4}
+	\end{equation}
+	ここで，$D = \Bigl(h\bunsuu{\partial}{\partial x} + k\bunsuu{\partial}{\partial y}\Bigr)$とおくと，$\bunsuu{df}{dt}$は$Df = \Bigl(h\bunsuu{\partial}{\partial x} + k\bunsuu{\partial}{\partial y}\Bigr)f$と書ける．
+	\vskip\baselineskip
+	次に，$\bunsuu{d^2 f}{dt^2}$を考える．式(\ref{equ5:4})より
+	\begin{equation*}
+		\bunsuu{d^2 f}{dt^2} = h\bunsuu{d}{dt}\Bigl(\bunsuu{\partial f}{\partial x}\Bigr) + k\bunsuu{d}{dt}\Bigl(\bunsuu{\partial f}{\partial y}\Bigr)
+	\end{equation*}
+	今，$\bunsuu{\partial f}{\partial x},\ \bunsuu{\partial f}{\partial y}$は2変数$x,\ y$の関数なので，チェーン・ルールより
+	\begin{gather*}
+		\bunsuu{d}{dt}\Bigl(\bunsuu{\partial f}{\partial x}\Bigr)
+		= \bunsuu{\partial}{\partial x}\Bigl(\bunsuu{\partial f}{\partial x}\Bigr)\bunsuu{dx}{dt} + \bunsuu{\partial}{\partial y}\Bigl(\bunsuu{\partial f}{\partial x}\Bigr)\bunsuu{dy}{dt}
+		= h\bunsuu{\partial^2 f}{\partial x^2} + k\bunsuu{\partial^2 f}{\partial y \partial x}\\
+		% 
+		\bunsuu{d}{dt}\Bigl(\bunsuu{\partial f}{\partial y}\Bigr)
+		= \bunsuu{\partial}{\partial x}\Bigl(\bunsuu{\partial f}{\partial y}\Bigr)\bunsuu{dx}{dt} + \bunsuu{\partial}{\partial y}\Bigl(\bunsuu{\partial f}{\partial y}\Bigr)\bunsuu{dy}{dt}
+		= h\bunsuu{\partial^2 f}{\partial x \partial y} + k\bunsuu{\partial^2 f}{\partial y^2}
+	\end{gather*}
+	よって，代入して　$\bunsuu{d^2 f}{dt^2} = h\Bigl(h\bunsuu{\partial^2 f}{\partial x^2} + k\bunsuu{\partial^2 f}{\partial y \partial x}\Bigr) + k\Bigl(h\bunsuu{\partial^2 f}{\partial x \partial y} + k\bunsuu{\partial^2 f}{\partial y^2}\Bigr)$\\
+	第2次偏導関数が存在し，ともに連続とすると$\bunsuu{\partial^2 f}{\partial y \partial x} = \bunsuu{\partial^2 f}{\partial x \partial y}$なので，
+	\begin{equation}
+		\bunsuu{d^2 f}{dt^2} = h^2\bunsuu{\partial^2 f}{\partial x^2} + 2hk\bunsuu{\partial^2 f}{\partial x \partial y} + k^2\bunsuu{\partial^2 f}{\partial y^2} = \Bigl(h\bunsuu{\partial}{\partial x} + k\bunsuu{\partial}{\partial y}\Bigr)^2 f = D^2 f
+	\end{equation}
+	このように，$D$を用いると
+	\begin{equation}
+		\bunsuu{d^n f}{dt^n} = D^n f = \Bigl(h\bunsuu{\partial}{\partial x} + k\bunsuu{\partial}{\partial y}\Bigr)^n f
+	\end{equation}
+	と略記することができる．
+\end{tip}
+
+$a = b = 0$としたときのテイラーの定理を\textbf{マクローリンの定理}という．$h,\ k$の代わりに$x,\ y$でよく表す．
+\begin{equation}
+	f(x,\ y) = f(0,\ 0) + \bunsuu{1}{1!}Df(0,\ 0) + \bunsuu{1}{2!}D^2 f(0,\ 0) + \cdots + \bunsuu{1}{(n - 1)!}D^{n - 1} f(0,\ 0) + \bunsuu{1}{n!}D^n f(\theta x,\ \theta y)
+\end{equation}
+を満たす$\theta\ (0 < \theta < 1)$が存在する．
+
+
+
+\subsection{包絡線}
+
+変数$x,\ y$の他に任意定数$\alpha$を含んでいる方程式
+\begin{equation}
+	f(x,\ y,\ \alpha) = 0
+\end{equation}
+は$\alpha$を変化させて得られる全ての曲線の集合（曲線群）を表している．これを\textbf{曲線群の方程式}という．
+
+曲線群の全ての曲線に接する曲線or直線を曲線群の\textbf{包絡線}という．包絡線上の点$(x,\ y)$は
+\begin{equation}
+	f(x,\ y,\ \alpha) = 0,\ \bunsuu{\partial}{\partial\alpha}f(x,\ y,\ \alpha) = 0
+\end{equation}
+を満たす．この2式を求めて，$\alpha$を消去すると包絡線の方程式が求まる．
+
+
+
+\section{極値問題}
+\subsection{2変数関数の極値}
+
+\textbf{ヘッシアン}$H(a,\ b) =
+\begin{vmatrix}
+	f_{xx}(a,\ b) & f_{xy}(a,\ b)\\
+	f_{xy}(a,\ b) & f_{yy}(a,\ b)
+\end{vmatrix}
+$とおくと，点$(a,\ b)$に於いて
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item $H > 0$のとき
+		\begin{align}
+			&f_{xx} > 0 \qLongright \text{点$(a,\ b)$で極小をとる} & &f_{xx} < 0 \qLongright \text{点$(a,\ b)$で極大をとる}
+		\end{align}
+	\item $H < 0$のとき
+		\begin{equation}
+			\text{点$(a,\ b)$では極値を取らない．}
+		\end{equation}
+	\item $H = 0$のとき
+		\begin{equation*}
+			\text{極値の判定は出来ない．}
+		\end{equation*}
+\end{enumerate}
+
+\begin{tip}{証明}
+	テイラーの定理より
+	\begin{equation*}
+		f(a + h,\ b + k) - f(a,\ b) = Df(a,\ b) + \bunsuu{1}{2}D^2 f(a + \theta h,\ b + \theta k) \quad (0 < \theta < 1)
+	\end{equation*}
+	$(a,\ b)$で極値を取るので，$Df(a,\ b) = h \cdot 0 + k \cdot 0 = 0$より
+	\begin{equation*}
+		f(a + h,\ b + k) - f(a,\ b) = \bunsuu{1}{2}D^2 f(a + \theta h,\ b + \theta k)
+	\end{equation*}
+	となる．ここで，簡単のため
+	\begin{align*}
+		A &= f_{xx}(a + \theta h,\ b + \theta k), &
+		B &= f_{xy}(a + \theta h,\ b + \theta k), &
+		C &= f_{yy}(a + \theta h,\ b + \theta k)
+	\end{align*}
+	とおくと，$f(a + h,\ b + k) - f(a,\ b) = \bunsuu{1}{2}(Ah^2 + 2Bhk + Ck^2)$\\
+	$h,\ k$が十分$0$に近ければ，$AC - B^2,\ A$の符号はそれぞれ$H,\ f_{xx}$の符号に等しくなる．\\
+	変形して
+	\begin{equation*}
+		f(a + h,\ b + k) - f(a,\ b) = \bunsuu{\color{blue}A}{2}\Bigl\{\Bigl(h + \bunsuu{B}{A}k\Bigr)^2 + \bunsuu{\color{red}AC - B^2}{A^2}k^2\Bigr\}
+	\end{equation*}
+	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+		\item $H > 0$（即ち，${\color{red}AC - B^2} > 0$）のとき\\
+			$f_{xx} > 0\ ({\color{blue}A} > 0)$ならば，$f(a + h,\ b + k) > f(a,\ b)$（下に凸）より，極小\\
+			$f_{xx} < 0\ ({\color{blue}A} < 0)$ならば，$f(a + h,\ b + k) < f(a,\ b)$（上に凸）より，極大
+		\item $H < 0$（即ち，${\color{red}AC - B^2} < 0$）のとき
+			\begin{enumerate}[labelsep=10pt, leftmargin=23pt]
+				\item[(ア)] $A \ne 0$または$C \ne 0$のとき\\
+					${\color{red}AC - B^2} < 0$より，$Ah^2 + 2Bhk + Ck^2$は$h,\ k$によって正にも負にもなる．
+				\item[(イ)] $A = C = 0$のとき\\
+					${\color{red}AC - B^2} < 0$より$B \ne 0$なので，$Ah^2 + 2Bhk + Ck^2 = 2Bhk$は$h,\ k$によって正にも負にもなる．
+			\end{enumerate}
+	\end{enumerate}
+\end{tip}
+
+
+
+\subsection{条件付極値問題}
+
+$xy$平面上の点$(x,\ y)$が条件$\varphi(x,\ y) = 0$で表される曲線上を動くとき，平面$x = f(x,\ y)$が極値を取り得る点
+\begin{equation}
+	\bunsuu{f_x}{\varphi_x} = \bunsuu{f_y}{\varphi_y} \quad (\varphi_x,\ \varphi_y \ne 0) \label{equ5:5}
+\end{equation}
+
+\begin{tip}{導出}
+	方程式$\varphi(x,\ y) = 0$の$y$が$x$の関数，即ち$\varphi\bigl(x,\ y(x)\bigr) = 0$とすると，陰関数の微分法より
+	\begin{equation}
+		\bunsuu{dy}{dx} = -\bunsuu{\partial\varphi}{\partial x} \left/ \bunsuu{\partial \varphi}{\partial y}\right. \label{equ5:2}
+	\end{equation}
+	このとき，関数$z = f(x,\ y)$は$x$の関数となるのでチェーン・ルールより，極値をとるとき
+	\begin{equation}
+		\bunsuu{df}{dx} = \bunsuu{\partial f}{\partial x}\bunsuu{dx}{dx} + \bunsuu{\partial f}{\partial y}\bunsuu{dy}{dx} = 0 \label{equ5:3}
+	\end{equation}
+	式(\ref{equ5:3})に式(\ref{equ5:2})を代入して
+	\begin{equation*}
+		\bunsuu{\partial f}{\partial x} - \bunsuu{\partial f}{\partial y} \cdot \bunsuu{\bunsuu{\partial\varphi}{\partial x}}{\bunsuu{\partial\varphi}{\partial y}} = 0
+	\end{equation*}
+	整理すると得られる．
+\end{tip}
+
+
+
+\subsubsection*{ラグランジュの未定乗数法}
+
+$f(x,\ y)$は条件$\varphi(x,\ y) = 0$のもとで，$(a,\ b)$で極値をとるとする．$\varphi_x(a,\ b) \ne 0$または$\varphi_y(a,\ b) \ne 0$であれば
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			f_x(a,\ b) &= \lambda \cdot \varphi_x(a,\ b)\\
+			f_y(a,\ b) &= \lambda \cdot \varphi_y(a,\ b) 
+		\end{aligned}
+	\right.\quad\text{を満たす$\lambda$が存在}
+\end{equation}
+
+\begin{tip}{導出}
+	式(\ref{equ5:5})で，$\bunsuu{f_x}{\varphi_x} = \bunsuu{f_y}{\varphi_y} = \lambda$とおくことによって得られる．
+\end{tip}
+
+\vskip\baselineskip
+
+\textbf{【条件付極値問題で，最大値・最小値を問われたとき】}
+
+$\varphi(x,\ y) = 0$が端点をもたない場合，$z = f(x,\ y)$が連続関数であれば，極値を取り得る点が最大値・最小値になる．
+
+
+
+
+\newpage

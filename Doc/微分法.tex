@@ -1,2 +1,48 @@
 \chapter{微分法}
 \setcounter{page}{1}
+
+
+
+\section{微分法}
+
+\subsection{関数の連続}
+
+関数$f(x)$の極限値について
+\begin{equation}
+	\lim_{x \to a} f(x) = \alpha \iff \lim_{x \to a + 0} f(x) = \lim_{x \to a - 0} f(x) = \alpha
+\end{equation}
+が成り立つ．また，$\dlim_{x \to a} f(x)$が存在して
+\begin{equation}
+	\lim_{x \to a} f(x) = f(a)
+\end{equation}
+が成り立つとき，$f(x)$は$x = a$で\textbf{連続}であるという．
+
+
+
+\subsection{微分可能性}
+
+\vskip-\baselineskip
+\begin{equation}
+	f'(a) = \lim_{h \to 0} \bunsuu{f(a + h) - f(a)}{h}
+\end{equation}
+が存在するとき，関数$f(x)$は$x = a$に於いて\textbf{微分可能}であるという．このとき，次が成り立つ．
+\begin{equation}
+	\textbf{$f(x)$は$x = a$で微分可能} \qLongright \textbf{$f(x)$は$x = a$で連続}
+\end{equation}
+
+
+
+\subsection{導関数}
+
+次の式で定義される関数を$f(x)$の\textbf{導関数}という．
+\begin{equation}
+	\bunsuu{d}{dx}f(x) = \lim_{\varDelta x \to 0} \bunsuu{f(x + \varDelta x) - f(x)}{\varDelta x}
+\end{equation}
+
+
+
+\begin{kousiki}{導関数の性質と公式}
+	$c$を定数とする．
+\end{kousiki}
+
+\newpage
