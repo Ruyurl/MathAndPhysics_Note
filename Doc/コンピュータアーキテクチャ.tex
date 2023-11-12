@@ -1,0 +1,351 @@
+\chapter{コンピュータアーキテクチャ}
+\setcounter{page}{1}
+
+\section{基本アーキテクチャ}
+\subsection{基本ハードウェア構成}
+
+コンピュータは，
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{プロセッサ}（\textbf{CPU}）
+	\item \textbf{メインメモリ}
+	\item \textbf{入出力装置}（外部装置で，キーボードとディスプレイ）
+\end{enumerate}
+で構成させる．\textbf{[1]}，\textbf{[2]}を纏めて\textbf{内部装置}という．
+
+
+
+\section{内部装置のアーキテクチャ}\label{sec14-2}
+\subsection{内部装置のハードウェア構成}
+
+コンピュータの内部装置は，\textbf{プロセッサ}と\textbf{メインメモリ}の2つの基本ハードウェア装置を\textbf{内部バス}で接続して構成している．このうち，プロセッサは以下の3つの主要なハードウェア装置やハードウェア機構で構成する．
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{制御機構}
+	\item \textbf{演算機構}
+	\item \textbf{レジスタ}
+\end{enumerate}
+
+\textbf{[2]}演算機構と\textbf{[3]}レジスタは\textbf{データバス}でデータを送受する．
+
+
+
+\subsection{プロセッサアーキテクチャ① 制御機構}\label{sec14-2-B}
+\vskip-1\baselineskip
+\subsubsection{制御機構}
+
+\textbf{制御機構}は，次の2つの機能を実現するハードウェア機構である．
+
+\begin{enumerate}[label=\textbf{[\alph*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{順序制御機構}\quad 実行するマシン命令のメモリアドレスを決定する．即ちマシン命令の実行順序を決める．
+	\item \textbf{制御信号}の生成\quad プロセッサ更には内部装置全体の各所に，それぞれを制御するために必要なハードウェア信号を供給する．
+	\begin{align*}
+		&\text{命令コード（OPコード）} \qlongright \text{各装置に動作させる．}\\
+		&\text{\f{例}　1001} \hspace*{6.5\zw}\qlongright
+		\left\{
+			\begin{array}{l}
+				\text{格納したい} \qlongright \text{レジスタに信号を送る．}\\
+				\text{加算したい} \qlongright \text{演算機構に信号を送る．}
+			\end{array}
+		\right.
+	\end{align*}
+\end{enumerate}
+
+
+
+\subsubsection{制御方式}
+
+命令コードから制御信号を生成することを\textbf{（命令）デコード}という．制御信号の生成方法は2通りある．
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{配線論理制御方式（ワイヤードロジック）}\quad 論理回路でデコーダをつくる．ハードウェア的制御方式なので，動作速度は速いが，変更はできない．\\
+	単純な機能で簡潔な制御で済むマシン命令に対して適用される．
+	\item \textbf{マイクロプログラム制御方式}\quad 命令デコーダをプログラムで表現してデコーダをつくる．ソフトウェア的制御方式なので，動作速度は遅いが，変更ができる．このマイクロプログラムは，\textbf{制御メモリ}という専用メモリに格納してある．\\
+	高機能で複雑な制御が必要な場合に用いられる．
+\end{enumerate}
+
+現代のコンピュータはこれらを併用している．
+
+
+
+\subsubsection{割り込み}
+
+不測の事態や事象（\textbf{割り込み要因}）が生じたときに割り込み機構が発動すると，実行中のプログラム（マシン命令列）を一時中断して，\textbf{割り込み処理}プログラムへ制御フローが分岐する．
+
+
+
+\subsubsection{割り込みの必要性}
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 不測の事態や事象の対処
+	\item 異常や例外の検知・対処
+	\item 「ユーザプログラムからOSへの通信」機能の実現
+	\item 「ハードウェア装置からOSへの通信」機能の実現
+	\item ハードウェア同士の同期の実現
+	\item 通信の競合の実現
+\end{enumerate}
+
+
+
+\subsubsection{割り込み要因}\label{sec14-2-B-5}
+
+割り込みを引き起こす具体的な原因や事象を「割り込み要因の発生場所」で分類する．
+
+\begin{enumerate}[label=\textbf{[\Alph*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{内部割り込み}\quad 要因の発生場所が内部装置特にプロセッサにある割り込み．マシン命令の実行するタイミングに合わせて発生し，マシン命令の実行というソフトウェア的要因に依るので，\textbf{ソフトウェア割り込み}ともいう．割り込みの必要性の\textbf{[3]}の手段．
+		\begin{enumerate}[label=\textbf{(\arabic*)}, labelsep=10pt, leftmargin=23pt]
+			\item \textbf{命令実行例外}
+				\begin{enumerate}[label={\color{gray}●}, labelsep=10pt, leftmargin=23pt]
+					\item \textbf{メモリアクセス例外}
+						\begin{enumerate}[label=\textbf{(\roman*)}, labelsep=10pt, leftmargin=23pt]
+							\item 指定したメモリアドレスにマシン命令やデータがないとき
+							\item \textbf{ページフォールト}…プログラムを仮想メモリ\footnote{メインメモリ＋ファイル装置で作った仮装的なメモリ．}に割り当てていてメインメモリにはまだ読み込んでいない状態で，プログラムにアクセスしようとしたとき
+							\item メモリ保護違反…アクセスする権限がないメインメモリへアクセスしようとしたとき
+						\end{enumerate}
+					\item \textbf{不正命令}
+						\begin{enumerate}[label=\textbf{(\roman*)}, labelsep=10pt, leftmargin=23pt]
+							\item 命令セットにない（＝定義されていない）命令コードであるとき
+							\item データなのに命令として実行しようとしたとき
+						\end{enumerate}
+					\item \textbf{不正オペランド}\quad オペランドで指定するアドレスにデータがないとき
+					\item \textbf{演算例外}
+						\begin{enumerate}[label=\textbf{(\roman*)}, labelsep=10pt, leftmargin=23pt]
+							\item \textbf{オーバーフロー}\footnote{演算結果が演算器そのものやレジスタの最上位ビットから溢れる場合．}を起こしたとき
+							\item \textbf{0除算}…0を除数とする除算を行ったとき
+						\end{enumerate}
+				\end{enumerate}
+			\item \textbf{SVC（スーパーバイザコール）}\quad OSを呼び出すSVC命令を実行したとき．SVC命令は以下の通り：
+				\begin{enumerate}[label={\color{gray}●}, labelsep=10pt, leftmargin=23pt]
+					\item \textbf{入出力命令}…ディスプレイやプリンタなど
+					\item \textbf{ブレークポイント命令}…プログラム実行の中断点（ブレークポイント\footnote{デバグ（プログラムの誤りを発見・削除する操作）時にプログラム実行を一時中断する起点，プログラムをトレース（実行履歴を取る）する起点．}）をOSに通知する．
+				\end{enumerate}
+		\end{enumerate}
+	\item 外部割り込み\quad 要因の発生場所が外部装置特に入出力装置にある割り込み．マシン命令の実行とは無関係に発生し，外部装置というハードウェア的要因に依るので，\textbf{ハードウェア割り込み}ともいう．割り込みの必要性の\textbf{[4]}の手段．
+		\begin{enumerate}[label=\textbf{(\arabic*)}, labelsep=10pt, leftmargin=23pt]
+			\item \textbf{入出力割り込み}\quad 入出力装置・通信装置からOSに次の状態を知らせる割り込み
+				\begin{enumerate}[label=\textbf{(\roman*)}, labelsep=10pt, leftmargin=23pt]
+					\item ユーザが入力装置によってデータを正常に入力した
+					\item 出力装置の操作が正常に完了した
+					\item 入出力装置に異常があった
+					\item 通信装置を使って他のコンピュータが通信を要求した
+				\end{enumerate}
+			\item \textbf{ハードウェア障害}\quad ハードウェア装置から以下のような「障害発生」の通知
+				\begin{enumerate}[label=\textbf{(\roman*)}, labelsep=10pt, leftmargin=23pt]
+					\item 電源異常
+					\item メモリからの読み出しエラー
+					\item 温度異常
+				\end{enumerate}
+			\item \textbf{リセット}\quad ユーザが電源ボタンを押したとき
+		\end{enumerate}
+\end{enumerate}
+
+複数の割り込みが発生した時，優先度を付与する．
+
+\noindent\textbf{【優先度】}（高→低）
+\begin{enumerate}[label={\color{gray}●}, labelsep=10pt, leftmargin=23pt]
+	\item ハードウェア障害
+	\item リセット
+	\item 命令実行例外
+		\begin{enumerate}[label={\color{gray}○}, labelsep=10pt, leftmargin=23pt]
+			\item ページフォールト
+			\item メモリ保護違反
+			\item 演算例外
+		\end{enumerate}
+	\item 入出力割り込み
+		\begin{enumerate}[label={\color{gray}○}, labelsep=10pt, leftmargin=23pt]
+			\item ファイル装置（高速）
+			\item キーボード・プリンタ
+		\end{enumerate}
+	\item SVC
+	\item ブレークポイント命令
+\end{enumerate}
+
+
+
+\subsubsection{割り込み処理}
+
+順序制御機構とOS機能とが機能分担して処理する．
+
+\begin{figure}[H]
+	\begin{center}
+		\framebox{
+		\includegraphics[width=15cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/割り込み.pdf}
+		}
+		\caption{割り込み処理の流れ}
+		\label{fig14-1}
+	\end{center}
+\end{figure}
+
+\begin{enumerate}[label=\arabic*., labelsep=10pt, leftmargin=23pt]
+	\item 割り込みの発生…\ref{sec14-2}.\ref{sec14-2-B}節の\ref{sec14-2-B-5}で紹介した要因で割り込みが発生．
+	\item 割り込みの受付…ハードウェア機構が割り込みを受付→割り込み処理開始．
+	\item 割り込み禁止状態…他の割り込みを受け付けないようにする．
+	\item ハードウェア状態を退避…ハードウェア機構によって今までのプログラムが生成していたハードウェア状態をプロセッサ内の退避領域へ退避．
+	\item 割り込み要因の識別…割り込み要因は何かを識別．
+	\item 割り込みハンドラへ分岐…割り込み要因ごとの割り込み処理プログラムへ分岐．
+	\item ハードウェア状態の回復…退避領域から今までのプログラムが生成していたハードウェア状態を回復．
+	\item 割り込み可能にする…他の割り込みを許可する．
+\end{enumerate}
+
+
+
+\subsubsection{命令パイプライン処理}
+
+\begin{figure}[H]
+	\begin{center}
+		\framebox{
+		\includegraphics[width=10cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令実行サイクル.pdf}
+		}
+		\caption{命令実行サイクルの流れ}
+		\label{fig14-2}
+	\end{center}
+\end{figure}
+
+命令実行サイクルは以下の通り．
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 命令取り出し（I）
+	\item 命令デコード（D）
+	\item オペランド取り出し（O）
+	\item 実行（E）
+	\item 結果格納（W）
+	\item 次アドレス決定
+\end{enumerate}
+
+上の命令実行サイクルの1つ1つを\textbf{ステージ}という．この1連のマシン命令をプロセッサに投入して処理するとき，高速化するため\textbf{命令パイプライン処理}をする．命令パイプライン処理の具体的な流れは以下の通り．
+
+\begin{figure}[H]
+	\begin{center}
+		\framebox{
+		\includegraphics[width=8cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令パイプライン処理.pdf}
+		}
+		\caption{命令パイプライン処理の流れ}
+		\label{fig14-3}
+	\end{center}
+\end{figure}
+
+\begin{table}[H]
+	\caption{命令パイプライン処理の流れ}
+	\label{tab14-1}
+	\centering
+	\scriptsize
+	\begin{tabular}{c|p{10cm}}
+		\hline
+		時間（クロック） & 実行内容\\
+		\hline
+		0 & 5つ（赤，青，黄，緑，紫）の命令が実行されるのを待っている．\\
+		\hline
+		1 & 紫色の命令を取り出す．\\
+		\hline
+		2 & 紫色の命令をデコードする．\par 緑色の命令を取り出す．\\
+		\hline
+		3 & 紫色の命令のオペランドを取り出す．\par 緑色の命令をデコードする．\par 黄色の命令を取り出す．\\
+		\hline
+		4 & 紫色の命令を実行する（実際の命令処理を行う）．\par 緑色の命令のオペランドを取り出す．\par 黄色の命令をデコードする．\par 青色の命令を取り出す．\\
+		\hline
+		5 & 紫色の命令の結果を（レジスタなどに）格納する．\par 緑色の命令を実行する．\par 黄色の命令のオペランドを取り出す．\par 青色の命令をデコードする．\par 赤色の命令を取り出す．\\
+		\hline
+		6 & 紫色の命令は完了した．\par 緑色の命令の結果を格納する．\par 黄色の命令を実行する．\par 青色の命令のオペランドを取り出す．\par 赤色の命令をデコードする．\\
+		\hline
+		7 & 緑色の命令は完了した．\par 黄色の命令の結果を格納する．\par 青色の命令を実行する．\par 赤色の命令のオペランドを取り出す．\\
+		\hline
+		8 & 黄色の命令は完了した．\par 青色の命令の結果を格納する．\par 赤色の命令を実行する．\\
+		\hline
+		9 & 青色の命令は完了した．\par 赤色の命令の結果を格納する．\\
+		\hline
+		10 & 赤色の命令は完了した＝\textbf{全命令を実行した．}\\
+		\hline
+	\end{tabular}
+\end{table}
+
+このように，5つのマシン命令が完了するまでに10サイクルの時間が必要になる．
+
+\begin{tip}{例題}
+	\textsf{上の図のように5ステージで構成する命令実行サイクルを持つ命令パイプライン処理機構がある．ただし，1ステージ時間は10ナノ秒とする．即ち，1命令実行サイクルは50ナノ秒要する．このパイプライン機構に100,000個のマシン命令を投入すると，全部のマシン命令が完了するまでにはどれだけ時間がかかるか求めなさい．また，命令パイプライン処理機構がない場合と比較しなさい．}
+
+	\tcblower
+
+	パイプライン処理をしない場合，1つの命令につき50ナノ秒なので，100,000個の命令では$50 \times 100000 = 5000000$ナノ秒，つまり，5ミリ秒かかる．
+
+	パイプライン処理をする場合，まず，1個目の命令がStage1.に入るまでから100,000個目の命令がStage1.に入るまで10ナノ秒ずつずれていくわけなので，$\text{$10$ナノ秒$\times 100000 = 1000000$ナノ秒}$掛かる．そのあと，100,000個目の命令は残り4つのステージが残っているわけだから，$\text{$10$ナノ秒$\times 4 = 40$ナノ秒}$．
+	
+	つまり，合計$\text{$1000000$ナノ秒$ + 40$ナノ秒$ = 1000040$ナノ秒$ = 1.00004$ミリ秒$ \approx 1$ミリ秒}$掛かることになる．つまり，しない場合の約5分の1で完了できる．
+\end{tip}
+
+この例題は上の図で，「時間（クロック）」が「時間（ナノ秒）」となり，「$0,\ 10,\ 20,\ \cdots,\ 1000040$」と置き換え，100,000色の四角（命令）があると考えた場合である．
+
+このように，命令実行サイクルを$s$個のステージで構成する命令パイプライン処理機構に$I$個のマシン命令を投入すると，処理時間は$I$の値にかかわらず，パイプライン処理をしない場合の\textbf{約$\bm{s}$分の1}に短縮できる．
+
+\noindent
+※例題の5ステージに対し100,000個の命令のように，ステージ数に対し命令数が十分大きくではならない（$I \gg s$）．でないと処理時間はそんなに変わらない．
+
+
+
+\subsection{プロセッサアーキテクチャ② 演算機構}
+\vskip-1\baselineskip
+\subsubsection{数の表現}
+
+\begin{table}[H]
+	\caption{数の表現}
+	\label{tab14-2}
+	\centering
+	\begin{tabular}{c|p{10cm}}
+		\hline
+		\textbf{整数} & \textbf{固定小数点数表現}\par 小数点は最下位ビットの右に固定．\\
+		\hline
+		\textbf{実数} & \textbf{浮動小数点数表現}\par 小数点の位置を変えて任意の精度で表現する．小数点も“0”か“1”で表現する．問題として，ハードウェアは有限なので\textbf{循環小数}や\textbf{無理数}の\textbf{丸め誤差}が生れる．\\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+\subsubsection{演算機構とデータバス}
+
+マシン命令の転送とデータの転送の両方で共用する内部バスに対し，データ専転送だけに使用する演算機構 -- レジスタ間の転送路を\textbf{データバス}という．
+
+演算器（ALU）は，データバスに並列接続する．
+
+
+
+\subsubsection{加算器}
+
+四則演算は\textbf{加算}を基にしてできる．
+
+\begin{enumerate}[label={\color{gray}●}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{減算}\qquad 加える数を負の数にする．
+	\item \textbf{乗算}\qquad 加算の繰り返し：$a \times b$の場合，$0$を最初の加えられる数にして，$a$を$b$回繰り返し加算する．
+	\item \textbf{除算}\qquad 減算の繰り返し：$a \div b$の場合，$a$を最初の引かれる数にして，$b$を繰り返し引いたとき，$b$未満になるまでに何回引いたかが商（計算結果）となる．
+\end{enumerate}
+
+加算器で，1個下のビットからの繰り上げも考慮したものを\textbf{全加算器}という．足される数を$X$，足す数を$Y$，1個下のビットからの繰り上げを$C_{\mathrm{in}}$，\kenten{当該ビット}の和を$S$\footnote{例えば，2進数の$(1)_{2} + (1)_{2}$をすると，$(10)_{2}$となる．このとき，$S$は$0$，$C_{\mathrm{out}}$は$1$である．}，1個上のビットへの繰り上げを$C_{\mathrm{out}}$とすると，真理値表は以下の通り．
+
+\begin{table}[H]
+	\caption{全加算器の真理値表}
+	\label{tab14-3}
+	\centering
+	\begin{tabular}{c|c|c||c|c}
+		\hline
+		$X$ & $Y$ & $C_{\mathrm{in}}$ & $S$ & $C_{\mathrm{out}}$\\
+        \hline\hline
+        $0$ & $0$ & $0$ & $0$ & $0$\\
+        $0$ & $0$ & $1$ & $1$ & $0$\\
+        $0$ & $1$ & $0$ & $1$ & $0$\\
+        $0$ & $1$ & $1$ & $0$ & $1$\\
+        $1$ & $0$ & $0$ & $1$ & $0$\\
+        $1$ & $0$ & $1$ & $0$ & $1$\\
+        $1$ & $1$ & $0$ & $0$ & $1$\\
+        $1$ & $1$ & $1$ & $1$ & $1$\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+	\begin{center}
+		\framebox{
+		\includegraphics[width=8cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf}
+		}
+		\caption{全加算器のブロック図}
+		\label{fig14-4}
+	\end{center}
+\end{figure}

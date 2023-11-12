@@ -54,7 +54,7 @@
 \end{tip}
 
 \begin{tip}{例題(2)}
-	$y = \log x \qLongright x = e^y$より
+	$y = \log x \qLonglr x = e^y$より
 	\begin{equation*}
 		\int_{1}^{e} \left\{\int_{0}^{\log x} f(x,\ y)\,dy\right\}dx = \int_{0}^{1} \left\{\int_{e^y}^{e} f(x,\ y)\,dx\right\}\,dy
 	\end{equation*}
@@ -92,5 +92,17 @@ $x = r\cos\theta,\ y = r\sin\theta$より
 	\right|\,drd\theta \notag\\
 	&= \iint_{D'} f(r\cos\theta,\ r\sin\theta)\,rdrd\theta
 \end{align}
+
+
+
+\subsection{広義積分}
+\subsubsection*{領域に関数の定義されない部分が含まれている場合}
+
+\begin{tip}{例題}
+	$D$が不等式$x^2 + y^2 \le 1$の表す領域とするとき
+	\begin{equation*}
+		\iint_{D} (x^2 + y^2)^{-\myfrac{3}{4}}\,dxdy
+	\end{equation*}
+\end{tip}
 
 \newpage

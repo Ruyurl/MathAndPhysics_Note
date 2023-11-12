@@ -31,11 +31,12 @@
 %%%%%%%%%%                              %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % フォント関係
-\usepackage{luatexja-fontspec}
+\usepackage{luatexja-fontspec, luatexja-ruby}
 \setmainjfont{ChikuPori-Regular2.ttf}[BoldFont=LINESeedJP_OTF_Rg.otf]
 \setsansjfont{LINESeedJP_OTF_Rg.otf}[BoldFont=LINESeedJP_OTF.otf]
 \usepackage{fontspec}
-\setsansfont{QTEurotype}
+% \setsansfont{QTEurotype}
+\setsansfont{GenEiMGothic2-Regular.ttf}[BoldFont=GenEiMGothic2-Bold.ttf]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ノンブル、柱の設定
 \ModifyPageStyle{headings}{
@@ -135,6 +136,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\qlongright}{\quad\longrightarrow\quad}
 \newcommand{\qLongright}{\quad\Longrightarrow\quad}
+\newcommand{\qLonglr}{\quad\Longleftrightarrow\quad}
 \usepackage[e]{esvect}
 \renewcommand{\vec}[1]{\hspace*{-0.5pt}\vv{\mathstrut #1}\hspace*{-0.5pt}}
 \newcommand{\vecrm}[1]{\vv{\mathrm{\mathstrut #1}}}
@@ -303,6 +305,7 @@
 		{\color{gray}◆}#1{\color{gray}\hspace*{-0.7\zw}◆}\quad#2
 	}
 }
+\renewcommand{\thesubsubsection}{［\arabic{subsubsection}］}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 章，節のデザインを変更 \MakeUppercase{#1}ですべて大文字   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -337,28 +340,32 @@
 
 
 \input{微分法.tex}
-% \input{積分法.tex}
-% \input{数列の極限.tex}
-% \input{関数の展開.tex}
+\input{積分法.tex}
+\input{数列の極限.tex}
+\input{関数の展開.tex}
 \input{偏微分法.tex}
 \input{重積分法.tex}
-\input{常微分方程式.tex}
+\input{微分方程式.tex}
 \input{ベクトル.tex}
-% \input{行列.tex}
-% \input{行列式.tex}
-% \input{線形変換.tex}
-% \input{固有値とその応用.tex}
+\input{行列.tex}
+\input{行列式.tex}
+\input{線形変換.tex}
+\input{固有値とその応用.tex}
 \input{ベクトル空間.tex}
-% \input{確率.tex}
-% \input{データの整理.tex}
-% \input{確率分布.tex}
-% \input{推定と検定.tex}
+\input{確率.tex}
+\input{データの整理.tex}
+\input{確率分布.tex}
+\input{推定と検定.tex}
 \input{ベクトル解析.tex}
 \input{ラプラス変換.tex}
-% \input{フーリエ解析.tex}
-% \input{複素解析.tex}
+\input{フーリエ解析.tex}
+\input{複素解析.tex}
 \input{力学1234.tex}
+\input{力学56789.tex}
 \input{電磁気学1.tex}
+\input{電磁気学2.tex}
+\input{電磁気学3.tex}
+\input{コンピュータアーキテクチャ.tex}
 
 
 

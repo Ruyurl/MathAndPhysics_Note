@@ -1,0 +1,89 @@
+\chapter{微分方程式}
+\setcounter{page}{1}
+
+
+\section{1階線形常微分方程式}
+
+以下の形の微分方程式を\textbf{1階線形常微分方程式}という．
+\begin{equation}
+	\bunsuu{dx}{dt} + P(t)x = Q(t)
+\end{equation}
+
+このとき，$Q(t) = 0$の場合，即ち
+\begin{equation}
+	\bunsuu{dx}{dt} + P(t)x = 0
+\end{equation}
+の場合を\textbf{斉次}といい，$Q(t) \ne 0$の場合，即ち
+\begin{equation}
+	\bunsuu{dx}{dt} + P(t)x = Q(t)
+\end{equation}
+の場合を\textbf{非斉次}という．
+
+
+
+\subsection{変数分離形}
+
+1階微分方程式で，
+\begin{equation}
+	\bunsuu{dx}{dt} = F(x)G(t)
+\end{equation}
+のように，$x$の関数と$t$の関数の積になる形を\textbf{変数分離形}という．
+
+\noindent
+\textbf{【解法】}
+\begin{equation*}
+	\bunsuu{dx}{dt} = 2tx
+\end{equation*}
+を例にする．
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 左辺を$x$だけの式，右辺を$t$だけの式にする．
+		\begin{equation*}
+			\bunsuu{dx}{x} = 2t\,dt
+		\end{equation*}
+	\item $\int$をつけて両辺積分する．
+		\begin{gather*}
+			\int \bunsuu{dx}{x} = \int 2t\,dt\\
+			\log |x| = t^2 + C_1 \quad \text{（$C_1$は任意定数）}
+		\end{gather*}
+	\item $x$について解く．
+		\begin{gather*}
+			x = \pm e^{t^2 + C_1} = \pm e^{C_1} e^{t^2}\\
+		\intertext{$\pm e^{C_1} = C$とおいて}
+			x = Ce^{t^2} \quad \text{（$C$は任意定数）}
+		\end{gather*}
+\end{enumerate}
+
+
+\subsection{定数変化法}
+
+1階線形常微分方程式
+\begin{equation}
+	\bunsuu{dx}{dt} + P(t)x = Q(t)
+\end{equation}
+の一般解を求める．まず，$Q(t) = 0$といた斉次方程式を解く．これは変数分離形で解ける．その結果を用いて非斉次方程式の一般解を導く．
+
+\noindent\textbf{【解法】}
+\begin{equation}
+	\bunsuu{dx}{dt} + \bunsuu{1}{t}x = 4t^2 + 1 \label{equ:JBH-1}
+\end{equation}
+を例にする．
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item まず，斉次方程式
+		\begin{equation}
+			\bunsuu{dx}{dt} + \bunsuu{1}{t}x = 0
+		\end{equation}
+		の一般解を求める．
+		\begin{gather*}
+			\bunsuu{dx}{x} = -\bunsuu{dt}{t}\\
+			\int \bunsuu{dx}{x} = -\int \bunsuu{dt}{t}\\
+			\log |x| = -\log |t| + C_1 \quad \text{（$C_1$は任意定数）}\\
+			\log |x| + \log |t| = C_1\\
+			\log |xt| = C_1\\
+			\pm e^{C_1} = xt\\
+			\intertext{$\pm e^{C_1} = C$とおいて}
+			x = \bunsuu{C}{t}
+		\end{gather*}
+	\item これは斉次方程式の一般解である．求めたいのは
+\end{enumerate}
