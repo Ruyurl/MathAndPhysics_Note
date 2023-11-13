@@ -1,6 +1,6 @@
 \documentclass[
 	report, paper=a4, head_space=23mm, foot_space=13mm,
-	fontsize=9pt, jafontscale=0.9,
+	fontsize=8pt, jafontsize=8pt,
 	gutter=20mm, line_length=170mm,
 	fleqn, twoside
 ]{jlreq}
@@ -35,7 +35,6 @@
 \setmainjfont{ChikuPori-Regular2.ttf}[BoldFont=LINESeedJP_OTF_Rg.otf]
 \setsansjfont{LINESeedJP_OTF_Rg.otf}[BoldFont=LINESeedJP_OTF.otf]
 \usepackage{fontspec}
-% \setsansfont{QTEurotype}
 \setsansfont{GenEiMGothic2-Regular.ttf}[BoldFont=GenEiMGothic2-Bold.ttf]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ノンブル、柱の設定
@@ -52,7 +51,7 @@
 % plain ヘッダーには何も表示せず，フッターにノンブル
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 色関係
-\usepackage{graphicx}
+% \usepackage{graphicx}
 \usepackage[dvipsnames]{xcolor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % xcolor    dvipsnamesをつけるといろいろな名前が使える：
@@ -280,6 +279,29 @@
 %%%%%%%%%%           デザイン           %%%%%%%%%%
 %%%%%%%%%%                              %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+% 目次の章の体裁カスタマイズ
+\newif\ifmaincontents   % メイン内の章かを区別するため
+\maincontentsfalse
+\renewcommand{\l@chapter}[2]{%
+    \ifnum \c@tocdepth >\m@ne
+        \setlength\@lnumwidth{0.1\textwidth}
+        \ifmaincontents
+            \vspace*{0.8\baselineskip}
+            \noindent\hrulefill\par%
+            \nobreak%
+            \noindent {\sffamily\large #1}\par
+        \else
+            \vspace*{0.8\baselineskip}
+            \noindent {\sffamily\large #1}\par
+        \fi
+    \fi}
+	\renewcommand{\l@section}[2]{%
+		\setlength\@lnumwidth{0.06\textwidth}
+		#1\par
+	}
+\makeatother
+\setcounter{tocdepth}{1}
 % 章
 \ModifyHeading{chapter}{
 	font={\huge\sffamily\bfseries},
@@ -310,8 +332,13 @@
 % 章，節のデザインを変更 \MakeUppercase{#1}ですべて大文字   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{hyperref}
 
-
+\hypersetup{
+	colorlinks,
+	linkcolor=blue,
+	urlcolor=blue
+}
 % hyperref  目次リンク
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -321,6 +348,12 @@
 \title{\fontsize{40pt}{1\zh} \jfontspec{DelaGothicOne-Regular.ttf}数学・物理 回憶錄}
 \date{\LARGE 最終更新日: \today}
 \maketitle
+
+\begin{multicols}{2}
+\tableofcontents
+	
+\end{multicols}
+
 
 
 \noindent
