@@ -287,7 +287,7 @@
 
 \begin{table}[H]
 	\caption{数の表現}
-	\label{tab14-2}
+	\label{tab27-2}
 	\centering
 	\begin{tabular}{c|p{10cm}}
 		\hline
@@ -320,6 +320,15 @@
 
 加算器で，1個下のビットからの繰り上げも考慮したものを\textbf{全加算器}という．足される数を$X$，足す数を$Y$，1個下のビットからの繰り上げを$C_{\mathrm{in}}$，\kenten{当該ビット}の和を$S$\footnote{例えば，2進数の$(1)_{2} + (1)_{2}$をすると，$(10)_{2}$となる．このとき，$S$は$0$，$C_{\mathrm{out}}$は$1$である．}，1個上のビットへの繰り上げを$C_{\mathrm{out}}$とすると，真理値表は以下の通り．
 
+1個下のビットからの繰り上げ出力を当該ビットの$C_{\mathrm{in}}$入力として，32個の全加算器を直列に繫げば「32ビット加算器」が構成出来る．このとき，最下位ビットの繰り上げ$C_{\mathrm{out}_0}$が32個の全加算器を最上位ビットからの繰り上げ$C_{\mathrm{out}_{31}}$まで，次々に伝播することによって累積する遅延が加算時間を決める．
+
+よって，加算時間を減らすため以下の2つの加算器を現代のコンピュータは装備している．
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{桁上げ先見加算器}\qquad 各ビットでの加算数・被加算数を使って予め和を出しておく．桁上げ先見回路という専用の装置を使う．
+	\item \textbf{桁上げ保存加算器}\qquad 部分加算を行い，出た部分和の桁上げ情報を保存する．
+\end{enumerate}
+
 \begin{table}[H]
 	\caption{全加算器の真理値表}
 	\label{tab14-3}
@@ -349,3 +358,211 @@
 		\label{fig14-4}
 	\end{center}
 \end{figure}
+
+
+
+\subsubsection{負数の2進数表現 -- 補数表現}
+
+負数を2進数で表すとき，“$+$”，“$-$”符号も“0”，“1”で表す必要がある．負整数の2進数表現として，以下の2通りがある．
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{1の補数$\bm{\overline{N}}$}\\
+		$N$に加えると和が$1\cdots 11$になる数．\\
+		1の補数は2進数の正整数の各ビットを反転させる（“0”⇔“1”）と求められる．$m$ビットの2進数を10進数で表したとき，以下の式になる．
+		\begin{equation}
+			\overline{N} = 2^m - 1 - N
+		\end{equation}
+	\item \textbf{2の補数$\bm{\overline{\overline{N}}}$}\\
+		$m$ビットの$N$に加えると和が$1\underbrace{0\cdots 00}_{\text{$m$ビット}}$になる数．\\
+		2の補数は1の補数に$+1$すると求められる．$m$ビットの2進数を10進数で表したとき，以下の式になる．
+		\begin{equation}
+			\overline{\overline{N}} = 2^m - N = \overline{N} + 1
+		\end{equation}
+\end{enumerate}
+
+\begin{tip}{例題}
+	\textsf{$N = (0111)_{2}$の1の補数$\overline{N}$と2の補数$\overline{\overline{N}}$を求めなさい．}
+
+	\tcblower
+
+	1の補数：
+	\begin{align*}
+		&\text{機械的にする場合} & N &= (0111)_{2} & \overline{N} &= (1000)_{2}\\
+		&\text{10進数に直して考える場合} & N &= (0111)_{2} = (7)_{10} & \therefore \overline{N} &= 2^4 - 1 - 7 = (8)_{10} = (1000)_{2}
+	\end{align*}
+
+	2の補数：
+	\begin{align*}
+		&\text{機械的にする場合} & N &= (0111)_{2} & \overline{\overline{N}} &= (1001)_{2}\\
+		&\text{10進数に直して考える場合} & N &= (0111)_{2} = (7)_{10} & \therefore \overline{\overline{N}} &= 2^4 - 7 = (9)_{10} = (1001)_{2}
+	\end{align*}
+\end{tip}
+
+\newpage
+
+
+符号無しでは，4ビット$(0000)_{2} ～ (1111)_{2}$の2進数が表現出来る範囲は$(0)_{10} ～ (15)_{10}$である．しかし，補数表現を使うと最上位ビットは符号ビット（“0”：正数，“1”：負数）となり，表現できる範囲は$(-8)_{10} ～ (+7)_{10}$となる．
+
+\begin{table}[H]
+	\caption{4ビット2進数の2の補数表現に於ける10進数との対応表}
+	\label{tab27-4}
+	\centering
+	\begin{tabular}{c|cccccccccccccccc}
+		\hline
+		\textsf{対応する10進数} &
+		$-8$ & $-7$ & $-6$ & $-5$ &
+		$-4$ & $-3$ & $-2$ & $-1$ &
+		$ 0$ & $+1$ & $+2$ & $+3$ &
+		$+4$ & $+5$ & $+6$ & $+7$ \\
+		\hline
+		\textsf{2進数} &
+		1000 & 1001 & 1010 & 1011 &
+		1100 & 1101 & 1110 & 1111 &
+		0000 & 0001 & 0010 & 0011 &
+		0100 & 0101 & 0110 & 0111 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+\subsubsection{補数による加算}
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textsf{1の補数を使うとき}
+		\begin{enumerate}[label=\textbf{\arabic*.}, labelsep=10pt, leftmargin=23pt]
+			\item 負数があるときは1の補数にする．
+			\item 2つの値を加算する．
+			\item \textbf{2.}の結果，最上位ビットで繰り上がり（エンドキャリ）が発生したら，\textbf{2.}に$+1$をした後，最上位ビットの繰り上がりは無視する．この補正を\textbf{エンドアラウンドキャリ}（\textbf{循環桁上げ}）という．
+			\item その結果，最上位ビットが“0”であれば正数，“1”であれば1の補数表現で示された負数である．
+		\end{enumerate}
+		\begin{tip}{例題}
+			\textsf{
+				$(-4)_{10} + (-2)_{10}$を1の補数によって加算せよ．
+			}
+
+			\tcblower
+
+			\begin{enumerate}[label=\textbf{\arabic*.}, labelsep=10pt, leftmargin=23pt]
+				\item どちらも負数なので，1の補数にする．
+					\begin{gather*}
+						(-4)_{10} = \overline{(0100)_{2}} = (1011)_{2}\\
+						(-2)_{10} = \overline{(0010)_{2}} = (1101)_{2}
+					\end{gather*}
+				\item $(1011)_{2} + (1101)_{2} = ({\color{red}1}\,1000)_{2}$
+				\item \textcolor{red}{エンドキャリ}が発生したので，$+1$すると$({\color{red}1}\,1001)_{2}$．繰り上がりそのものは無視して結果は$(1001)_{2}$．
+				\item 最上位ビットが“1”なので，これは1の補数で示された負数である．よって，符号を反転させて$(0110)_{2} = (+6)_{10}$なので，答えは$(-6)_{10}$である．
+			\end{enumerate}
+		\end{tip}
+	\item \textsf{2の補数を使うとき}
+		\begin{enumerate}[label=\textbf{\arabic*.}, labelsep=10pt, leftmargin=23pt]
+			\item 負数があるときは2の補数にする．
+			\item 2つの値を加算する．
+			\item \textbf{2.}の結果，最上位ビットで繰り上がり（エンドキャリ）が発生したら無視する．
+			\item その結果，最上位ビットが“0”であれば正数，“1”であれば1の補数表現で示された負数である．
+		\end{enumerate}
+		\begin{tip}{例題}
+			\textsf{
+				$(-4)_{10} + (-2)_{10}$を2の補数によって加算せよ．
+			}
+
+			\tcblower
+
+			\begin{enumerate}[label=\textbf{\arabic*.}, labelsep=10pt, leftmargin=23pt]
+				\item どちらも負数なので，2の補数にする．
+					\begin{gather*}
+						(-4)_{10} = \overline{\overline{(0100)_{2}}} = (1100)_{2}\\
+						(-2)_{10} = \overline{\overline{(0010)_{2}}} = (1110)_{2}
+					\end{gather*}
+				\item $(1100)_{2} + (1110)_{2} = ({\color{red}1}\,1010)_{2}$
+				\item \textcolor{red}{エンドキャリ}が発生したので無視して結果は$(1010)_{2}$．
+				\item 最上位ビットが“1”なので，これは2の補数で示された負数である．よって，符号を反転後$+1$して$(0110)_{2} = (+6)_{10}$なので，答えは$(-6)_{10}$である．
+			\end{enumerate}
+		\end{tip}
+\end{enumerate}
+
+2の補数による加算では1の補数と違って補正は必要無くエンドキャリは無視すればいいだけなので都合がよい．よって，現代のコンピュータでは減算・負数の加算は2の補数で行うのが一般的．
+
+
+
+\subsubsection{乗算器と除算器}
+
+\begin{enumerate}[label={\color{gray}●}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{乗算器}を実現させる仕組み
+		\begin{enumerate}[label=\textbf{(\arabic*)}, labelsep=10pt, leftmargin=23pt]
+			\item ブース法…負の数を2の補数で表現し，部分積を足して実現．
+			\item 配列型乗算器（並列乗算器）…部分積を2次元配列状に並べ，全加算器で同時に加算．
+			\item ウォリス木…tree構造（根付き木）に部分積を格納．
+			\item 早見表…基本乗算の結果を表にして部分積を求める．
+		\end{enumerate}
+	\item \textbf{除算器}を実現させる仕組み
+		\begin{enumerate}[label=\textbf{(\arabic*)}, labelsep=10pt, leftmargin=23pt]
+			\item 引き戻し法…部分商を求め，結果$0$なら減算\footnote{除算は減算の繰り返しである．}を無かったことにする．
+			\item 引き放し法…部分商が$0$のとき，当該ビットでの減算はそのまま次のビットの操作に移行．
+			\item 乗算収束型除算法
+			\item 部分商の同時生成
+		\end{enumerate}
+\end{enumerate}
+
+
+
+\subsubsection{実数の表現}
+
+実数$R$は\textbf{浮動小数点数表現}を用いる（表\ref{tab27-2}）．小数点の左側$m$を\textbf{仮数部}，右側$e$を\textbf{指数部}といい，式では以下のように表す．
+\begin{equation}
+	R = m \times 2^e \qquad \text{（$m$も$e$もコンピュータ内部では2進数）}
+\end{equation}
+$m$や$e$が負数であれば補数表現で表される．このとき，$m$が負であれば$R$は負となる．
+
+$m$は\textbf{有効数字}ともいい，$e$は小数点の位置決めをしている．よって，$e$は$m$が整数となるように調整している．言い換えれば，実数を2つの整数$m,\ e$によって表現する．
+
+\begin{tip}{例題}
+	\textsf{
+		2進実数$(10100)_{2},\ (11.011)_{2},\ (0.1111)_{2}$を浮動小数点数表現せよ．
+	}
+	
+	\tcblower
+
+	\begin{gather*}
+		(10100)_{2} = (101)_{2} \times 2^{(10)_{2}}\\
+		(11.011)_{2} = (11011)_{2} \times 2^{(-11)_{2}}\\
+		(0.1111)_{2} = (1111)_{2} \times 2^{(-100)_{2}}
+	\end{gather*}
+	※ここでは，負数を絶対値に“$-$”符号を付けることによって表しているが，実際のコンピュータ内部では補数表現されている．
+\end{tip}
+
+$R_1 = m_1 \times 2^{e_1}$と$R_2 = m_2 \times 2^{e_2}$の積$R_1 \times R_2$は次のように計算できる．
+\begin{equation}
+	R_1 \times R_2 = (m_1 \times m_2) \times 2^{(e_1 + e_2)}
+\end{equation}
+
+よって，浮動小数点数用の演算器では，乗算器と加算器を同時に行う工夫をしている．
+
+
+
+\subsubsection{論理演算器とシフト演算器}
+
+\textbf{論理演算器}では，ビットの1つ1つが論理値であるので並列で論理演算できればよい．対して，\textbf{シフト演算器}では，上下位のビットを隣り合うビットに移動する操作を行うので論理回路が必要である．
+
+
+
+\subsubsection{演算機構のアーキテクチャ}
+
+演算器（ALU）は
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 補数器
+	\item 整数の加算器
+	\item 整数の乗算器
+	\item 整数の除算器
+	\item 浮動小数点数の加算器
+	\item 浮動小数点数の乗算器
+	\item 浮動小数点数の除算器
+	\item 論理演算器とシフト演算器シフト演算器
+	\item 2進数→10進数変換機構
+	\item 10進数→2進数変換機構
+\end{enumerate}
+で構成される．
+
+
+
+\subsection{メモリアーキテクチャ}
