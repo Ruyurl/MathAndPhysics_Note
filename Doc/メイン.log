@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2023.10.14)  21 NOV 2023 02:41
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2023.10.14)  22 NOV 2023 04:33
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/User/Documents/TeX/MathAndPhysics_Note/Doc/メイン
@@ -1880,7 +1880,18 @@ File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ
 <use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf>
 Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf  used on input line 356.
 (luatex.def)             Requested size: 227.62204pt x 170.72806pt.
- [6<c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf>] [7]) [8] (./メイン.aux)
+ [6<c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf>] [7] [8]
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf, id=454, 963.6pt x 399.77354pt>
+File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf Graphic file (type pdf)
+<use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf>
+Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf  used on input line 613.
+(luatex.def)             Requested size: 227.62204pt x 94.4348pt.
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf, id=456, 569.0058pt x 569.0058pt>
+File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf Graphic file (type pdf)
+<use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf>
+Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf  used on input line 637.
+(luatex.def)             Requested size: 142.26378pt x 142.25978pt.
+ [9<c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf><c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf>]) [10] (./メイン.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 2.2pt have occurred.
@@ -1888,19 +1899,19 @@ LaTeX Font Warning: Size substitutions with differences
 )
 
 Here is how much of LuaTeX's memory you used:
- 53279 strings out of 479059
+ 53323 strings out of 479059
  382246,1977958 words of node,token memory allocated
- 34056 words of node memory still in use:
-   31 hlist, 2 vlist, 15 rule, 2 math, 7 glue, 150 kern, 23 penalty, 2 glyph, 10183 attribute, 1878 glue_spec, 668 attribute_list, 2 write, 363 user_defined, 16 pdf_literal, 16 pdf_colorstack nodes
-   avail lists: 1:31,2:98790,3:3175,4:1339,5:328,6:154,7:10967,8:145,9:5352,10:34,11:3
- 70353 multiletter control sequences out of 65536+600000
+ 36117 words of node memory still in use:
+   31 hlist, 2 vlist, 15 rule, 2 math, 7 glue, 159 kern, 28 penalty, 2 glyph, 10694 attribute, 2043 glue_spec, 703 attribute_list, 2 write, 384 user_defined, 16 pdf_literal, 16 pdf_colorstack nodes
+   avail lists: 1:31,2:98244,3:3170,4:1318,5:276,6:154,7:10967,8:145,9:5352,10:43,11:3
+ 70366 multiletter control sequences out of 65536+600000
  229 fonts using 175078643 bytes
  126i,22n,121p,1259b,1334s stack positions out of 20000i,500n,10000p,200000b,200000s
 <c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman5-regular.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman8-bold.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman7-bold.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/GenEiMGothic2-Regular.ttf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/LINESeedJP_OTF_Rg.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/LINESeedJP_OTF.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/GenEiMGothic2-Bold.ttf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/ChikuPori-Regular2.ttf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/DelaGothicOne-Regular.ttf><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on メイン.pdf (17 pages, 887549 bytes).
+Output written on メイン.pdf (19 pages, 961471 bytes).
 
-PDF statistics: 614 PDF objects out of 1000 (max. 8388607)
- 504 compressed objects within 6 object streams
- 232 named destinations out of 1000 (max. 131072)
+PDF statistics: 666 PDF objects out of 1000 (max. 8388607)
+ 548 compressed objects within 6 object streams
+ 251 named destinations out of 1000 (max. 131072)
  248 words of extra memory for PDF output out of 10000 (max. 100000000)
 

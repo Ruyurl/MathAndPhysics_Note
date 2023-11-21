@@ -566,3 +566,98 @@ $R_1 = m_1 \times 2^{e_1}$と$R_2 = m_2 \times 2^{e_2}$の積$R_1 \times R_2$は
 
 
 \subsection{メモリアーキテクチャ}
+\vskip-\baselineskip
+\subsubsection{メインメモリ（内部メモリ）}
+
+\textbf{メインメモリ（内部メモリ）}は，プロセッサと共にコンピュータの内部装置を構成するものである．メインメモリとプロセッサで，「プロセッサで処理するマシン命令とデータを予めメインメモリに用意しておく」という\textbf{プログラム内蔵}の実装を実現している．
+
+メインメモリは以下の機能を備え，その機能に求められる評価がある．
+
+\begin{table}[H]
+	\caption{メインメモリに求められる機能と評価}
+	\label{tab27-5}
+	\centering
+	\begin{tabular}{c|c}
+		\hline
+		\textsf{機能} & \textsf{評価}\\
+		\hline
+		格納 & 容量が大きいほど嬉しい\\
+		アクセス & アクセスが速いほど嬉しい\\
+		\hline
+	\end{tabular}
+\end{table}
+
+現代のコンピュータのメインメモリは
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{ランダムアクセス}\qquad アドレスと格納場所が1対1であり，一定時間でアクセスできる．謂わば，アドレスを指定すれば計算量$O(1)$で即アクセスできる（配列に近いイメージ）．
+	\item \textbf{線形アドレス}\qquad メモリ空間を決まった空間で区切り，連番のアドレスを付ける．つまり，アドレスを$+1$ずつ増加させるだけで順番にアクセスできる．
+\end{enumerate}
+の2つの要件を満たさなければならない．
+
+
+
+\subsubsection{メインメモリへのアクセス}
+
+プロセッサがメインメモリにアクセスするときは，アドレスを指定し，読み出しと書き込みのどちらのアクセスかを指定する必要がある．その為に次の2つの機構をプロセッサ側に備える．
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{メモリアドレスレジスタ（MAR）}…メインメモリアドレスをアクセスする間保持しておく．
+	\item \textbf{メモリデータレジスタ（MDR）}……アクセスするマシン命令やデータをアクセスする間保持しておく．
+\end{enumerate}
+
+プロセッサ内のMAR，MDRを備える機構を\textbf{メインメモリ管理機構（MMU）}という．
+
+\begin{figure}[H]
+	\begin{center}
+		\framebox{
+		\includegraphics[width=8cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf}
+		}
+		\caption{プロセッサによるメインメモリへのアクセス}
+		\label{fig14-5}
+	\end{center}
+\end{figure}
+
+
+
+\subsubsection{メモリの階層構造}
+
+
+メモリ素子とは，“0”か“1”を格納出来るメモリの最小単位（1ビット）である．メモリ素子は以下のハードウェアで構成される．
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{半導体}\hspace*{4\zw} 電流のON/OFFを切り替える．
+	\item \textbf{磁性体}\hspace*{4\zw} 磁場の向きで“0”と“1”を記録する．
+	\item \textbf{コンデンサ}\hspace*{2\zw} 電荷を蓄える．
+\end{enumerate}
+
+メモリ素子によって表\ref{tab27-5}の評価が決まるが，容量が大きいこととアクセス時間が短いことは\textbf{両立しない}．つまり，どちらの性能も高いメモリは実在しない．結果として，適材適所を図ることが必要．
+
+\begin{figure}[H]
+	\begin{center}
+		\framebox{
+		\includegraphics[width=5cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf}
+		}
+		\caption{主要なメモリ階層}
+		\label{fig14-6}
+	\end{center}
+\end{figure}
+
+
+
+\subsubsection{参照局所性}
+
+実行中のプログラムがアクセス又は参照するマシン命令やデータの格納場所（アドレス）が一部或いは特定の場所に集中することを「\textbf{参照局所性}が高い」という．空間的と時間的の2種類がある．
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 「空間的参照局所性が高い」とは，一度アクセスしたアドレスの“格納場所に近いアドレス”が近いうちにアクセスする可能性が高いということ．
+	\item 「時間的参照局所性が高い」とは，一度アクセスしたアドレス“そのもの”が近いうちにアクセスする可能性が高いということ．
+\end{enumerate}
+
+従って，参照局所性が高いプログラムを上の階層におけば，よりプロセッサに近くなり時間的・空間的に効率よく処理出来るようになる．
+
+
+
+\subsubsection{仮想メモリ}
+
+メインメモリには，プロセッサが実行しようとするプログラムやデータを格納しておく，つまりプログラム内蔵である必要がある．しかし，プログラムが巨大で一時的にメインメモリに入らないとき，取り敢えずそれ以外のメモリに格納しておいて必要なときに必要なプログラムをメインメモリに持ってこなくてはいけない．もしくは，複数のプログラムを同時に行うとき，個々のサイズは小さくても数が多過ぎてメインメモリに入りきらないときがある．
+
+このとき，ユーザが作成したプログラムをファイルとして\textbf{ファイル装置}に格納しておき，使用する可能性があるときにメインメモリに転送，そしてプロセッサが実行するときにアクセスするようにする．
+
+このように，使用する可能性が高い＝参照局所性が高いファイルだけを置いて残りはファイル装置に置くことで「プロセッサから見えるメインメモリの容量を見かけ上大きくする機能」を\textbf{仮想メモリ}方式という．
