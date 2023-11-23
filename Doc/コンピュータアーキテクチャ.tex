@@ -15,8 +15,8 @@
 
 
 
-\section{内部装置のアーキテクチャ}\label{sec14-2}
-\subsection{内部装置のハードウェア構成}
+\section{内部装置のアーキテクチャ}\label{sec27-2}
+\subsection{内部装置のハードウェア構成}\label{sec27-2-A}
 
 コンピュータの内部装置は，\textbf{プロセッサ}と\textbf{メインメモリ}の2つの基本ハードウェア装置を\textbf{内部バス}で接続して構成している．このうち，プロセッサは以下の3つの主要なハードウェア装置やハードウェア機構で構成する．
 
@@ -30,9 +30,9 @@
 
 
 
-\subsection{プロセッサアーキテクチャ① 制御機構}\label{sec14-2-B}
+\subsection{プロセッサアーキテクチャ① 制御機構}\label{sec27-2-B}
 \vskip-1\baselineskip
-\subsubsection{制御機構}
+\subsubsection{制御機構}\label{sec27-2-B-1}
 
 \textbf{制御機構}は，次の2つの機能を実現するハードウェア機構である．
 
@@ -53,7 +53,7 @@
 
 
 
-\subsubsection{制御方式}
+\subsubsection{制御方式}\label{sec27-2-B-2}
 
 命令コードから制御信号を生成することを\textbf{（命令）デコード}という．制御信号の生成方法は2通りある．
 
@@ -68,13 +68,13 @@
 
 
 
-\subsubsection{割り込み}
+\subsubsection{割り込み}\label{sec27-2-B-3}
 
 不測の事態や事象（\textbf{割り込み要因}）が生じたときに割り込み機構が発動すると，実行中のプログラム（マシン命令列）を一時中断して，\textbf{割り込み処理}プログラムへ制御フローが分岐する．
 
 
 
-\subsubsection{割り込みの必要性}
+\subsubsection{割り込みの必要性}\label{sec27-2-B-4}
 
 \begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
 	\item 不測の事態や事象の対処
@@ -87,7 +87,7 @@
 
 
 
-\subsubsection{割り込み要因}\label{sec14-2-B-5}
+\subsubsection{割り込み要因}\label{sec27-2-B-5}
 
 割り込みを引き起こす具体的な原因や事象を「割り込み要因の発生場所」で分類する．
 
@@ -99,7 +99,7 @@
 					\item \textbf{メモリアクセス例外}
 						\begin{enumerate}[label=\textbf{(\roman*)}, labelsep=10pt, leftmargin=23pt]
 							\item 指定したメモリアドレスにマシン命令やデータがないとき
-							\item \textbf{ページフォールト}…プログラムを仮想メモリ\footnote{メインメモリ＋ファイル装置で作った仮装的なメモリ．}に割り当てていてメインメモリにはまだ読み込んでいない状態で，プログラムにアクセスしようとしたとき
+							\item \textbf{ページフォールト}…プログラムを仮想メモリ\footnote{メインメモリ＋ファイル装置で作った仮想的なメモリ．}に割り当てていてメインメモリにはまだ読み込んでいない状態で，プログラムにアクセスしようとしたとき
 							\item メモリ保護違反…アクセスする権限がないメインメモリへアクセスしようとしたとき
 						\end{enumerate}
 					\item \textbf{不正命令}
@@ -162,7 +162,7 @@
 
 
 
-\subsubsection{割り込み処理}
+\subsubsection{割り込み処理}\label{sec27-2-B-6}
 
 順序制御機構とOS機能とが機能分担して処理する．
 
@@ -172,12 +172,12 @@
 		\includegraphics[width=15cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/割り込み.pdf}
 		}
 		\caption{割り込み処理の流れ}
-		\label{fig14-1}
+		\label{fig27-1}
 	\end{center}
 \end{figure}
 
 \begin{enumerate}[label=\arabic*., labelsep=10pt, leftmargin=23pt]
-	\item 割り込みの発生…\ref{sec14-2}.\ref{sec14-2-B}節の\ref{sec14-2-B-5}で紹介した要因で割り込みが発生．
+	\item 割り込みの発生…\ref{sec27-2}.\ref{sec27-2-B}節の\ref{sec27-2-B-5}で紹介した要因で割り込みが発生．
 	\item 割り込みの受付…ハードウェア機構が割り込みを受付→割り込み処理開始．
 	\item 割り込み禁止状態…他の割り込みを受け付けないようにする．
 	\item ハードウェア状態を退避…ハードウェア機構によって今までのプログラムが生成していたハードウェア状態をプロセッサ内の退避領域へ退避．
@@ -189,7 +189,7 @@
 
 
 
-\subsubsection{命令パイプライン処理}
+\subsubsection{命令パイプライン処理}\label{sec27-2-B-7}
 
 \begin{figure}[H]
 	\begin{center}
@@ -197,19 +197,19 @@
 		\includegraphics[width=10cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令実行サイクル.pdf}
 		}
 		\caption{命令実行サイクルの流れ}
-		\label{fig14-2}
+		\label{fig27-2}
 	\end{center}
 \end{figure}
 
 命令実行サイクルは以下の通り．
 
-\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
-	\item 命令取り出し（I）
-	\item 命令デコード（D）
-	\item オペランド取り出し（O）
-	\item 実行（E）
-	\item 結果格納（W）
-	\item 次アドレス決定
+\begin{enumerate}[labelsep=10pt, leftmargin=23pt]
+	\item[①] 命令取り出し（I）
+	\item[②] 命令デコード（D）
+	\item[③] オペランド取り出し（O）
+	\item[④] 実行（E）
+	\item[⑤] 結果格納（W）
+	\item[⑥] 次アドレス決定
 \end{enumerate}
 
 上の命令実行サイクルの1つ1つを\textbf{ステージ}という．この1連のマシン命令をプロセッサに投入して処理するとき，高速化するため\textbf{命令パイプライン処理}をする．命令パイプライン処理の具体的な流れは以下の通り．
@@ -220,7 +220,7 @@
 		\includegraphics[width=8cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令パイプライン処理.pdf}
 		}
 		\caption{命令パイプライン処理の流れ}
-		\label{fig14-3}
+		\label{fig27-3}
 	\end{center}
 \end{figure}
 
@@ -281,9 +281,9 @@
 
 
 
-\subsection{プロセッサアーキテクチャ② 演算機構}
+\subsection{プロセッサアーキテクチャ② 演算機構}\label{sec27-2-C}
 \vskip-1\baselineskip
-\subsubsection{数の表現}
+\subsubsection{数の表現}\label{sec27-2-C-1}
 
 \begin{table}[H]
 	\caption{数の表現}
@@ -300,7 +300,7 @@
 
 
 
-\subsubsection{演算機構とデータバス}
+\subsubsection{演算機構とデータバス}\label{sec27-2-C-2}
 
 マシン命令の転送とデータの転送の両方で共用する内部バスに対し，データ専転送だけに使用する演算機構 -- レジスタ間の転送路を\textbf{データバス}という．
 
@@ -308,7 +308,7 @@
 
 
 
-\subsubsection{加算器}
+\subsubsection{加算器}\label{sec27-2-C-3}
 
 四則演算は\textbf{加算}を基にしてできる．
 
@@ -320,7 +320,7 @@
 
 加算器で，1個下のビットからの繰り上げも考慮したものを\textbf{全加算器}という．足される数を$X$，足す数を$Y$，1個下のビットからの繰り上げを$C_{\mathrm{in}}$，\kenten{当該ビット}の和を$S$\footnote{例えば，2進数の$(1)_{2} + (1)_{2}$をすると，$(10)_{2}$となる．このとき，$S$は$0$，$C_{\mathrm{out}}$は$1$である．}，1個上のビットへの繰り上げを$C_{\mathrm{out}}$とすると，真理値表は以下の通り．
 
-1個下のビットからの繰り上げ出力を当該ビットの$C_{\mathrm{in}}$入力として，32個の全加算器を直列に繫げば「32ビット加算器」が構成出来る．このとき，最下位ビットの繰り上げ$C_{\mathrm{out}_0}$が32個の全加算器を最上位ビットからの繰り上げ$C_{\mathrm{out}_{31}}$まで，次々に伝播することによって累積する遅延が加算時間を決める．
+1個下のビットからの繰り上げ出力を当該ビットの$C_{\mathrm{in}}$入力として，32個の全加算器を直列に繫げば「32ビット加算器」が構成出来る．このとき，最下位ビットの繰り上げ$C_{\mathrm{out}_0}$が32個の全加算器を最上位ビットからの繰り上げ$C_{\mathrm{out}_{31}}$まで，次々に伝播することによって累積する遅延が加算時間を決める．この加算器を\textbf{桁上げ伝播加算器}という．
 
 よって，加算時間を減らすため以下の2つの加算器を現代のコンピュータは装備している．
 
@@ -355,13 +355,13 @@
 		\includegraphics[width=8cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf}
 		}
 		\caption{全加算器のブロック図}
-		\label{fig14-4}
+		\label{fig27-4}
 	\end{center}
 \end{figure}
 
 
 
-\subsubsection{負数の2進数表現 -- 補数表現}
+\subsubsection{負数の2進数表現 -- 補数表現}\label{sec27-2-C-4}
 
 負数を2進数で表すとき，“$+$”，“$-$”符号も“0”，“1”で表す必要がある．負整数の2進数表現として，以下の2通りがある．
 
@@ -426,7 +426,7 @@
 
 
 
-\subsubsection{補数による加算}
+\subsubsection{補数による加算}\label{sec27-2-C-5}
 
 \begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
 	\item \textsf{1の補数を使うとき}
@@ -485,7 +485,7 @@
 
 
 
-\subsubsection{乗算器と除算器}
+\subsubsection{乗算器と除算器}\label{sec27-2-C-6}
 
 \begin{enumerate}[label={\color{gray}●}, labelsep=10pt, leftmargin=23pt]
 	\item \textbf{乗算器}を実現させる仕組み
@@ -506,7 +506,7 @@
 
 
 
-\subsubsection{実数の表現}
+\subsubsection{実数の表現}\label{sec27-2-C-7}
 
 実数$R$は\textbf{浮動小数点数表現}を用いる（表\ref{tab27-2}）．小数点の左側$m$を\textbf{仮数部}，右側$e$を\textbf{指数部}といい，式では以下のように表す．
 \begin{equation}
@@ -540,13 +540,13 @@ $R_1 = m_1 \times 2^{e_1}$と$R_2 = m_2 \times 2^{e_2}$の積$R_1 \times R_2$は
 
 
 
-\subsubsection{論理演算器とシフト演算器}
+\subsubsection{論理演算器とシフト演算器}\label{sec27-2-C-8}
 
 \textbf{論理演算器}では，ビットの1つ1つが論理値であるので並列で論理演算できればよい．対して，\textbf{シフト演算器}では，上下位のビットを隣り合うビットに移動する操作を行うので論理回路が必要である．
 
 
 
-\subsubsection{演算機構のアーキテクチャ}
+\subsubsection{演算機構のアーキテクチャ}\label{sec27-2-C-9}
 
 演算器（ALU）は
 \begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
@@ -565,9 +565,9 @@ $R_1 = m_1 \times 2^{e_1}$と$R_2 = m_2 \times 2^{e_2}$の積$R_1 \times R_2$は
 
 
 
-\subsection{メモリアーキテクチャ}
+\subsection{メモリアーキテクチャ}\label{sec27-2-D}
 \vskip-\baselineskip
-\subsubsection{メインメモリ（内部メモリ）}
+\subsubsection{メインメモリ（内部メモリ）}\label{sec27-2-D-1}
 
 \textbf{メインメモリ（内部メモリ）}は，プロセッサと共にコンピュータの内部装置を構成するものである．メインメモリとプロセッサで，「プロセッサで処理するマシン命令とデータを予めメインメモリに用意しておく」という\textbf{プログラム内蔵}の実装を実現している．
 
@@ -596,7 +596,7 @@ $R_1 = m_1 \times 2^{e_1}$と$R_2 = m_2 \times 2^{e_2}$の積$R_1 \times R_2$は
 
 
 
-\subsubsection{メインメモリへのアクセス}
+\subsubsection{メインメモリへのアクセス}\label{sec27-2-D-2}
 
 プロセッサがメインメモリにアクセスするときは，アドレスを指定し，読み出しと書き込みのどちらのアクセスかを指定する必要がある．その為に次の2つの機構をプロセッサ側に備える．
 \begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
@@ -612,13 +612,13 @@ $R_1 = m_1 \times 2^{e_1}$と$R_2 = m_2 \times 2^{e_2}$の積$R_1 \times R_2$は
 		\includegraphics[width=8cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf}
 		}
 		\caption{プロセッサによるメインメモリへのアクセス}
-		\label{fig14-5}
+		\label{fig27-5}
 	\end{center}
 \end{figure}
 
 
 
-\subsubsection{メモリの階層構造}
+\subsubsection{メモリの階層構造}\label{sec27-2-D-3}
 
 
 メモリ素子とは，“0”か“1”を格納出来るメモリの最小単位（1ビット）である．メモリ素子は以下のハードウェアで構成される．
@@ -636,13 +636,13 @@ $R_1 = m_1 \times 2^{e_1}$と$R_2 = m_2 \times 2^{e_2}$の積$R_1 \times R_2$は
 		\includegraphics[width=5cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf}
 		}
 		\caption{主要なメモリ階層}
-		\label{fig14-6}
+		\label{fig27-6}
 	\end{center}
 \end{figure}
 
 
 
-\subsubsection{参照局所性}
+\subsubsection{参照局所性}\label{sec27-2-D-4}
 
 実行中のプログラムがアクセス又は参照するマシン命令やデータの格納場所（アドレス）が一部或いは特定の場所に集中することを「\textbf{参照局所性}が高い」という．空間的と時間的の2種類がある．
 \begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
@@ -654,10 +654,210 @@ $R_1 = m_1 \times 2^{e_1}$と$R_2 = m_2 \times 2^{e_2}$の積$R_1 \times R_2$は
 
 
 
-\subsubsection{仮想メモリ}
+\subsubsection{仮想メモリ(1) － 原理}\label{sec27-2-D-5}
 
 メインメモリには，プロセッサが実行しようとするプログラムやデータを格納しておく，つまりプログラム内蔵である必要がある．しかし，プログラムが巨大で一時的にメインメモリに入らないとき，取り敢えずそれ以外のメモリに格納しておいて必要なときに必要なプログラムをメインメモリに持ってこなくてはいけない．もしくは，複数のプログラムを同時に行うとき，個々のサイズは小さくても数が多過ぎてメインメモリに入りきらないときがある．
 
 このとき，ユーザが作成したプログラムをファイルとして\textbf{ファイル装置}に格納しておき，使用する可能性があるときにメインメモリに転送，そしてプロセッサが実行するときにアクセスするようにする．
 
 このように，使用する可能性が高い＝参照局所性が高いファイルだけを置いて残りはファイル装置に置くことで「プロセッサから見えるメインメモリの容量を見かけ上大きくする機能」を\textbf{仮想メモリ}方式という．
+
+実装しているメインメモリに付いている物理的なアドレスを\textbf{実アドレス}\footnote{メインメモリで格納されているマシン命令やデータの格納場所を指定するために，メインメモリはアドレス付けをしている．}，マシン命令中のオペランドから生成する実効アドレスを\textbf{仮想アドレス}という．
+
+仮想メモリは，次の2種類のメモリ＝アドレス空間を独立に構成し，相互に対応付ける（\textbf{マッピング}）ことによって実現する．
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{実メモリ}\hspace*{3\zw} 実アドレスで指定するアドレス空間．即ち，メインメモリのアドレス空間\footnote{アドレス付けしたメインメモリの格納領域をメインメモリのアドレス空間という．}である．
+	\item \textbf{仮想メモリ}\hspace*{2\zw} 仮想アドレスで指定するアドレス空間．即ち，仮想の／論理的なメモリのアドレス空間である．
+\end{enumerate}
+
+仮想メモリを実現すると以下のメリットを得られる．
+\begin{itemize}
+	\item 実メモリであるメインメモリの利用効率が良くなる；
+	\item 実メモリであるメインメモリの容量による種々の制約を事実上撤廃出来る；
+\end{itemize}
+
+
+
+\subsubsection{仮想メモリ(2) － 仮想メモリ機構}\label{sec27-2-D-6}
+
+仮想メモリ機構に於けるメインメモリへのアクセスは，MMU内で以下のように実行する．
+\begin{enumerate}[label=\textbf{\arabic*.}, labelsep=10pt, leftmargin=23pt]
+	\item マシン命令のオペランドが示している仮想アドレス（実効アドレス）を含むブロック（マシン命令やデータを一定の範囲で区切った塊）がメインメモリ上にあるかチェックする．
+	\item 
+		\begin{enumerate}[label=\textbf{(\alph*)}, labelsep=10pt, leftmargin=23pt]
+			\item \textbf{ある場合}\qquad マッピングに従って，仮想アドレスから対応する実アドレスへ変換する．
+			\item \textbf{ない場合}（\textbf{ページフォールト}）
+				\begin{enumerate}[label=\textbf{(\arabic*)}, labelsep=10pt, leftmargin=23pt]
+					\item メインメモリ上にある不要なブロックをファイル装置へ追い出し，代わりに仮想アドレスで指定した命令やデータを含むブロックをファイル装置からメインメモリに入れる（\textbf{ブロック置換}）．
+					\item 置換後のマッピングに従って，仮想アドレスから対応する実アドレスへ変換する．
+				\end{enumerate}
+		\end{enumerate}
+\end{enumerate}
+
+
+
+\subsubsection{仮想メモリ(3) － マッピング}\label{sec27-2-D-7}
+
+仮想アドレスと実アドレスのマッピングは\textbf{マッピングテーブル}（\textbf{アドレス変換テーブル}）に記述してある．
+
+\begin{figure}[H]
+	\begin{center}
+		\framebox{
+		\includegraphics[width=7.5cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/マッピング.pdf}
+		}
+		\caption{マッピング}
+		\label{fig27-7}
+	\end{center}
+\end{figure}
+
+マッピングには次の3つの方式がある．
+
+\begin{enumerate}[label=\textbf{(\Alph*)}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{ページング}\\
+		\textbf{ページ}という一定サイズで区切ったブロック単位でマッピングする．仮想／実アドレス空間を\kenten{論理的な意味を無視して}一定のサイズに区切る．→参照局所性が保存されにくい．\\
+		仮想アドレス空間にはページごとに「仮想ページ番号」を，実アドレス空間にはページごとに「実ページ番号」を割り振り，仮想ページと実ページのマッピングを\textbf{ページテーブル}に記述する．\\
+		アクセスを要求した仮想ページがメインメモリに無い場合は，\textbf{ページフォールト割り込み}が生じる．
+		\begin{figure}[H]
+			\begin{center}
+				\framebox{
+				\includegraphics[width=10cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページング.pdf}
+				}
+				\caption{ページング}
+				\label{fig27-8}
+			\end{center}
+		\end{figure}
+	\item \textbf{セグメンテーション}\\
+		\textbf{セグメント}という論理的意味を持つブロックで区切って，仮想セグメントと実セグメントをマッピングする．その為，サイズは可変．\\
+		仮想アドレス空間にはセグメントごとに「仮想セグメント番号」を，実アドレス空間にはセグメントごとに「実セグメント番号」を割り振り，仮想セグメントと実セグメントのマッピングを\textbf{セグメントテーブル}に記述する．\\
+		アクセスを要求した仮想セグメントがメインメモリに無い場合は，\textbf{セグメントフォールト割り込み}が生じる．
+		\begin{figure}[H]
+			\begin{center}
+				\framebox{
+				\includegraphics[width=10cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/セグメンテーション.pdf}
+				}
+				\caption{セグメンテーション}
+				\label{fig27-9}
+			\end{center}
+		\end{figure}
+		上の図\ref{fig27-9}でブロック置換を行うとする．メインメモリ（実アドレス空間）の(3)のブロックを追い出したとき，(3)よりサイズが大きいブロックは格納出来ない．よって，セグメンテーションではメインメモリに無駄が発生しやすい．
+	\item \textbf{ページセグメンテーション}\\
+		ページングとセグメンテーションを併用するマッピング方式．次の順で適用する．
+		\begin{enumerate}[label=\textbf{\arabic*.}, labelsep=10pt, leftmargin=23pt]
+			\item まず，全体では\textbf{セグメント}単位で，仮想セグメントと実セグメントを「セグメントテーブル」でマッピングする．
+			\item 次に，\kenten{各セグメント内}では\textbf{ページ}単位で，仮想ページと実ページを\kenten{各セグメントごと}に備える「ページテーブル」でマッピングする．
+		\end{enumerate}
+		こうすることにより，外側ではセグメンテーションにより論理的意味を持つブロックに分かれているが，その中ではページングにより一定のサイズで分割されているので，
+		\begin{itemize}
+			\item セグメンテーションの長所である，論理的意味で区切るので参照局所性が保存される；
+			\item マッピングの長所である，一定のサイズで区切るので無駄な空間が生じにくい；
+		\end{itemize}
+		というそれぞれの長所がページセグメンテーションでは引き継がれる．\\
+		ページセグメンテーションに於けるアドレス変換の手順は以下の通りになる．
+		\begin{enumerate}[label=\textbf{\arabic*.}, labelsep=10pt, leftmargin=23pt]
+			\item 「セグメントテーブル」を引くことによって，\textcolor{red}{仮想セグメント番号}（図\ref{fig27-10}では“\fbox{9}”）から「\fbox{9}で備えられているページテーブル」を得る．
+			\item 「\textbf{1.}で得たページテーブル」を引くことによって，仮想ページ番号から実ページ番号を得る．
+		\end{enumerate}
+		\begin{figure}[H]
+			\begin{center}
+				\framebox{
+				\includegraphics[width=10cm]{C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページセグメンテーション.pdf}
+				}
+				\caption{ページセグメンテーション}
+				\label{fig27-10}
+			\end{center}
+		\end{figure}
+\end{enumerate}
+
+
+
+\subsubsection{仮想メモリ(4) － ページ置換アルゴリズム}\label{sec27-2-D-8}
+
+\textbf{ページ置換}では，使用頻度＝参照局所性が高いページをメインメモリで保持し，参照局所性が低い実ページをファイル装置へ追い出す．このとき，「メインメモリにあるどのページを追い出すか」を決める方法を\textbf{ページ置換アルゴリズム}という．
+
+最も参照局所性が低いページを決定する方法に以下がある．
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{LRU}（Least Recently Used）\\
+		最後のアクセス時刻が最も古いページを最優先で追い出す．
+	\item \textbf{FIFO}（First In First Out）\\
+		メインメモリに一番最初に読み込んだページを最優先で追い出す．
+	\item \textbf{ランダム}\\
+		任意或いは無作為に選んだページを追い出す．
+\end{enumerate}
+
+
+
+\subsubsection{キャッシュメモリ(1) － 原理}\label{sec27-2-D-9}
+
+メインメモリがプロセッサの要求に応じてマシン命令やデータをアクセスするとき，単純に速いプロセッサと，容量とアクセス時間のバランスをつ必要があるメインメモリでは動作速度に差が出来てしまう．\\
+→\textbf{キャッシュメモリ}というメモリを備えている．メモリ階層では，キャッシュメモリ階層はレジスタ階層とメインメモリ階層の中間にある（図\ref{fig27-6}）．
+
+メインメモリが保持するプログラムのうち，実際に使用中＝参照局所性が高いマシン命令やデータ\ruby{乃|至}{ない|し}その一部やコピーをキャッシュメモリに一時的に保持する．キャッシュメモリのデータのやり取りの単位を\textbf{ライン}という．
+
+命令実行サイクル（\ref{sec27-2}.\ref{sec27-2-B}節\ref{sec27-2-B-7}を参照）の各ステージで，要求されるデータがキャッシュメモリに
+\begin{enumerate}[label=\textbf{(\alph*)}, labelsep=10pt, leftmargin=23pt]
+	\item \textsf{ある}とき（\textbf{ヒット}という）\\
+		キャッシュメモリから命令やデータを取り出して提供する．
+	\item \textsf{ない}とき（\textbf{ミスヒット}という）\\
+		→キャッシュメモリの比較的今後アクセスされないラインを追い出して目的の命令やデータが含まれるラインを空いたところに格納する（\textbf{ライン置換}）．
+\end{enumerate}
+
+
+
+\subsubsection{キャッシュメモリ(2) － 処理時間を求める}\label{sec27-2-D-10}
+
+\begin{kousiki}{キャッシュメモリがあるときの実質的なメインメモリへのアクセス時間}
+	\begin{itemize}
+		\item \textsf{実質的なメインメモリへのアクセス時間$\bm{T}$}
+		\item キャッシュメモリに命令やデータがある確率（\textbf{ヒット率}）$R_c$
+		\item キャッシュメモリに命令やデータがない確率$R_m = 1 - R_c$
+		\item キャッシュメモリへのアクセス時間$T_c$
+		\item メインメモリへのアクセス時間$T_m$
+	\end{itemize}
+	とすると
+	\begin{equation}
+		T \quad = \quad R_c T_c + R_m T_m \quad = \quad R_c T_c + (1 - R_c) T_m
+	\end{equation}
+\end{kousiki}
+
+
+
+\subsubsection{キャッシュメモリ(3) － メインメモリとのマッピング}\label{sec27-2-D-11}
+
+キャッシュメモリとメインメモリとのマッピングは，参照局所性を活用するために\textbf{ライン}単位で行う．マッピングは\textbf{キャッシュタグ}に記述しておく．マッピングには次の3つの方式がある．尚，キャッシュメモリのライン総数を$L_C$とする．
+
+\begin{enumerate}[label=\textbf{(\Alph*)}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{ダイレクト}\\
+		「メインメモリの あるライン をキャッシュメモリの どのライン にマッピングするか」を予め固定しておく．\\
+		→\textsf{探索の必要がない＆処理が速い．}\\
+		メインメモリの第$i$番目のラインをキャッシュメモリの第$j$番目のラインにマッピングするには，例として$j \equiv i\pmod L_C$がある\footnote{$j \equiv i\pmod L_C$は，\textbf{モジュロ演算}といい，「$i$を$L_C$で割った余りと$j$を$L_C$で割った余りが等しい」ことを表している．例）$6 \equiv 2\pmod 4$}．
+	\item \textbf{フルアソシアティブ}\\
+		メインメモリの 各ライン をキャッシュメモリの どのライン にも自由にマッピング出来る．\\
+		→探索の必要がある＆キャッシュタグ検索に時間がかかるがライン置換の頻度を抑えられる．
+	\item \textbf{セットアソシアティブ}\\
+		一定数個のキャッシュラインを\textbf{セット}にし，
+		\begin{itemize}
+			\item メインメモリのラインとセットとのマッピングはダイレクト；
+			\item 各セット内のラインのマッピングはフルアソシアティブ；
+		\end{itemize}
+		を適用する．
+\end{enumerate}
+
+
+
+\subsubsection{キャッシュメモリ(4) － ライン置換アルゴリズム}\label{sec27-2-D-12}
+
+\textbf{ライン置換}では，メインメモリへ追い出す或いは廃棄するキャッシュラインを決める必要がある（内容が更新されている場合は追い出し，されていない場合は廃棄する）．このとき，「どのラインをキャッシュメモリからメインメモリへ追い出したり廃棄したりするか」を決める方法を\textbf{ライン置換アルゴリズム}という．その方法は次の5つがある．
+
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item \textbf{LRU}（Least Recently Used）\\
+		最後のアクセス時刻が最も古いラインを最優先で追い出す．
+	\item \textbf{FIFO}（First In First Out）\\
+		キャッシュメモリに一番最初にコピーしたラインを最優先で追い出す．
+	\item \textbf{FINUFO}（First In Not Used First Out）\\
+		一定時間アクセスのないラインのうち，最初にキャッシュメモリにコピーしたラインを追い出す．
+	\item \textbf{LFU}（Least Frequently Used）\\
+		アクセス頻度がいちばん低いラインを追い出す．
+	\item \textbf{ランダム}\\
+		任意或いは無作為に選んだラインを追い出す．
+\end{enumerate}
+※\textbf{[1]}，\textbf{[2]}，\textbf{[5]}はページ置換（\ref{sec27-2}.\ref{sec27-2-D}節\ref{sec27-2-D-8}）と同じアルゴリズム．

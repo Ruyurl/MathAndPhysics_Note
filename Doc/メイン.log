@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2023.10.14)  22 NOV 2023 04:33
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2023.10.14)  23 NOV 2023 21:36
  restricted system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/User/Documents/TeX/MathAndPhysics_Note/Doc/メイン
@@ -528,28 +528,28 @@ Inserting `luatexja.ruby.np_info' at position 1 in `luatexja.jfmglue.whatsit_get
 Inserting `luatexja.beginpar.np_info' at position 2 in `luatexja.jfmglue.whatsit_getinfo'.
 Removing  `luatexja.beginpar.np_info_after' from `luatexja.jfmglue.whatsit_after'.
 Inserting `luatexja.ruby.np_info_after' at position 1 in `luatexja.jfmglue.whatsit_after'.
-Inserting `luatexja.beginpar.np_info_after' at position 2 in `luatexja.jfmglue.whatsit_after'.)(load cache: extra_chikupori-regular.luc)(load cache: extra_lineseedjp_otf-regular.luc)
+Inserting `luatexja.beginpar.np_info_after' at position 2 in `luatexja.jfmglue.whatsit_after'.)(load cache: extra_chikupori-regular.luc)(load cache: extra_shipporigothicb2-bold.luc)
 
 Package fontspec Info: Font family 'ChikuPori-Regular2.ttf(0)' created for
 (fontspec)             font 'ChikuPori-Regular2.ttf' with options
-(fontspec)             [YokoFeatures={JFM=jlreq},TateFeatures={JFM=jlreqv},Scale=1,Kerning=Off,Script=CJK,BoldFont=LINESeedJP_OTF_Rg.otf].
+(fontspec)             [YokoFeatures={JFM=jlreq},TateFeatures={JFM=jlreqv},Scale=1,Kerning=Off,Script=CJK,BoldFont=ShipporiGothicB2-Bold.ttf].
 (fontspec)              
 (fontspec)              This font family consists of the following NFSS
 (fontspec)             series/shapes:
 (fontspec)              
 
-LaTeX Font Info:    Redeclaring symbol font `mincho' on input line 35.
+LaTeX Font Info:    Redeclaring symbol font `mincho' on input line 36.
 LaTeX Font Info:    Overwriting symbol font `mincho' in version `normal'
-(Font)                  JY3/mc/m/n --> JY3/ChikuPori-Regular2.ttf(0)/m/n on input line 35.
+(Font)                  JY3/mc/m/n --> JY3/ChikuPori-Regular2.ttf(0)/m/n on input line 36.
 LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
-(Font)                  JY3/gt/m/n --> JY3/ChikuPori-Regular2.ttf(0)/m/n on input line 35.
+(Font)                  JY3/gt/m/n --> JY3/ChikuPori-Regular2.ttf(0)/m/n on input line 36.
 LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
-(Font)                  JY3/ChikuPori-Regular2.ttf(0)/m/n --> JY3/ChikuPori-Regular2.ttf(0)/b/n on input line 35.
+(Font)                  JY3/ChikuPori-Regular2.ttf(0)/m/n --> JY3/ChikuPori-Regular2.ttf(0)/b/n on input line 36.
 LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 35.
+(Font)              scaled to size 8.0pt on input line 36.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 35.
-(load cache: extra_lineseedjp_otf-bold.luc)
+(Font)              scaled to size 8.0pt on input line 36.
+(load cache: extra_lineseedjp_otf-regular.luc)(load cache: extra_lineseedjp_otf-bold.luc)
 
 Package fontspec Info: Font family 'LINESeedJP_OTF_Rg.otf(0)' created for font
 (fontspec)             'LINESeedJP_OTF_Rg.otf' with options
@@ -559,14 +559,14 @@ Package fontspec Info: Font family 'LINESeedJP_OTF_Rg.otf(0)' created for font
 (fontspec)             series/shapes:
 (fontspec)              
 
-LaTeX Font Info:    Redeclaring math alphabet \mathgt on input line 36.
+LaTeX Font Info:    Redeclaring math alphabet \mathgt on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathgt' in version `normal'
-(Font)                  JY3/gt/m/n --> JY3/LINESeedJP_OTF_Rg.otf(0)/m/n on input line 36.
+(Font)                  JY3/gt/m/n --> JY3/LINESeedJP_OTF_Rg.otf(0)/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathgt' in version `bold'
-(Font)                  JY3/gt/m/n --> JY3/LINESeedJP_OTF_Rg.otf(0)/m/n on input line 36.
+(Font)                  JY3/gt/m/n --> JY3/LINESeedJP_OTF_Rg.otf(0)/m/n on input line 37.
 (load cache: extra_genei-m-gothic-v2-regular.luc)
-luaotfload | aux : font no 48 (nil) does not define feature smcp for script latn with language dflt(load cache: extra_genei-m-gothic-v2-bold.luc)
-luaotfload | aux : font no 49 (nil) does not define feature smcp for script latn with language dflt
+luaotfload | aux : font no 49 (nil) does not define feature smcp for script latn with language dflt(load cache: extra_genei-m-gothic-v2-bold.luc)
+luaotfload | aux : font no 50 (nil) does not define feature smcp for script latn with language dflt
 
 Package fontspec Info: Font family 'GenEiMGothic2-Regular.ttf(0)' created for
 (fontspec)             font 'GenEiMGothic2-Regular.ttf' with options
@@ -583,9 +583,9 @@ Package fontspec Info: Font family 'GenEiMGothic2-Regular.ttf(0)' created for
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 48.
+(Font)              scaled to size 7.19995pt on input line 49.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 48.
+(Font)              scaled to size 7.19995pt on input line 49.
  (c:/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
  (c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -1658,7 +1658,7 @@ LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
 (Font)              scaled to size 13.6pt on input line 351.
 (load cache: extra_delagothicone-regular.luc)
-luaotfload | aux : font no 100 (nil) defines no feature for script hani
+luaotfload | aux : font no 101 (nil) defines no feature for script hani
 
 Package fontspec Warning: Font "DelaGothicOne-Regular" does not contain
 (fontspec)                requested Script "CJK".
@@ -1706,17 +1706,17 @@ LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 16.0pt on input line 353.
+(Font)              scaled to size 16.0pt on input line 354.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
-(Font)              scaled to size 16.0pt on input line 353.
+(Font)              scaled to size 16.0pt on input line 354.
 LaTeX Font Info:    Font shape `JT3/LINESeedJP_OTF_Rg.otf(0)/m/n' will be
-(Font)              scaled to size 16.0pt on input line 353.
+(Font)              scaled to size 16.0pt on input line 354.
 LaTeX Font Info:    Font shape `JY3/LINESeedJP_OTF_Rg.otf(0)/m/n' will be
-(Font)              scaled to size 16.0pt on input line 353.
+(Font)              scaled to size 16.0pt on input line 354.
 LaTeX Font Info:    Font shape `JT3/LINESeedJP_OTF_Rg.otf(0)/b/n' will be
-(Font)              scaled to size 16.0pt on input line 353.
+(Font)              scaled to size 16.0pt on input line 354.
 LaTeX Font Info:    Font shape `JY3/LINESeedJP_OTF_Rg.otf(0)/b/n' will be
-(Font)              scaled to size 16.0pt on input line 353.
+(Font)              scaled to size 16.0pt on input line 354.
  (./メイン.toc
 LaTeX Font Info:    Font shape `JT3/LINESeedJP_OTF_Rg.otf(0)/m/n' will be
 (Font)              scaled to size 8.0pt on input line 1.
@@ -1731,14 +1731,19 @@ LaTeX Font Info:    Font shape `JY3/LINESeedJP_OTF_Rg.otf(0)/m/n' will be
 
 \openout8 = メイン.toc
 LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 8.0pt on input line 360.
+(Font)              scaled to size 8.0pt on input line 361.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 8.0pt on input line 360.
+(Font)              scaled to size 8.0pt on input line 361.
+luaotfload | aux : font no 144 (nil) does not define feature vert for script hani with language dflt
+luaotfload | aux : font no 144 (nil) does not define feature vrt2 for script hani with language dflt
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 6.0pt on input line 362.
+(Font)              scaled to size 6.0pt on input line 363.
+luaotfload | aux : font no 154 (nil) does not define feature vert for script hani with language dflt
+luaotfload | aux : font no 154 (nil) does not define feature vrt2 for script hani with language dflt
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
-(Font)              scaled to size 5.0pt on input line 362.
- (./偏微分法.tex
+(Font)              scaled to size 5.0pt on input line 363.
+luaotfload | aux : font no 155 (nil) does not define feature vert for script hani with language dflt
+luaotfload | aux : font no 155 (nil) does not define feature vrt2 for script hani with language dflt (./偏微分法.tex
 LaTeX Font Info:    Font shape `JT3/LINESeedJP_OTF_Rg.otf(0)/b/n' will be
 (Font)              scaled to size 8.0pt on input line 1.
 LaTeX Font Info:    Font shape `JY3/LINESeedJP_OTF_Rg.otf(0)/b/n' will be
@@ -1770,6 +1775,8 @@ LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/b/n' will be
 (Font)              scaled to size 7.19995pt on input line 63.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
 (Font)              scaled to size 7.19995pt on input line 63.
+luaotfload | aux : font no 174 (nil) does not define feature vert for script hani with language dflt
+luaotfload | aux : font no 174 (nil) does not define feature vrt2 for script hani with language dflt
 LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
 (Font)              scaled to size 6.0pt on input line 75.
 (load cache: extra_lmroman5-regular.luc)
@@ -1795,12 +1802,12 @@ LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/m/n' will be
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.2'
 [2]
-<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/割り込み.pdf, id=251, 963.6pt x 399.77354pt>
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/割り込み.pdf, id=276, 963.6pt x 399.77354pt>
 File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/割り込み.pdf Graphic file (type pdf)
 <use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/割り込み.pdf>
 Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/割り込み.pdf  used on input line 173.
 (luatex.def)             Requested size: 426.79134pt x 177.0599pt.
-<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令実行サイクル.pdf, id=255, 532.99126pt x 399.77354pt>
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令実行サイクル.pdf, id=280, 532.99126pt x 399.77354pt>
 File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令実行サイクル.pdf Graphic file (type pdf)
 <use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令実行サイクル.pdf>
 Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令実行サイクル.pdf  used on input line 198.
@@ -1808,7 +1815,7 @@ Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータ�
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.3'
 [3<c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/割り込み.pdf><c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令実行サイクル.pdf>]
-<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令パイプライン処理.pdf, id=305, 569.0058pt x 569.0058pt>
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令パイプライン処理.pdf, id=329, 569.0058pt x 569.0058pt>
 File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令パイプライン処理.pdf Graphic file (type pdf)
 <use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令パイプライン処理.pdf>
 Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令パイプライン処理.pdf  used on input line 221.
@@ -1841,7 +1848,8 @@ LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/b/n' will be
 (Font)              scaled to size 5.6pt on input line 256.
 LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
 (Font)              scaled to size 5.6pt on input line 256.
-
+luaotfload | aux : font no 206 (nil) does not define feature vert for script hani with language dflt
+luaotfload | aux : font no 206 (nil) does not define feature vrt2 for script hani with language dflt
 warning  (pdf backend): ignoring duplicate destination with the name 'page.4'
 [4<c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/命令パイプライン処理.pdf>]
 LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/m/n' will be
@@ -1875,23 +1883,51 @@ LaTeX Font Warning: Font shape `U/esvect/m/n' in size <3.20001> not available
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.5'
 [5]
-<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf, id=366, 532.99126pt x 399.77354pt>
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf, id=384, 532.99126pt x 399.77354pt>
 File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf Graphic file (type pdf)
 <use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf>
 Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf  used on input line 356.
 (luatex.def)             Requested size: 227.62204pt x 170.72806pt.
  [6<c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/全加算器ブロック図.pdf>] [7] [8]
-<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf, id=454, 963.6pt x 399.77354pt>
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf, id=470, 963.6pt x 399.77354pt>
 File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf Graphic file (type pdf)
 <use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf>
 Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf  used on input line 613.
 (luatex.def)             Requested size: 227.62204pt x 94.4348pt.
-<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf, id=456, 569.0058pt x 569.0058pt>
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf, id=472, 569.0058pt x 569.0058pt>
 File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf Graphic file (type pdf)
 <use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf>
 Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf  used on input line 637.
 (luatex.def)             Requested size: 142.26378pt x 142.25978pt.
- [9<c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf><c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf>]) [10] (./メイン.aux)
+ [9<c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/MMU.pdf><c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/メモリ階層.pdf>]
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/マッピング.pdf, id=516, 963.6pt x 399.77354pt>
+File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/マッピング.pdf Graphic file (type pdf)
+<use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/マッピング.pdf>
+Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/マッピング.pdf  used on input line 707.
+(luatex.def)             Requested size: 213.39566pt x 88.52995pt.
+ [10<c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/マッピング.pdf>]
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページング.pdf, id=552, 963.6pt x 399.77354pt>
+File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページング.pdf Graphic file (type pdf)
+<use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページング.pdf>
+Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページング.pdf  used on input line 724.
+(luatex.def)             Requested size: 284.52756pt x 118.04196pt.
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/セグメンテーション.pdf, id=553, 963.6pt x 399.77354pt>
+File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/セグメンテーション.pdf Graphic file (type pdf)
+<use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/セグメンテーション.pdf>
+Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/セグメンテーション.pdf  used on input line 737.
+(luatex.def)             Requested size: 284.52756pt x 118.04196pt.
+<C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページセグメンテーション.pdf, id=556, 963.6pt x 399.77354pt>
+File: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページセグメンテーション.pdf Graphic file (type pdf)
+<use C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページセグメンテーション.pdf>
+Package luatex.def Info: C:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページセグメンテーション.pdf  used on input line 764.
+(luatex.def)             Requested size: 284.52756pt x 118.04196pt.
+ [11<c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページング.pdf><c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/セグメンテーション.pdf>] [12<c:/Users/User/Documents/PowerPoint/コンピュータアーキテクチャ/ページセグメンテーション.pdf>]
+LaTeX Font Info:    Font shape `JT3/ChikuPori-Regular2.ttf(0)/b/n' will be
+(Font)              scaled to size 6.40002pt on input line 832.
+LaTeX Font Info:    Font shape `JY3/ChikuPori-Regular2.ttf(0)/b/n' will be
+(Font)              scaled to size 6.40002pt on input line 832.
+luaotfload | aux : font no 233 (nil) does not define feature vert for script hani with language dflt
+luaotfload | aux : font no 233 (nil) does not define feature vrt2 for script hani with language dflt) [13] (./メイン.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 2.2pt have occurred.
@@ -1899,19 +1935,19 @@ LaTeX Font Warning: Size substitutions with differences
 )
 
 Here is how much of LuaTeX's memory you used:
- 53323 strings out of 479059
- 382246,1977958 words of node,token memory allocated
- 36117 words of node memory still in use:
-   31 hlist, 2 vlist, 15 rule, 2 math, 7 glue, 159 kern, 28 penalty, 2 glyph, 10694 attribute, 2043 glue_spec, 703 attribute_list, 2 write, 384 user_defined, 16 pdf_literal, 16 pdf_colorstack nodes
-   avail lists: 1:31,2:98244,3:3170,4:1318,5:276,6:154,7:10967,8:145,9:5352,10:43,11:3
- 70366 multiletter control sequences out of 65536+600000
- 229 fonts using 175078643 bytes
+ 53476 strings out of 479059
+ 477803,1977958 words of node,token memory allocated
+ 43152 words of node memory still in use:
+   31 hlist, 2 vlist, 15 rule, 2 math, 10 glue, 192 kern, 35 penalty, 2 glyph, 12663 attribute, 2495 glue_spec, 836 attribute_list, 2 write, 475 user_defined, 16 pdf_literal, 16 pdf_colorstack nodes
+   avail lists: 1:38,2:97470,3:3163,4:1256,5:375,6:154,7:11072,8:145,9:5352,10:43,11:12
+ 70455 multiletter control sequences out of 65536+600000
+ 233 fonts using 187267219 bytes
  126i,22n,121p,1259b,1334s stack positions out of 20000i,500n,10000p,200000b,200000s
-<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman5-regular.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman8-bold.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman7-bold.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/GenEiMGothic2-Regular.ttf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/LINESeedJP_OTF_Rg.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/LINESeedJP_OTF.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/GenEiMGothic2-Bold.ttf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/ChikuPori-Regular2.ttf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/DelaGothicOne-Regular.ttf><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on メイン.pdf (19 pages, 961471 bytes).
+<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman5-regular.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman8-bold.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman7-bold.otf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf>{c:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/ShipporiGothicB2-Bold.ttf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/GenEiMGothic2-Regular.ttf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/LINESeedJP_OTF_Rg.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/LINESeedJP_OTF.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/GenEiMGothic2-Bold.ttf><c:/texlive/2020/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/ChikuPori-Regular2.ttf><c:/Users/User/AppData/Local/Microsoft/Windows/Fonts/DelaGothicOne-Regular.ttf><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmib10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy5.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on メイン.pdf (22 pages, 1286378 bytes).
 
-PDF statistics: 666 PDF objects out of 1000 (max. 8388607)
- 548 compressed objects within 6 object streams
- 251 named destinations out of 1000 (max. 131072)
- 248 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 891 PDF objects out of 1000 (max. 8388607)
+ 751 compressed objects within 8 object streams
+ 291 named destinations out of 1000 (max. 131072)
+ 416 words of extra memory for PDF output out of 10000 (max. 100000000)
 

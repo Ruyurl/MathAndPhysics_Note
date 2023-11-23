@@ -32,7 +32,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % フォント関係
 \usepackage{luatexja-fontspec, luatexja-ruby}
-\setmainjfont{ChikuPori-Regular2.ttf}[BoldFont=LINESeedJP_OTF_Rg.otf]
+% \setmainjfont{ChikuPori-Regular2.ttf}[BoldFont=LINESeedJP_OTF_Rg.otf]
+\setmainjfont{ChikuPori-Regular2.ttf}[BoldFont=ShipporiGothicB2-Bold.ttf]
 \setsansjfont{LINESeedJP_OTF_Rg.otf}[BoldFont=LINESeedJP_OTF.otf]
 \usepackage{fontspec}
 \setsansfont{GenEiMGothic2-Regular.ttf}[BoldFont=GenEiMGothic2-Bold.ttf]
@@ -301,7 +302,6 @@
 		#1\par
 	}
 \makeatother
-\setcounter{tocdepth}{1}
 % 章
 \ModifyHeading{chapter}{
 	font={\huge\sffamily\bfseries},
@@ -349,6 +349,7 @@
 \date{\LARGE 最終更新日: \today}
 \maketitle
 
+\setcounter{tocdepth}{2}
 \begin{multicols}{2}
 \tableofcontents
 	
