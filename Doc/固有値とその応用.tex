@@ -1,2 +1,252 @@
 \chapter{固有値とその応用}
 \setcounter{page}{1}
+
+\section{固有値とは?}
+
+1次変換の章での通り，線形変換$f$が行列$A =
+\begin{bmatrix}
+	3 & -2\\ 2 & -2
+\end{bmatrix}
+$で表されているとき，ベクトル$\bm{x}_1 =
+\begin{bmatrix*}[r]
+	2\\ -3
+\end{bmatrix*}
+$は，
+\begin{align*}
+	&f(\bm{x}_1) = A\bm{x}_1 =
+	\begin{bmatrix*}[r]
+		3 & -2\\ 2 & -2
+	\end{bmatrix*}
+	\begin{bmatrix*}[r]
+		2\\ -3
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}[r]
+		0\\ -2
+	\end{bmatrix*}
+	&
+	&\therefore\quad \bm{x}_1 \nheikou f(\bm{x}_1) \quad \left(
+		\begin{bmatrix*}[r]
+			2\\ -3
+		\end{bmatrix*}
+		\nheikou
+		\begin{bmatrix*}[r]
+			0\\ -2
+		\end{bmatrix*}
+	\right)
+\end{align*}
+と，大きさも向きも異なるベクトルに移されるのが大抵である．しかし，$\bm{x}$を上手く選ぶと，移した後のベクトル$f(\bm{x})$が元のベクトルを\kenten{スカラー倍したかのような}変換である（＝向きが変わらない）ように見えることがある．例えば$\bm{x}_2 =
+\begin{bmatrix*}[r]
+	2\\ 1
+\end{bmatrix*}$というベクトルは
+\begin{align*}
+	&f(\bm{x}_2) = A\bm{x}_2 =
+	\begin{bmatrix*}[r]
+		3 & -2\\ 2 & -2
+	\end{bmatrix*}
+	\begin{bmatrix*}[r]
+		2\\ 1
+	\end{bmatrix*}
+	=
+	\begin{bmatrix*}[r]
+		4\\ 2
+	\end{bmatrix*}
+	&
+	&\therefore\quad \bm{x}_2 \heikou f(\bm{x}_2) \quad \left(
+		\begin{bmatrix*}[r]
+			2\\ 1
+		\end{bmatrix*}
+		\heikou
+		\begin{bmatrix*}[r]
+			4\\ 2
+		\end{bmatrix*}
+	\right)
+\end{align*}
+より，$f(\bm{x}_2)$は$\bm{x}_2$を2倍にしたかのように見える．このようなベクトルは少なく，存在しないときもある．この$\bm{x}_2$のベクトルを$A$の\textbf{固有ベクトル}，倍率$2$を$A$の\textbf{固有値}という．
+
+固有値・固有ベクトルの定義を式に表すと次のようになる．
+\begin{kousiki}{固有値・固有ベクトル}
+	$A$を$n$次正方行列とする．以下を満たす$n$次元列ベクトル$\bm{x}$が存在するとき，$\lambda$を$A$の\textbf{固有値}，$\bm{x}$を$\lambda$に対する\textbf{固有ベクトル}という．
+	\begin{equation}
+		A\bm{x} = \lambda\bm{x} \qquad (\bm{x} \ne \bm{0})
+	\end{equation}
+\end{kousiki}
+
+※$\lambda\bm{x}$は$\bm{x}$のスカラー$\lambda$倍を表す．
+
+
+
+\subsection{固有値と固有ベクトルの計算}
+
+固有値・固有ベクトルの定義より
+\begin{equation*}
+	A\bm{x} = \lambda\bm{x}
+\end{equation*}
+左辺は行列とベクトルの積，右辺はベクトルのスカラー倍になっているので，両辺に単位行列$E$を左から掛けると
+\begin{equation*}
+	EA\bm{x} = \lambda E\bm{x}
+\end{equation*}
+$EA = A$より
+\begin{equation*}
+	A\bm{x} = \lambda E\bm{x}
+\end{equation*}
+これで両辺とも行列とベクトルの積になったので，移項して
+\begin{equation*}
+	A\bm{x} - \lambda E\bm{x} = \bm{0}
+\end{equation*}
+$\bm{x}$を括りだして
+\begin{equation}
+	(A - \lambda E)\bm{x} = \bm{0} \label{equ:eig-1}
+\end{equation}
+ここで定義より$\bm{x} \ne \bm{0}$なので，(\ref{equ:eig-1})が$\bm{x} = \bm{0}$以外の解を持つには
+\begin{equation}
+	|A - \lambda E| = 0\label{equ:eig-2}
+\end{equation}
+でなければならない（教科書p.111）．
+
+$|A - \lambda E|$を$A$の\textbf{固有多項式}，(\ref{equ:eig-2})を$A$の\textbf{固有方程式}という．固有値は固有方程式を解くことで求められる．つまり，$A$の固有値を求める場合，$A$から$\lambda E =
+\begin{bmatrix}
+	\lambda & 0 & \cdots & 0\\
+	0 & \lambda & \cdots & 0\\
+	\vdots & \vdots & \ddots & \vdots\\
+	0 & 0 & \cdots & \lambda
+\end{bmatrix}$を引いた行列の行列式が$0$になるときの$\lambda$を求める．固有値が$\lambda$のときの固有ベクトル$\bm{x}$は(\ref{equ:eig-1})に代入して求める．
+
+\begin{tip}{例題(1)}
+	行列$A = 
+	\begin{bmatrix*}[r]
+		3 & -2\\ 2 & -2
+	\end{bmatrix*}$の固有値と固有ベクトルを求めよ．なお，この行列は冒頭の行列と同じである．
+
+	\tcblower
+
+	固有値を$\lambda$とすると
+	\begin{equation*}
+		A - \lambda E =
+			\begin{bmatrix*}[r]
+				3 & -2\\ 2 & -2
+			\end{bmatrix*}
+			- \lambda
+			\begin{bmatrix*}[r]
+				1 & 0\\ 0 & 1
+			\end{bmatrix*}
+		= 
+			\begin{bmatrix*}[r]
+				3 & -2\\ 2 & -2
+			\end{bmatrix*}
+			- 
+			\begin{bmatrix*}[r]
+				\lambda & 0\\ 0 & \lambda
+			\end{bmatrix*}
+		=
+		\begin{bmatrix}
+			3 - \lambda & -2\\ 2 & -2 - \lambda
+		\end{bmatrix}
+	\end{equation*}
+	これより
+	\begin{equation*}
+		\begin{vmatrix}
+			3 - \lambda & -2\\ 2 & -2 - \lambda
+		\end{vmatrix}
+		= (3 - \lambda)(-2 - \lambda) + 4 = \lambda^2 - \lambda - 2 = (\lambda - 2)(\lambda + 1) = 0
+	\end{equation*}
+	よって，$\lambda = -1,\ 2$が固有値である．
+
+	固有値が$\lambda = -1$のときの固有ベクトル$\bm{x}_1$は
+	\begin{equation*}
+		(A - \lambda E)\bm{x} = \bm{0} \qLonglr \begin{bmatrix}
+			3 - \lambda & -2\\ 2 & -2 - \lambda
+		\end{bmatrix}
+		\begin{bmatrix}
+			x\\ y
+		\end{bmatrix} =
+		\begin{bmatrix}
+			0\\ 0
+		\end{bmatrix} \qLonglr
+		\begin{bmatrix}
+			4 & -2\\ 2 & -1
+		\end{bmatrix}
+		\begin{bmatrix}
+			x\\ y
+		\end{bmatrix} =
+		\begin{bmatrix}
+			0\\ 0
+		\end{bmatrix}
+	\end{equation*}
+	より，
+	\begin{equation*}
+		\begin{cases*}
+			4x - 2y = 0\\ 2x - y = 0
+		\end{cases*}
+		\longrightarrow 2x - y = 0
+	\end{equation*}
+	$x = \alpha$とおくと，$y = 2\alpha$．よって，$\bm{x}_1 =
+	\begin{bmatrix}
+		\alpha\\ 2\alpha
+	\end{bmatrix}\ (\alpha \ne 0)$
+
+	固有値が$\lambda = 2$のときの固有ベクトル$\bm{x}_2$は
+	\begin{equation*}
+		(A - \lambda E)\bm{x} = \bm{0} \qLonglr \begin{bmatrix}
+			3 - \lambda & -2\\ 2 & -2 - \lambda
+		\end{bmatrix}
+		\begin{bmatrix}
+			x\\ y
+		\end{bmatrix} =
+		\begin{bmatrix}
+			0\\ 0
+		\end{bmatrix} \qLonglr
+		\begin{bmatrix}
+			1 & -2\\ 2 & -4
+		\end{bmatrix}
+		\begin{bmatrix}
+			x\\ y
+		\end{bmatrix} =
+		\begin{bmatrix}
+			0\\ 0
+		\end{bmatrix}
+	\end{equation*}
+	より，
+	\begin{equation*}
+		\begin{cases*}
+			x - 2y = 0\\ 2x - 4y = 0
+		\end{cases*}
+		\longrightarrow x - 2y = 0
+	\end{equation*}
+	$y = \beta$とおくと，$x = 2\beta$．よって，$\bm{x}_2 =
+	\begin{bmatrix}
+		2\beta\\ \beta
+	\end{bmatrix}\ (\beta \ne 0)$
+\end{tip}
+
+
+
+\subsubsection*{2次正方行列$A$の固有値の簡単な求め方}
+
+\begin{kousiki}{2次正方行列の固有値}
+	$A =
+	\begin{bmatrix}
+		a & b\\ c & d
+	\end{bmatrix}$の固有値$\lambda$は，$a$と$d$の平均値を$m$，$|A|$を$p$とすると
+	\begin{equation}
+		\lambda = m \pm \sqrt{m^2 - p}
+	\end{equation}
+\end{kousiki}
+
+\begin{tip}{例題(2)}
+	行列$A = 
+	\begin{bmatrix*}[r]
+		3 & -2\\ 2 & -2
+	\end{bmatrix*}$の固有値を求めよ（行列は例題(1)と同じ）．
+
+	\tcblower
+
+	固有値を$\lambda$とすると
+	\begin{align*}
+		&m = \bunsuu{3 + (-2)}{2} = \bunsuu{1}{2} & &p = |A| = -6 + 4 = -2
+	\end{align*}
+	より
+	\begin{equation*}
+		\lambda = \bunsuu{1}{2} \pm \sqrt{\left(\bunsuu{1}{2}\right)^2 - (-2)} = \bunsuu{1}{2} \pm \sqrt{\bunsuu{9}{4}} = \bunsuu{1}{2} \pm \bunsuu{3}{2} = -1,\ 2 
+	\end{equation*}
+\end{tip}

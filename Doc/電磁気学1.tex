@@ -317,9 +317,9 @@ $Q$と$q$が同符号の場合，$q$には引力が働くので向きは$\bm{r}$
 ここで，クーロンの法則による表し方を変えてみる（一先ず，クーロン力の大きさ（スカラー）だけを考える）．
 \begin{align}
 	F &= \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1 Q_2}{r^2} \notag\\
-	&= Q_2 {\color{teal}\left(\bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1}{r^2}\right)} \label{equ:DJ1-2}
+	&= Q_2 {\color{teal}\left(\bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1}{r^2}\right)} \label{equ:elec1-1}
 \end{align}
-式(\ref{equ:DJ1-2})をこういう見方で考える．
+式(\ref{equ:elec1-1})をこういう見方で考える．
 \begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
 	\item $Q_2$の存在は置いといて，点電荷$Q_1$があることによって$Q_1$が周りの空間にある影響$E$を作り出す（本来はベクトル$\bm{E}$）．これは式(\ref{equ:DJ1-2})の\textcolor{teal}{青緑色}の部分に該当する．
 	\item $Q_2$は，$E$を感じてクーロン力を受ける．
@@ -334,7 +334,7 @@ $Q$と$q$が同符号の場合，$q$には引力が働くので向きは$\bm{r}$
 \begin{kousiki}{電場(2)}
 	原点にある電荷$Q_1$があって，この電荷が周りの空間のある1点$\bm{r} = (x,\ y,\ z)$に
 	\begin{equation}
-		\bm{E}(x,\ y,\ z) = \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1}{|\bm{r}|^2}\bunsuu{\bm{r}}{|\bm{r}|} \label{equ:DJ1-3}
+		\bm{E}(x,\ y,\ z) = \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{Q_1}{|\bm{r}|^2}\bunsuu{\bm{r}}{|\bm{r}|} \label{equ:elec1-2}
 	\end{equation}
 	だけの電場を作っていると考える．そして，その電場に入った電荷$Q_2$は，電場から
 	\begin{equation}
@@ -365,7 +365,7 @@ $Q$と$q$が同符号の場合，$q$には引力が働くので向きは$\bm{r}$
 
 しかし，これも面に厚みがないものとするので，これでも現実的な電荷分布とは言えない．更にもう1方向に広がって分布する電荷を考える．これは風船のような空間の体積領域$V$の内部に電荷が分布していると考える．このとき，単位体積（MKS単位系では$1\,\mathrm{m^3}$）あたりの電気量を\textbf{電荷密度}といい，$\rho$で表す．単位は$\mathrm{C / m^3}$である．体積領域$V$に存在する電荷の総量（総電荷）$Q$は，以下のように体積分で求めることができる．
 \begin{equation}
-	Q = \int_{V} \rho\,\md V \label{equ:DJ1-4}
+	Q = \int_{V} \rho\,\md V \label{equ:elec1-3}
 \end{equation}
 
 
@@ -374,7 +374,7 @@ $Q$と$q$が同符号の場合，$q$には引力が働くので向きは$\bm{r}$
 
 電荷が先程述べた通り3次元的に分布しているとする．この電荷が分布している体積領域$V$の外側に点（点の位置ベクトルを$\bm{r}$とする）があるとして，その点に作られる電場を表現する．重ね合わせの原理から，外側の点で作られる電場は，体積領域$V$の中にあるすべての電荷からの影響の総和である．
 
-まず，体積領域$V$の中の微小体積$\md V$を考え，$\md V$の中にある電荷が作る微小電場$\md\bm{E}$を求める．$\md V$の中に存在する電荷の総量は式(\ref{equ:DJ1-4})より，$\rho\,\md V$である．さらに，$\md V$が存在する場所の位置ベクトルを$\bm{r}'$とすると式(\ref{equ:DJ1-3})より$\md\bm{E}$は次のように表される．
+まず，体積領域$V$の中の微小体積$\md V$を考え，$\md V$の中にある電荷が作る微小電場$\md\bm{E}$を求める．$\md V$の中に存在する電荷の総量は式(\ref{equ:elec1-3})より，$\rho\,\md V$である．さらに，$\md V$が存在する場所の位置ベクトルを$\bm{r}'$とすると式(\ref{equ:elec1-2})より$\md\bm{E}$は次のように表される．
 \begin{equation}
 	\md\bm{E} = \bunsuu{1}{4\pi\varepsilon_0}\bunsuu{\rho(\bm{r}')\,\md V}{|\bm{r} - \bm{r}'|^2}\bunsuu{\bm{r} - \bm{r}'}{|\bm{r} - \bm{r}'|}
 \end{equation}

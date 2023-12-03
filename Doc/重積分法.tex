@@ -3,14 +3,25 @@
 
 \section{2重積分}
 \subsection{定義}
-\vskip-\baselineskip
+
+$xy$平面上の閉領域$D$で定義された2変数関数$z = f(x,\ y)$について，
+\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
+	\item 領域$D$を直線$x = x_0,\ x_1,\ \cdots,\ x_l$と$y = y_0,\ y_1,\ \cdots,\ y_m$とで出来る長方形で分割する．このときの小領域を$D_{ij}$，長方形の辺の長さを$\varDelta x_i,\ \varDelta y_j$で表す．
+	\item 各小領域$D_{ij}$内に代表点$(\xi_i,\ \eta_j)$を取って，高さ$f(\xi_i,\ \eta_j)$の直方体を立てる．この直方体の体積は$f(\xi_i,\ \eta_j)\,\varDelta x_i \varDelta y_j$である．
+	\item よって，領域$D$内の各直方体の体積の総和$V(\varDelta)$は
+		\begin{equation*}
+			V(\varDelta) = \sum_{i = 1}^{l}\sum_{j = 1}^{m} f(\xi_i,\ \eta_j)\,\varDelta x_i \varDelta y_j
+		\end{equation*}
+	\item ここで，$D_{ij}$の最大値を$|\varDelta|$とすると，$|\varDelta| \to 0$として分割数を増やしていけば，領域$D$と曲面$f(x,\ y)$で挟まれた立体の体積が求められる．これが\textbf{2重積分}の定義である．
+\end{enumerate}
 \begin{equation}
 	\iint_{D} f(x,\ y)\,dxdy = \lim_{|\varDelta| \to 0} \sum_{i = 1}^{l}\sum_{j = 1}^{m} f(\xi_i,\ \eta_j)\,\varDelta x_i \varDelta y_j
 \end{equation}
 
 
 \subsection{性質}
-\vskip-\baselineskip
+
+$f(x,\ y)$は領域$D$で積分可能とする．絶対値に関して次の不等式が成り立つ．
 \begin{equation}
 	\left|\iint_{D} f(x,\ y)\,dxdy\right| \le \iint_{D} |f(x,\ y)|\,dxdy
 \end{equation}
@@ -19,7 +30,7 @@
 
 \subsection{累次積分（逐次積分）}
 
-\begin{kousiki}{累次積分（１）}
+\begin{kousiki}{累次積分(1)}
 	$D = \{(x,\ y) \mid a \le x \le b,\ c \le y \le d\}$とする．
 	\begin{equation}
 		\iint_{D} f(x,\ y)\,dxdy = \int_{a}^{b} \left\{\int_{c}^{d} f(x,\ y)\,dy\right\}dx = \int_{c}^{d} \left\{\int_{a}^{b} f(x,\ y)\,dx\right\}\,dy
@@ -27,7 +38,7 @@
 \end{kousiki}
 
 範囲に関数が含まれている場合は変数を含んでいる方を先に計算する．
-\begin{kousiki}{累次積分（２）}
+\begin{kousiki}{累次積分(2)}
 	\begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
 		\item $D = \{(x,\ y) \mid a \le x \le b,\ {\color{cyan}\varphi_1(x)} \le y \le {\color{cyan}\varphi_2(x)}\}$とする．
 			\begin{equation}
@@ -44,7 +55,7 @@
 
 \subsection{積分順序の交換}
 
-\begin{tip}{例題(1)}
+\begin{tip}{例(1)}
 	$y = \sqrt{x}$と$y = \bunsuu{1}{2}x$に囲まれた領域
 	\tcblower
 	\begin{align*}
@@ -53,7 +64,7 @@
 	\end{align*}
 \end{tip}
 
-\begin{tip}{例題(2)}
+\begin{tip}{例(2)}
 	$y = \log x \qLonglr x = e^y$より
 	\begin{equation*}
 		\int_{1}^{e} \left\{\int_{0}^{\log x} f(x,\ y)\,dy\right\}dx = \int_{0}^{1} \left\{\int_{e^y}^{e} f(x,\ y)\,dx\right\}\,dy

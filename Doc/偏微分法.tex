@@ -55,27 +55,29 @@ $z = f(x,\ y)$で，2階偏微分可能で全て連続のとき\quad$\bunsuu{\pa
 	\item $f(x,\ y)$の$\bunsuu{\partial f}{\partial x},\ \bunsuu{\partial f}{\partial y}$が$(a,\ b)$で存在してそれらが連続である $\qLongright$ $f(x,\ y)$は$(a,\ b)$で全微分可能
 	\item $f(x,\ y)$が偏微分可能であっても全微分可能ではない（全微分の方が強い概念）．
 \end{itemize}
+
+下の式を$z = f(x,\ y)$の\textbf{全微分}という．全微分は，$x,\ y$を微小変化させたときの$z = f(x,\ y)$の変化量，つまり$dx,\ dy$増加したときの$dz$の値である．
 \begin{equation}
-	df = \bunsuu{\partial f}{\partial x}dx + \bunsuu{\partial f}{\partial y}
+	dz = \bunsuu{\partial z}{\partial x}dx + \bunsuu{\partial z}{\partial y}dy
 \end{equation}
 
 \newpage
 \begin{tip}{導出}
-	関数$f(x,\ y)$の$\varDelta x,\ \varDelta y$に対する増加量$\varDelta f$は
+	関数$z = f(x,\ y)$の$\varDelta x,\ \varDelta y$に対する増加量$\varDelta z$は
 	\begin{equation*}
-		\varDelta f = 
+		\varDelta z = 
 		\underbrace{
 			\underbrace{
-				\bunsuu{\partial f}{\partial x}\varDelta x
+				\bunsuu{\partial z}{\partial x}\varDelta x
 			}_{\text{$\varDelta x$についての増加量}}
 			+
 			\underbrace{
-				\bunsuu{\partial f}{\partial y}\varDelta y
+				\bunsuu{\partial z}{\partial y}\varDelta y
 			}_{\text{$\varDelta y$についての増加量}}
 		}_{接平面の公式}
 		{} + \varepsilon
 	\end{equation*}
-	更に，$\dlim_{\scalebox{0.5}{$(\varDelta x,\ \varDelta y) \to (0,\ 0)$}} \bunsuu{\varepsilon}{\sqrt{(\varDelta x)^2 + (\varDelta y)^2}} = 0$であれば，$f(x,\ y)$は全微分可能という．
+	更に，$\dlim_{\scalebox{0.5}{$(\varDelta x,\ \varDelta y) \to (0,\ 0)$}} \bunsuu{\varepsilon}{\sqrt{(\varDelta x)^2 + (\varDelta y)^2}} = 0$であれば，$z = f(x,\ y)$は全微分可能という．
 \end{tip}
 
 ここで，$\dlim_{\scalebox{0.5}{$(\varDelta x,\ \varDelta y) \to (0,\ 0)$}} \bunsuu{\varepsilon}{\sqrt{(\varDelta x)^2 + (\varDelta y)^2}} = 0$を，「$\varepsilon$は$\sqrt{(\varDelta x)^2 + (\varDelta y)^2}$より\textbf{高位の無限小}」という．これは，「$\varepsilon$は$\sqrt{(\varDelta x)^2 + (\varDelta y)^2}$とは比べ物にならないくらい速く$0$に近付く」という意味である．
@@ -86,7 +88,7 @@ $z = f(x,\ y)$で，2階偏微分可能で全て連続のとき\quad$\bunsuu{\pa
 
 曲面$z = f(x,\ y)$上の点$\bigl(a,\ b,\ f(a,\ b)\bigr)$に於ける接平面の方程式
 \begin{equation}
-	z - f(a,\ b) = \bunsuu{\partial f(a,\ b)}{\partial x}(x - a) + \bunsuu{\partial f(a,\ b)}{\partial y}(y - b) \label{equ5:1}
+	z - f(a,\ b) = \bunsuu{\partial f(a,\ b)}{\partial x}(x - a) + \bunsuu{\partial f(a,\ b)}{\partial y}(y - b) \label{equ:par_deri-1}
 \end{equation}
 
 曲面$f(x,\ y,\ z) = 0$上の点$(a,\ b,\ c)$に於ける接平面の方程式
@@ -100,7 +102,7 @@ $z = f(x,\ y)$で，2階偏微分可能で全て連続のとき\quad$\bunsuu{\pa
 	= 0
 \end{equation}
 
-これは，陰関数の微分法と式(\ref{equ5:1})から分かる．また，これより曲面$f(x,\ y,\ z) = 0$の法線ベクトルは以下である．
+これは，陰関数の微分法と式(\ref{equ:par_deri-1})から分かる．また，これより曲面$f(x,\ y,\ z) = 0$の法線ベクトルは以下である．
 \begin{equation}
 	{
 		\begin{bmatrix}
@@ -186,11 +188,11 @@ $f(x,\ y)$が$n$次までの連続な偏導関数を持つとき（$C^n$級関�
 \begin{tip}{補足}
 	$z = f(x,\ y)$で，$x = a + ht$，$y = b + kt$とすると，$z = f(a + ht,\ b + kt)$より，1変数$t$の関数になる．微分して
 	\begin{equation}
-		\bunsuu{df}{dt} = \bunsuu{dx}{dt}\bunsuu{\partial f}{\partial x} + \bunsuu{dy}{dt}\bunsuu{\partial f}{\partial y} = h\bunsuu{\partial f}{\partial x} + k\bunsuu{\partial f}{\partial y} \label{equ5:4}
+		\bunsuu{df}{dt} = \bunsuu{dx}{dt}\bunsuu{\partial f}{\partial x} + \bunsuu{dy}{dt}\bunsuu{\partial f}{\partial y} = h\bunsuu{\partial f}{\partial x} + k\bunsuu{\partial f}{\partial y} \label{equ:par_deri-2}
 	\end{equation}
 	ここで，$D = \Bigl(h\bunsuu{\partial}{\partial x} + k\bunsuu{\partial}{\partial y}\Bigr)$とおくと，$\bunsuu{df}{dt}$は$Df = \Bigl(h\bunsuu{\partial}{\partial x} + k\bunsuu{\partial}{\partial y}\Bigr)f$と書ける．
 	\vskip\baselineskip
-	次に，$\bunsuu{d^2 f}{dt^2}$を考える．式(\ref{equ5:4})より
+	次に，$\bunsuu{d^2 f}{dt^2}$を考える．式(\ref{equ:par_deri-2})より
 	\begin{equation*}
 		\bunsuu{d^2 f}{dt^2} = h\bunsuu{d}{dt}\Bigl(\bunsuu{\partial f}{\partial x}\Bigr) + k\bunsuu{d}{dt}\Bigl(\bunsuu{\partial f}{\partial y}\Bigr)
 	\end{equation*}
@@ -245,20 +247,20 @@ $a = b = 0$としたときのテイラーの定理を\textbf{マクローリン�
 
 \textbf{ヘッシアン}$H(a,\ b) =
 \begin{vmatrix}
-	f_{xx}(a,\ b) & f_{xy}(a,\ b)\\
+	f_{xx}(a,\ b) & f_{xy}(a,\ b)\\[5pt]
 	f_{xy}(a,\ b) & f_{yy}(a,\ b)
 \end{vmatrix}
 $とおくと，点$(a,\ b)$に於いて
 \begin{enumerate}[label=\textbf{[\arabic*]}, labelsep=10pt, leftmargin=23pt]
-	\item $H > 0$のとき
+	\item $H(a,\ b) > 0$のとき
 		\begin{align}
-			&f_{xx} > 0 \qLongright \text{点$(a,\ b)$で極小をとる} & &f_{xx} < 0 \qLongright \text{点$(a,\ b)$で極大をとる}
+			&f_{xx}(a,\ b) > 0 \qLongright \text{点$(a,\ b)$で極小をとる} & &f_{xx}(a,\ b) < 0 \qLongright \text{点$(a,\ b)$で極大をとる}
 		\end{align}
-	\item $H < 0$のとき
+	\item $H(a,\ b) < 0$のとき
 		\begin{equation}
 			\text{点$(a,\ b)$では極値を取らない．}
 		\end{equation}
-	\item $H = 0$のとき
+	\item $H(a,\ b) = 0$のとき
 		\begin{equation*}
 			\text{極値の判定は出来ない．}
 		\end{equation*}
@@ -305,19 +307,19 @@ $とおくと，点$(a,\ b)$に於いて
 
 $xy$平面上の点$(x,\ y)$が条件$\varphi(x,\ y) = 0$で表される曲線上を動くとき，平面$x = f(x,\ y)$が極値を取り得る点
 \begin{equation}
-	\bunsuu{f_x}{\varphi_x} = \bunsuu{f_y}{\varphi_y} \quad (\varphi_x,\ \varphi_y \ne 0) \label{equ5:5}
+	\bunsuu{f_x}{\varphi_x} = \bunsuu{f_y}{\varphi_y} \quad (\varphi_x,\ \varphi_y \ne 0) \label{equ:par_deri-3}
 \end{equation}
 
 \begin{tip}{導出}
 	方程式$\varphi(x,\ y) = 0$の$y$が$x$の関数，即ち$\varphi\bigl(x,\ y(x)\bigr) = 0$とすると，陰関数の微分法より
 	\begin{equation}
-		\bunsuu{dy}{dx} = -\bunsuu{\partial\varphi}{\partial x} \left/ \bunsuu{\partial \varphi}{\partial y}\right. \label{equ5:2}
+		\bunsuu{dy}{dx} = -\bunsuu{\partial\varphi}{\partial x} \left/ \bunsuu{\partial \varphi}{\partial y}\right. \label{equ:par_deri-4}
 	\end{equation}
 	このとき，関数$z = f(x,\ y)$は$x$の関数となるのでチェーン・ルールより，極値をとるとき
 	\begin{equation}
-		\bunsuu{df}{dx} = \bunsuu{\partial f}{\partial x}\bunsuu{dx}{dx} + \bunsuu{\partial f}{\partial y}\bunsuu{dy}{dx} = 0 \label{equ5:3}
+		\bunsuu{df}{dx} = \bunsuu{\partial f}{\partial x}\bunsuu{dx}{dx} + \bunsuu{\partial f}{\partial y}\bunsuu{dy}{dx} = 0 \label{equ:par_deri-5}
 	\end{equation}
-	式(\ref{equ5:3})に式(\ref{equ5:2})を代入して
+	式(\ref{equ:par_deri-5})に式(\ref{equ:par_deri-4})を代入して
 	\begin{equation*}
 		\bunsuu{\partial f}{\partial x} - \bunsuu{\partial f}{\partial y} \cdot \bunsuu{\bunsuu{\partial\varphi}{\partial x}}{\bunsuu{\partial\varphi}{\partial y}} = 0
 	\end{equation*}
@@ -339,7 +341,7 @@ $f(x,\ y)$は条件$\varphi(x,\ y) = 0$のもとで，$(a,\ b)$で極値をと�
 \end{equation}
 
 \begin{tip}{導出}
-	式(\ref{equ5:5})で，$\bunsuu{f_x}{\varphi_x} = \bunsuu{f_y}{\varphi_y} = \lambda$とおくことによって得られる．
+	式(\ref{equ:par_deri-3})で，$\bunsuu{f_x}{\varphi_x} = \bunsuu{f_y}{\varphi_y} = \lambda$とおくことによって得られる．
 \end{tip}
 
 \vskip\baselineskip

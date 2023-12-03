@@ -22,13 +22,13 @@
 		\begin{enumerate}[label=(\arabic*), labelsep=10pt, leftmargin=23pt]
 			\item 図で，$\mathrm{P}$から$x$軸と$x'$軸にそれぞれ垂線$\mathrm{PA,\ PB}$を下す．$\mathrm{A}$から$x'$軸に垂線$\mathrm{AA'}$を下すと
 			\begin{equation}
-				x' = \mathrm{OB} + \mathrm{OA'} + \mathrm{A'B} = \mathrm{OA}\cos\bunsuu{\pi}{4} + \mathrm{AP}\sin\bunsuu{\pi}{4} = \bunsuu{1}{\sqrt{2}}(x + y) \label{equ:NR1-1}
+				x' = \mathrm{OB} + \mathrm{OA'} + \mathrm{A'B} = \mathrm{OA}\cos\bunsuu{\pi}{4} + \mathrm{AP}\sin\bunsuu{\pi}{4} = \bunsuu{1}{\sqrt{2}}(x + y) \label{equ:mecha1-1}
 			\end{equation}
 			また
 			\begin{equation}
-				y' = \mathrm{AP}\cos\bunsuu{\pi}{4} - \mathrm{OA}\sin\bunsuu{\pi}{4} = \bunsuu{1}{\sqrt{2}}(-x + y) \label{equ:NR1-2}
+				y' = \mathrm{AP}\cos\bunsuu{\pi}{4} - \mathrm{OA}\sin\bunsuu{\pi}{4} = \bunsuu{1}{\sqrt{2}}(-x + y) \label{equ:mecha1-2}
 			\end{equation}
-			式(\ref{equ:NR1-1})，式(\ref{equ:NR1-2})が$x',\ y'$を$x,\ y$で表す式である．$x,\ y$について解けば
+			式(\ref{equ:mecha1-1})，式(\ref{equ:mecha1-2})が$x',\ y'$を$x,\ y$で表す式である．$x,\ y$について解けば
 			\begin{gather}
 				x = \bunsuu{1}{\sqrt{2}}(x' - y')\\
 				y = \bunsuu{1}{\sqrt{2}}(x' + y')
@@ -186,28 +186,28 @@ $\mathrm{S}'(\mathrm{O}',\ x',\ y',\ z')$
 
 任意の点$\mathrm{P}$の座標を$(x,\ y,\ z),\ (x',\ y',\ z')$とすれば
 \begin{align}
-	x &= x_0 + x' & y &= y_0 + y' & z &= z_0 + z' \label{equ:NR1-3}\\
-	x' &= x - x_0 & y' &= y - y_0 & z' &= z - z_0 \label{equ:NR1-4}
+	x &= x_0 + x' & y &= y_0 + y' & z &= z_0 + z' \label{equ:mecha1-3}\\
+	x' &= x - x_0 & y' &= y - y_0 & z' &= z - z_0 \label{equ:mecha1-4}
 \end{align}
 である．これらを$t$で微分すると
 \begin{align}
-	u &= u_0 + u' & v &= v_0 + v' & w &= w_0 + w' \label{equ:NR1-5}\\
-	u' &= u - u_0 & v' &= v - v_0 & w' &= w - w_0 \label{equ:NR1-6}
+	u &= u_0 + u' & v &= v_0 + v' & w &= w_0 + w' \label{equ:mecha1-5}\\
+	u' &= u - u_0 & v' &= v - v_0 & w' &= w - w_0 \label{equ:mecha1-6}
 \end{align}
-となる．式(\ref{equ:NR1-5})を更に$t$で微分すると$\bunsuu{du_0}{dt} = 0,\ \bunsuu{dv_0}{dt} = 0,\ \bunsuu{dw_0}{dt} = 0$なので
+となる．式(\ref{equ:mecha1-5})を更に$t$で微分すると$\bunsuu{du_0}{dt} = 0,\ \bunsuu{dv_0}{dt} = 0,\ \bunsuu{dw_0}{dt} = 0$なので
 \begin{align}
 	\bunsuu{du}{dt} &= \bunsuu{du'}{dt} &
 	\bunsuu{dv}{dt} &= \bunsuu{dv'}{dt} &
-	\bunsuu{dw}{dt} &= \bunsuu{dw'}{dt} \label{equ4-7}
+	\bunsuu{dw}{dt} &= \bunsuu{dw'}{dt} \label{equ:mecha-7}
 \end{align}
-となる．式(\ref{equ:NR1-3})～式(\ref{equ:NR1-7})を\textbf{ガリレイ変換}という．例えば，式(\ref{equ:NR1-6})は速度$u$で飛んでいる鳥を同方向に速度$u_0$で走っている列車から見ると相対的に$u - u_0$の速度で飛んでいるように見えるということ．
+となる．式(\ref{equ:mecha1-3})～式(\ref{equ:mecha1-7})を\textbf{ガリレイ変換}という．例えば，式(\ref{equ:mecha1-6})は速度$u$で飛んでいる鳥を同方向に速度$u_0$で走っている列車から見ると相対的に$u - u_0$の速度で飛んでいるように見えるということ．
 
 $\bm{v}$が一定であるとき，$\mathrm{S}$が慣性系ならば$\mathrm{S}'$も慣性系である．
 
 
 
 \subsection{力と加速度（運動の第2法則）}
-\label{sec:NR1-2-3}
+\label{sec:mecha1-2-3}
 
 \begin{tcolorbox}[colback=white]
 	質点に他の物体から力が働いた結果，加速度が生じる．このとき
@@ -225,7 +225,7 @@ $\bm{v}$が一定であるとき，$\mathrm{S}$が慣性系ならば$\mathrm{S}'
 \end{equation*}
 と表される．運動の変化は加えられた駆動力（＝力×力を加えた時間）によって起こるので，
 \begin{equation}
-	\label{equ:NR1-8}
+	\label{equ:mecha1-8}
 	\varDelta \bm{p} = \bm{F}\varDelta t
 \end{equation}
 と書くことができる．しかし，実際$\bm{F}$は変化するので積分を用いることで一般化ができる．力を時間で積分したものを\textbf{力積}$\bm{I}$といい
@@ -234,7 +234,7 @@ $\bm{v}$が一定であるとき，$\mathrm{S}$が慣性系ならば$\mathrm{S}'
 \end{equation*}
 で定義される．つまり運動の変化$\varDelta\bm{p}$は力積$\bm{I}$に等しい．
 
-運動の変化率は式(\ref{equ:NR1-8})から
+運動の変化率は式(\ref{equ:mecha1-8})から
 \begin{equation*}
 	\bunsuu{\varDelta \bm{p}}{\varDelta t} = \bm{F}
 \end{equation*}
@@ -377,11 +377,11 @@ $\bm{v}$が一定であるとき，$\mathrm{S}$が慣性系ならば$\mathrm{S}'
 \end{equation*}
 よって，
 \begin{equation}
-	v = \bunsuu{mg}{\alpha}\left\{1 - \exp\left(-\bunsuu{\alpha}{m}t\right)\right\} \label{equ:NR1-9}
+	v = \bunsuu{mg}{\alpha}\left\{1 - \exp\left(-\bunsuu{\alpha}{m}t\right)\right\} \label{equ:mecha1-9}
 \end{equation}
 となる．
 
-式(\ref{equ:NR1-9})で，$t \to \infty$とすると
+式(\ref{equ:mecha1-9})で，$t \to \infty$とすると
 \begin{equation}
 	v_{\infty} = \bunsuu{mg}{\alpha}
 \end{equation}
