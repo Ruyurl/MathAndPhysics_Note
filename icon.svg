@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="756"
+   height="756"
+   overflow="hidden"
+   version="1.1"
+   id="svg9"
+   sodipodi:docname="アイコン.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     id="namedview9"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.0714286"
+     inkscape:cx="377.53332"
+     inkscape:cy="378.93332"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g9" />
+  <g
+     id="g9">
+    <rect
+       x="0"
+       y="0"
+       width="756"
+       height="756"
+       fill="#FFFFFF"
+       fill-opacity="0"
+       id="rect1" />
+    <g
+       id="g8">
+      <g
+         id="g7">
+        <g
+           id="g6">
+          <path
+             d="M157.646 562.042 157.646 95.9583 329 95.9583 329 239.896 500.354 239.896 500.354 562.042 157.646 562.042ZM370.125 113.094 455.802 198.771 370.125 198.771 370.125 113.094ZM370.125 54.8333 116.521 54.8333 116.521 603.167 541.479 603.167 541.479 205.625 370.125 54.8333Z"
+             transform="matrix(1.00152 0 0 1 49 49)"
+             id="path1" />
+        </g>
+      </g>
+    </g>
+    <path
+       style="font-weight:800;font-size:128px;font-family:'A-OTF Shin Go Pro';-inkscape-font-specification:'A-OTF Shin Go Pro Ultra-Bold'"
+       d="m 231.86003,401.93599 v 100.864 h 22.912 v -32.128 h 37.248 c 25.728,0 32,-11.392 32,-34.688 0,-25.856 -9.344,-34.048 -31.36,-34.048 z m 56.576,20.992 c 7.552,0 12.544,0.512 12.544,13.312 0,11.52 -3.968,13.44 -12.544,13.44 h -33.664 v -26.752 z m 47.23207,-20.992 v 100.864 h 59.648 c 28.032,0 37.504,-11.264 37.504,-51.072 0,-38.144 -8.704,-49.792 -37.632,-49.792 z m 57.088,20.992 c 13.952,0 17.024,4.864 17.024,27.264 0,26.88 -1.536,31.488 -17.152,31.488 h -33.92 v -58.752 z m 54.5281,-20.992 v 100.864 h 22.912 v -37.12 h 51.584 v -21.12 h -51.584 v -21.632 h 53.76 v -20.992 z"
+       id="text8"
+       aria-label="PDF" />
+  </g>
+</svg>

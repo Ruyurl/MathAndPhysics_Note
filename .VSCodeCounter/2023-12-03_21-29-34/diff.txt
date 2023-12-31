@@ -1,0 +1,56 @@
+Date : 2023-12-03 21:29:34
+Directory : c:\Users\User\Documents\TeX\MathAndPhysics_Note
+Total : 28 files,  2000 codes, 11 comments, 503 blanks, all 2514 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| LaTeX    |         24 |      1,626 |         11 |        425 |      2,062 |
+| Log      |          1 |        244 |          0 |         29 |        273 |
+| Markdown |          3 |        130 |          0 |         49 |        179 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                  | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                     |         28 |      2,000 |         11 |        503 |      2,514 |
+| . (Files)                                                             |          3 |        130 |          0 |         49 |        179 |
+| Doc                                                                   |         25 |      1,870 |         11 |        454 |      2,335 |
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                              | language | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\オペレーティングシステム.tex  | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\コンピュータと工学.tex     | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\コンピュータアーキテクチャ.tex | LaTeX    |        770 |          0 |        231 |      1,001 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\コンピュータシステム.tex    | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\データの整理.tex        | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\フーリエ解析.tex        | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\ベクトル.tex          | LaTeX    |         37 |          0 |         23 |         60 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\ベクトル空間.tex        | LaTeX    |        137 |          0 |         23 |        160 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\メイン.log           | Log      |        244 |          0 |         29 |        273 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\メイン.tex           | LaTeX    |         54 |         10 |          3 |         67 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\偏微分法.tex          | LaTeX    |        252 |          1 |         63 |        316 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\力学1234.tex        | LaTeX    |        -36 |          0 |          0 |        -36 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\力学56789.tex       | LaTeX    |         42 |          0 |         13 |         55 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\固有値とその応用.tex      | LaTeX    |        229 |          0 |         21 |        250 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\常微分方程式.tex        | LaTeX    |        -74 |          0 |        -15 |        -89 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\微分方程式.tex         | LaTeX    |         74 |          0 |         15 |         89 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\微分法.tex           | LaTeX    |         29 |          0 |         17 |         46 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\推定と検定.tex         | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\確率.tex            | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\確率分布.tex          | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\複素解析.tex          | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\論理回路.tex          | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\重積分法.tex          | LaTeX    |         88 |          0 |         29 |        117 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\電磁気学2.tex         | LaTeX    |          2 |          0 |          1 |          3 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\電磁気学3.tex         | LaTeX    |          2 |          0 |          1 |          3 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\README.md             | Markdown |         28 |          0 |        -11 |         17 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\REFERENCE.md          | Markdown |         15 |          0 |         14 |         29 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\VERSION.md            | Markdown |         87 |          0 |         46 |        133 |
+| Total                                                                 |          |      2,000 |         11 |        503 |      2,514 |
++-----------------------------------------------------------------------+----------+------------+------------+------------+------------+

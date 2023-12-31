@@ -1,0 +1,45 @@
+Date : 2023-10-14 19:27:18
+Directory : c:\Users\User\Documents\TeX\MathAndPhysics_Note
+Total : 17 files,  112 codes, -32 comments, 3 blanks, all 83 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| LaTeX    |         15 |        156 |        -32 |          7 |        131 |
+| Log      |          1 |          1 |          0 |         -4 |         -3 |
+| Markdown |          1 |        -45 |          0 |          0 |        -45 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                             | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                |         17 |        112 |        -32 |          3 |         83 |
+| . (Files)                                                        |          1 |        -45 |          0 |          0 |        -45 |
+| Doc                                                              |         16 |        157 |        -32 |          3 |        128 |
++------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                         | language | code       | comment    | blank      | total      |
++------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\ベクトル.tex     | LaTeX    |        168 |          0 |         52 |        220 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\ベクトル空間.tex   | LaTeX    |         53 |          0 |          7 |         60 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\ベクトル解析.tex   | LaTeX    |       -129 |          0 |        -26 |       -155 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\メイン.log      | Log      |          1 |          0 |         -4 |         -3 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\メイン.tex      | LaTeX    |         22 |         -5 |          4 |         21 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\力学1234.tex   | LaTeX    |         52 |          0 |          8 |         60 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\固有値とその応用.tex | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\微分法.tex      | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\数列の極限.tex    | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\積分法.tex      | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\線形変換.tex     | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\行列.tex       | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\行列式.tex      | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\重積分法.tex     | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\関数の展開.tex    | LaTeX    |          2 |          0 |          0 |          2 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\Doc\電磁気学1.tex    | LaTeX    |        -28 |        -27 |        -38 |        -93 |
+| c:\Users\User\Documents\TeX\MathAndPhysics_Note\README.md        | Markdown |        -45 |          0 |          0 |        -45 |
+| Total                                                            |          |        112 |        -32 |          3 |         83 |
++------------------------------------------------------------------+----------+------------+------------+------------+------------+
