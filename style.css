@@ -66,3 +66,10 @@ ul {
 .fileLink_info {
 	font-size: 0.875rem;
 }
+
+/* モバイル版 */
+/* @media (max-width: 600px) {
+	body {
+		font-size: 12px;
+	}
+} */
