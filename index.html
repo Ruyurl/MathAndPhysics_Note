@@ -4,8 +4,20 @@
 	<meta charset="UTF-8">
 	<title>回憶錄</title>
 	<meta name="description" content="これは，私が独学或いは講義で習った事柄を整理して記録するためのノートです．">
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
 	<link href="style.css" rel="stylesheet">
-	<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']],
+		processEscapes: true
+		},
+		CommonHTML: { matchFontHeight: false, undefinedFamily:"sans-serif"}
+		});
+	</script>
+	<script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+	</script>
 </head>
 <body>
 <h1>数学・物理 回憶錄</h1>
@@ -16,7 +28,7 @@
 	<li>行列（ベクトル）の空白を調整しました．</li>
 	<li>30.2.B.5「割り込み要因」で，「[B]外部割り込み」を強調太字にしました．</li>
 	<li>図30.2を修正しました．</li>
-	<li>30.2.D.11「キャッシュメモリ(3)」で，\(\pmod L_C\) となっていたのを\(\pmod {L_C}\) に修正しました．</li>
+	<li>30.2.D.11「キャッシュメモリ(3)」で，$\pmod L_C$となっていたのを$\pmod {L_C}$に修正しました．</li>
 </ul>
 <h3>追加</h3>
 <ul>
